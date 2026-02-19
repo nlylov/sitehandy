@@ -3027,194 +3027,180 @@ button.portfolio-card__video {
   line-height: 1.4;
 }
 
-/* ---------- Photo Drop Module ---------- */
+/* ---------- Photo Drop / GHL Form Module ---------- */
 .mod-photo {
   text-align: center;
 }
 
-.mod-photo__inner {
-  max-width: 640px;
-  margin: 0 auto;
+.mod-photo__header {
+  margin-bottom: 48px;
 }
 
 .mod-photo__subtitle {
   color: var(--text-secondary);
   font-size: 17px;
   margin-top: 12px;
-  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.mod-photo__zone {
-  position: relative;
-  border: 2px dashed var(--border-accent);
-  border-radius: var(--radius-lg);
-  padding: 56px 32px;
-  cursor: pointer;
-  transition: all 0.3s var(--ease);
-  overflow: hidden;
+.mod-photo__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  text-align: left;
 }
 
-.mod-photo__zone::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--accent-glow);
-  opacity: 0;
-  transition: opacity 0.3s var(--ease);
+/* Left column — selling points */
+.mod-photo__selling {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
 
-.mod-photo__zone:hover,
-.mod-photo__zone:focus-visible {
-  border-color: var(--accent);
-}
-
-.mod-photo__zone:hover::before,
-.mod-photo__zone:focus-visible::before,
-.mod-photo__zone--dragover::before {
-  opacity: 1;
-}
-
-.mod-photo__zone--dragover {
-  border-color: var(--accent);
-  transform: scale(1.01);
-}
-
-.mod-photo__zone-content {
-  position: relative;
-  z-index: 1;
-}
-
-.mod-photo__icon {
-  color: var(--accent);
-  margin-bottom: 16px;
-  opacity: 0.7;
-}
-
-.mod-photo__label {
+.mod-photo__sell-title {
   font-family: var(--font-heading);
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 4px;
 }
 
-.mod-photo__sublabel {
+.mod-photo__steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mod-photo__step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
   color: var(--text-secondary);
-  font-size: 15px;
+  font-weight: 500;
 }
 
-.mod-photo__browse {
+.mod-photo__step-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.mod-photo__trust-title {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.mod-photo__trust-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+.mod-photo__fast-badge {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 16px 20px;
+  background: rgba(201, 168, 76, 0.08);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: var(--radius-md);
+  font-size: 14px;
   color: var(--accent);
+  line-height: 1.5;
+}
+
+.mod-photo__fast-badge svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.mod-photo__alt-contact {
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+
+.mod-photo__alt-contact p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.mod-photo__alt-links {
+  display: flex;
+  gap: 20px;
+}
+
+.mod-photo__alt-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
   font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.mod-photo__alt-link:hover {
+  opacity: 0.8;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
-.mod-photo__formats {
-  font-size: 12px;
-  color: var(--text-muted);
-  margin-top: 12px;
-}
-
-.mod-photo__input {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-  /* Hidden but keeps click target */
-  display: none;
-}
-
-.mod-photo__preview {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 16px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  margin-top: 16px;
-}
-
-.mod-photo__thumb-wrap {
-  position: relative;
-  width: 64px;
-  height: 64px;
-  border-radius: var(--radius-sm);
+/* Right column — GHL form iframe */
+.mod-photo__form-wrap {
+  min-height: 620px;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  flex-shrink: 0;
+  border: 1px solid var(--border);
 }
 
-.mod-photo__thumb {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.mod-photo__remove {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  width: 22px;
-  height: 22px;
-  background: rgba(0, 0, 0, 0.7);
-  border: none;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 14px;
-  line-height: 1;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.mod-photo__info {
-  text-align: left;
-}
-
-.mod-photo__filename {
+.mod-photo__form-wrap iframe {
   display: block;
-  font-size: 14px;
-  color: var(--text-primary);
-  font-weight: 500;
+  width: 100%;
+  min-height: 607px;
 }
 
-.mod-photo__filesize {
-  font-size: 12px;
-  color: var(--text-muted);
+/* ---------- Photo Module Responsive ---------- */
+@media (max-width: 768px) {
+  .mod-photo__layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .mod-photo__selling {
+    gap: 20px;
+  }
+
+  .mod-photo__form-wrap {
+    min-height: 580px;
+  }
+
+  .mod-photo__alt-links {
+    gap: 16px;
+  }
 }
 
-.mod-photo__success {
-  padding: 48px 24px;
-  opacity: 0;
-  transform: scale(0.95);
-  transition: all 0.5s var(--ease);
-}
-
-.mod-photo__success--visible {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.mod-photo__check {
-  margin-bottom: 16px;
-}
-
-.mod-photo__success-title {
-  font-family: var(--font-heading);
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 8px;
-}
-
-.mod-photo__success-text {
-  color: var(--text-secondary);
-  font-size: 16px;
-  margin-bottom: 24px;
+@media (max-width: 480px) {
+  .mod-photo__alt-links {
+    flex-direction: column;
+    gap: 12px;
+  }
 }
 
 /* ---------- Checklist Module ---------- */
@@ -3398,14 +3384,6 @@ button.portfolio-card__video {
   .mod-checklist__item {
     padding: 16px 20px;
   }
-
-  .mod-photo__zone {
-    padding: 40px 20px;
-  }
-
-  .mod-photo__label {
-    font-size: 16px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -3430,10 +3408,6 @@ button.portfolio-card__video {
   .mod-checklist__text {
     font-size: 14px;
   }
-
-  .mod-photo__zone {
-    padding: 32px 16px;
-  }
 }
 
 /* ---------- Comparison Rating Badge ---------- */
@@ -3442,117 +3416,6 @@ button.portfolio-card__video {
   font-weight: 700;
   color: var(--accent);
   letter-spacing: 0.02em;
-}
-
-/* ---------- Photo Drop: Next Steps ---------- */
-.mod-photo__preview {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 16px 20px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-md);
-  margin-top: 20px;
-}
-
-.mod-photo__thumb-wrap {
-  position: relative;
-  flex-shrink: 0;
-}
-
-.mod-photo__thumb {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: var(--radius-sm);
-  border: 2px solid rgba(255, 255, 255, 0.1);
-}
-
-.mod-photo__remove {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: var(--error);
-  color: #fff;
-  border: none;
-  font-size: 16px;
-  line-height: 1;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.15s ease;
-}
-
-.mod-photo__remove:hover {
-  transform: scale(1.1);
-}
-
-.mod-photo__info {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.mod-photo__filename {
-  color: var(--text-primary);
-  font-size: 14px;
-  font-weight: 600;
-  word-break: break-all;
-}
-
-.mod-photo__filesize {
-  color: var(--text-muted);
-  font-size: 13px;
-}
-
-.mod-photo__next-steps {
-  text-align: center;
-  padding: 32px 20px;
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.mod-photo__next-steps--visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.mod-photo__check {
-  margin-bottom: 12px;
-}
-
-.mod-photo__next-title {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 8px;
-}
-
-.mod-photo__next-text {
-  color: var(--text-secondary);
-  font-size: 15px;
-  max-width: 480px;
-  margin: 0 auto 24px;
-  line-height: 1.6;
-}
-
-.mod-photo__next-actions {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.mod-photo__next-actions .btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
 }
 
 /* ---------- Spoke Testimonials ---------- */
@@ -3636,11 +3499,6 @@ button.portfolio-card__video {
 
   .svc-testimonials__card {
     padding: 24px;
-  }
-
-  .mod-photo__next-actions {
-    flex-direction: column;
-    align-items: stretch;
   }
 }
 
