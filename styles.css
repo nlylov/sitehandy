@@ -3032,139 +3032,20 @@ button.portfolio-card__video {
   text-align: center;
 }
 
-.mod-photo__header {
-  margin-bottom: 48px;
-}
-
 .mod-photo__subtitle {
   color: var(--text-secondary);
   font-size: 17px;
   margin-top: 12px;
-  max-width: 600px;
+  max-width: 560px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 40px;
 }
 
-.mod-photo__layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: start;
-  text-align: left;
-}
-
-/* Left column — selling points */
-.mod-photo__selling {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
-
-.mod-photo__sell-title {
-  font-family: var(--font-heading);
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.mod-photo__steps {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.mod-photo__step {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 16px;
-  color: var(--text-secondary);
-  font-weight: 500;
-}
-
-.mod-photo__step-icon {
-  font-size: 18px;
-  flex-shrink: 0;
-}
-
-.mod-photo__trust-title {
-  font-family: var(--font-heading);
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--text-muted);
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
-.mod-photo__trust-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  font-size: 15px;
-  color: var(--text-secondary);
-}
-
-.mod-photo__fast-badge {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 16px 20px;
-  background: rgba(201, 168, 76, 0.08);
-  border: 1px solid rgba(201, 168, 76, 0.2);
-  border-radius: var(--radius-md);
-  font-size: 14px;
-  color: var(--accent);
-  line-height: 1.5;
-}
-
-.mod-photo__fast-badge svg {
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.mod-photo__alt-contact {
-  border-top: 1px solid var(--border);
-  padding-top: 20px;
-}
-
-.mod-photo__alt-contact p {
-  font-size: 14px;
-  color: var(--text-muted);
-  margin-bottom: 12px;
-}
-
-.mod-photo__alt-links {
-  display: flex;
-  gap: 20px;
-}
-
-.mod-photo__alt-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--accent);
-  text-decoration: none;
-  transition: opacity 0.2s ease;
-}
-
-.mod-photo__alt-link:hover {
-  opacity: 0.8;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-/* Right column — GHL form iframe */
 .mod-photo__form-wrap {
+  max-width: 560px;
+  margin: 0 auto;
   min-height: 620px;
-  background: #ffffff;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--border);
@@ -3178,28 +3059,8 @@ button.portfolio-card__video {
 
 /* ---------- Photo Module Responsive ---------- */
 @media (max-width: 768px) {
-  .mod-photo__layout {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .mod-photo__selling {
-    gap: 20px;
-  }
-
   .mod-photo__form-wrap {
     min-height: 580px;
-  }
-
-  .mod-photo__alt-links {
-    gap: 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .mod-photo__alt-links {
-    flex-direction: column;
-    gap: 12px;
   }
 }
 
