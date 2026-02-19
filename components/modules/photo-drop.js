@@ -4,7 +4,7 @@
 
    Embeds the GoHighLevel upload form via iframe.
    The form submits directly to the CRM (prosbuddy).
-   Centered single-column layout.
+   Centered single-column layout — "Upload Form - Navy" dark theme.
    ============================================ */
 
 export default function photoDrop(container) {
@@ -15,9 +15,9 @@ export default function photoDrop(container) {
             <p class="mod-photo__subtitle">Upload a photo of your furniture boxes or the item, leave your number — we'll text you a flat-rate quote within 30 minutes.</p>
             <div class="mod-photo__form-wrap">
                 <iframe
-                    src="https://api.prosbuddy.com/widget/form/65sBXd38rcq1TBr04Unm"
+                    src="https://api.prosbuddy.com/widget/form/nDWwAfdvUJavZMYAHbbH"
                     style="width:100%;height:100%;border:none;"
-                    id="inline-65sBXd38rcq1TBr04Unm"
+                    id="inline-nDWwAfdvUJavZMYAHbbH"
                     data-layout="{'id':'INLINE'}"
                     data-trigger-type="alwaysShow"
                     data-trigger-value=""
@@ -25,10 +25,10 @@ export default function photoDrop(container) {
                     data-activation-value=""
                     data-deactivation-type="neverDeactivate"
                     data-deactivation-value=""
-                    data-form-name="Upload Form"
+                    data-form-name="Upload Form - Navy"
                     data-height="607"
-                    data-layout-iframe-id="inline-65sBXd38rcq1TBr04Unm"
-                    data-form-id="65sBXd38rcq1TBr04Unm"
+                    data-layout-iframe-id="inline-nDWwAfdvUJavZMYAHbbH"
+                    data-form-id="nDWwAfdvUJavZMYAHbbH"
                     title="Upload Form"
                 ></iframe>
             </div>
