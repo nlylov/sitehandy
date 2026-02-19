@@ -1,0 +1,13 @@
+# Repair Asap LLC — robots.txt
+# https://asap.repair
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://asap.repair/sitemap.xml
+
+# Block admin/system paths
+Disallow: /components/
+Disallow: /_data/
+Disallow: /.well-known/
