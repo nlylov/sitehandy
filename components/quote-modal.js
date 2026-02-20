@@ -335,6 +335,25 @@
             serviceSelect.classList.add('success');
         }
 
+        // ZIP code (optional, but validate format if provided)
+        const zip = form.querySelector('#modal-zip');
+        if (zip && zip.value.trim()) {
+            if (!/^\d{5}$/.test(zip.value.trim())) {
+                showError(zip);
+                isValid = false;
+            } else {
+                zip.classList.add('success');
+            }
+        }
+
+        // Consent checkbox (required)
+        const consent = form.querySelector('#modal-consent');
+        if (consent && !consent.checked) {
+            const consentGroup = consent.closest('.form-group');
+            if (consentGroup) consentGroup.classList.add('has-error');
+            isValid = false;
+        }
+
         if (!isValid) return;
 
         // Show loading state
@@ -345,7 +364,8 @@
         const payload = {
             name: form.querySelector('#modal-name').value.trim(),
             phone: form.querySelector('#modal-phone').value.trim(),
-            email: form.querySelector('#modal-email').value.trim(),
+            email: form.querySelector('#modal-email')?.value.trim() || '',
+            zip: form.querySelector('#modal-zip')?.value.trim() || '',
             service: serviceSelect ? serviceSelect.value : '',
             date: form.querySelector('#modal-date')?.value || '',
             message: form.querySelector('#modal-message')?.value.trim() || '',

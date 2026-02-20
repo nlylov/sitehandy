@@ -30,11 +30,20 @@
                     <span class="form-error">Please enter a valid phone number</span>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="modal-email" class="form-label">Email Address</label>
-                <input type="email" id="modal-email" name="email" class="form-input" placeholder="john@example.com"
-                    required>
-                <span class="form-error">Please enter a valid email</span>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="modal-email" class="form-label">Email <span
+                            style="color:var(--text-muted);font-weight:400">(optional)</span></label>
+                    <input type="email" id="modal-email" name="email" class="form-input" placeholder="john@example.com">
+                    <span class="form-error">Please enter a valid email</span>
+                </div>
+                <div class="form-group">
+                    <label for="modal-zip" class="form-label">ZIP Code <span
+                            style="color:var(--text-muted);font-weight:400">(optional)</span></label>
+                    <input type="text" id="modal-zip" name="zip" class="form-input" placeholder="10001" maxlength="5"
+                        inputmode="numeric" pattern="[0-9]{5}">
+                    <span class="form-error">Please enter a valid 5-digit ZIP</span>
+                </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
@@ -85,12 +94,21 @@
                 </div>
             </div>
 
+            <div class="form-group form-consent">
+                <label class="consent-label">
+                    <input type="checkbox" id="modal-consent" name="consent" required>
+                    <span class="consent-check"></span>
+                    <span class="consent-text">I agree to the <a href="/privacy-policy/" target="_blank">Privacy
+                            Policy</a> and <a href="/terms-of-service/" target="_blank">Terms of Service</a>, and
+                        consent to receive text messages. Message &amp; data rates may apply.</span>
+                </label>
+                <span class="form-error">You must agree to continue</span>
+            </div>
+
             <button type="submit" class="btn btn--accent btn--lg btn--full" id="quoteModalSubmit">
                 <span class="btn__text">Send Request</span>
                 <span class="btn__loader"></span>
             </button>
-            <p class="form-privacy">By submitting, you agree to our <a href="/privacy-policy/">privacy policy</a>. We'll
-                never share your information.</p>
         </form>
 
         <div class="quote-modal__success" id="quoteModalSuccess" style="display:none">

@@ -1743,15 +1743,76 @@ button.portfolio-card__video {
   min-height: 70px;
 }
 
-.quote-modal__form .form-privacy {
+.quote-modal__form .form-consent {
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+
+.consent-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.consent-label input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.consent-check {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg-input);
+  transition: all 0.2s var(--ease);
+  position: relative;
+  margin-top: 1px;
+}
+
+.consent-label input:checked+.consent-check {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.consent-label input:checked+.consent-check::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 5px;
+  height: 9px;
+  border: solid var(--bg-primary);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.consent-label input:focus-visible+.consent-check {
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.consent-text {
   font-size: 12px;
-  text-align: center;
-  margin-top: 12px;
+  line-height: 1.5;
   color: var(--text-muted);
 }
 
-.quote-modal__form .form-privacy a {
+.consent-text a {
   color: var(--accent);
+  text-decoration: none;
+}
+
+.consent-text a:hover {
+  text-decoration: underline;
+}
+
+.form-consent.has-error .consent-check {
+  border-color: var(--error);
 }
 
 .quote-modal__success {
@@ -3328,7 +3389,7 @@ button.portfolio-card__video {
   line-height: 1.4;
 }
 
-/* ---------- Photo Drop / GHL Form Module ---------- */
+/* ---------- Photo Drop / Quote Form Module ---------- */
 .mod-photo {
   text-align: center;
 }
@@ -3344,24 +3405,96 @@ button.portfolio-card__video {
 }
 
 .mod-photo__form-wrap {
-  max-width: 560px;
+  max-width: 640px;
   margin: 0 auto;
-  min-height: 620px;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--border);
+  padding: 32px;
+  text-align: left;
 }
 
-.mod-photo__form-wrap iframe {
-  display: block;
+.mod-photo__form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.mod-photo__form .photo-drop {
+  border: 1.5px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  cursor: pointer;
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
+  text-align: center;
+}
+
+.mod-photo__form .photo-drop:hover,
+.mod-photo__form .photo-drop.dragover {
+  border-color: var(--accent);
+  background: rgba(193, 154, 74, 0.04);
+}
+
+.mod-photo__form .photo-drop__prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+}
+
+.mod-photo__form .photo-drop__hint {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.mod-photo__form .photo-drop__preview {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.mod-photo__form .photo-thumb {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mod-photo__form .photo-thumb img {
   width: 100%;
-  min-height: 607px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mod-photo__form .photo-thumb__remove {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ---------- Photo Module Responsive ---------- */
 @media (max-width: 768px) {
   .mod-photo__form-wrap {
-    min-height: 580px;
+    padding: 20px;
+  }
+
+  .mod-photo__form .form-row {
+    grid-template-columns: 1fr;
   }
 }
 

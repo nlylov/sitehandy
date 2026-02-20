@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const submitBtn = document.getElementById('submitBtn');
 
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       // Clear previous errors
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // Validate email
+      // Validate email (optional, but check format if provided)
       const email = form.querySelector('#email');
       if (email && email.value.trim()) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -158,25 +158,71 @@ document.addEventListener('DOMContentLoaded', () => {
         service.classList.add('success');
       }
 
+      // Validate ZIP code (optional, but check format if provided)
+      const zip = form.querySelector('#zip');
+      if (zip && zip.value.trim()) {
+        if (!/^\d{5}$/.test(zip.value.trim())) {
+          showError(zip);
+          isValid = false;
+        } else {
+          zip.classList.add('success');
+        }
+      }
+
+      // Validate consent checkbox (required)
+      const consent = form.querySelector('#contact-consent');
+      if (consent && !consent.checked) {
+        const consentGroup = consent.closest('.form-group');
+        if (consentGroup) consentGroup.classList.add('has-error');
+        isValid = false;
+      }
+
       if (isValid) {
         // Show loading state
         submitBtn.classList.add('loading');
         submitBtn.disabled = true;
 
-        // Simulate submission (replace with real endpoint)
-        setTimeout(() => {
+        const payload = {
+          name: form.querySelector('#name').value.trim(),
+          phone: form.querySelector('#phone').value.trim(),
+          email: email?.value.trim() || '',
+          zip: zip?.value.trim() || '',
+          service: service.value,
+          date: form.querySelector('#date')?.value || '',
+          message: form.querySelector('#message')?.value.trim() || '',
+          photos: [],
+        };
+
+        try {
+          const response = await fetch('https://repair-asap-proxy.vercel.app/api/quote', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+
+          const result = await response.json();
+
+          if (response.ok && result.success) {
+            form.innerHTML = `
+              <div style="text-align:center; padding:40px 20px;">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:20px">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <h3 style="font-size:24px; margin-bottom:12px;">Quote Request Received</h3>
+                <p style="color:var(--text-secondary); font-size:16px; line-height:1.7;">Thank you! We'll get back to you within 30 minutes during business hours.</p>
+              </div>
+            `;
+          } else {
+            alert(result.error || 'Something went wrong. Please try again or call us.');
+          }
+        } catch (err) {
+          console.error('Quote submission error:', err);
+          alert('Network error. Please try again or call us at +1 (775) 310-7770.');
+        } finally {
           submitBtn.classList.remove('loading');
-          form.innerHTML = `
-            <div style="text-align:center; padding:40px 20px;">
-              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:20px">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                <polyline points="22 4 12 14.01 9 11.01"/>
-              </svg>
-              <h3 style="font-size:24px; margin-bottom:12px;">Quote Request Received</h3>
-              <p style="color:var(--text-secondary); font-size:16px; line-height:1.7;">Thank you! We'll get back to you within 30 minutes during business hours.</p>
-            </div>
-          `;
-        }, 1500);
+          submitBtn.disabled = false;
+        }
       }
     });
 

@@ -190,16 +190,37 @@
           border-bottom-right-radius: 4px; 
       }
       
+      /* === PHOTO MESSAGE === */
+      .chat-photo-msg { max-width: 70%; align-self: flex-end; animation: chatSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+      .chat-photo-msg img { width: 100%; max-width: 220px; border-radius: 12px; display: block; border: 1px solid #1e293b; }
+
       /* === INPUT AREA === */
       #repair-asap-chat-input-container { 
           padding: 14px 16px; 
           background: #0f1629; 
           border-top: 1px solid #1e293b; 
           display: flex; 
-          gap: 10px; 
+          gap: 8px; 
           align-items: center;
           flex-shrink: 0;
       }
+
+      #repair-asap-chat-attach {
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 6px;
+          border-radius: 50%;
+          transition: background 0.2s;
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+      #repair-asap-chat-attach:hover { background: rgba(201, 168, 76, 0.12); }
+      #repair-asap-chat-attach svg { width: 22px; height: 22px; fill: none; stroke: #64748b; stroke-width: 2; }
+      #repair-asap-chat-attach:hover svg { stroke: #c9a84c; }
+      #repair-asap-chat-file { display: none; }
       
       #repair-asap-chat-input { 
           flex: 1; 
@@ -349,6 +370,19 @@
     const chatInputContainer = document.createElement('div');
     chatInputContainer.id = 'repair-asap-chat-input-container';
 
+    // Photo attach button
+    const attachBtn = document.createElement('button');
+    attachBtn.id = 'repair-asap-chat-attach';
+    attachBtn.title = 'Attach photo';
+    attachBtn.innerHTML = `<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>`;
+
+    const fileInput = document.createElement('input');
+    fileInput.id = 'repair-asap-chat-file';
+    fileInput.type = 'file';
+    fileInput.accept = 'image/*';
+    fileInput.addEventListener('change', () => { if (fileInput.files[0]) sendPhoto(fileInput.files[0]); fileInput.value = ''; });
+    attachBtn.addEventListener('click', () => fileInput.click());
+
     const chatInput = document.createElement('input');
     chatInput.id = 'repair-asap-chat-input';
     chatInput.type = 'text';
@@ -361,6 +395,8 @@
     chatSend.innerHTML = `<svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>`;
     chatSend.addEventListener('click', sendMessage);
 
+    chatInputContainer.appendChild(fileInput);
+    chatInputContainer.appendChild(attachBtn);
     chatInputContainer.appendChild(chatInput);
     chatInputContainer.appendChild(chatSend);
     chatWindow.appendChild(chatHeader);
@@ -456,6 +492,80 @@
       state.isLoading = false;
       sendBtn.disabled = false;
       if (window.innerWidth > 768) inputEl.focus();
+    }
+  }
+
+  // --- Photo compression ---
+  function compressChatImage(file, maxW = 1200, quality = 0.7) {
+    return new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          let w = img.width, h = img.height;
+          if (w > maxW) { h = (h * maxW) / w; w = maxW; }
+          canvas.width = w;
+          canvas.height = h;
+          canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+          resolve(canvas.toDataURL('image/jpeg', quality));
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  // --- Send photo ---
+  async function sendPhoto(file) {
+    if (state.isLoading || !state.threadId) return;
+    if (!file.type.startsWith('image/') || file.size > 5 * 1024 * 1024) {
+      addMessageToUI('bot', 'Please send an image file under 5 MB.');
+      return;
+    }
+
+    state.isLoading = true;
+    const sendBtn = document.getElementById('repair-asap-chat-send');
+    sendBtn.disabled = true;
+
+    try {
+      const dataUrl = await compressChatImage(file);
+      const base64 = dataUrl.split(',')[1];
+
+      // Show photo preview in chat
+      const container = document.getElementById('repair-asap-chat-messages');
+      const photoDiv = document.createElement('div');
+      photoDiv.className = 'chat-photo-msg';
+      photoDiv.innerHTML = `<img src="${dataUrl}" alt="Uploaded photo">`;
+      container.appendChild(photoDiv);
+      container.scrollTop = container.scrollHeight;
+
+      showLoading();
+
+      const response = await fetch(`${config.apiEndpoint}/api/chat-photo`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          threadId: state.threadId,
+          photo: { data: base64, name: file.name, type: 'image/jpeg' }
+        })
+      });
+
+      removeLoading();
+
+      if (response.ok) {
+        const data = await response.json();
+        if (data.message) addMessageToUI('bot', data.message);
+      } else {
+        addMessageToUI('bot', 'Sorry, couldn\'t process the photo. Please try again.');
+      }
+    } catch (err) {
+      removeLoading();
+      addMessageToUI('bot', 'Photo upload failed. Please try again.');
+      console.error('Photo upload error:', err);
+    } finally {
+      state.isLoading = false;
+      sendBtn.disabled = false;
     }
   }
 
