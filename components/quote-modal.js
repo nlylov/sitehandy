@@ -156,6 +156,37 @@
         });
     }
 
+    /**
+     * Compress an image file via Canvas: resize to max 1200px, JPEG 0.7 quality.
+     * Returns a Promise resolving to { dataUrl, base64 }.
+     */
+    function compressImage(file) {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.onload = () => {
+                const MAX_DIM = 1200;
+                let w = img.width;
+                let h = img.height;
+
+                if (w > MAX_DIM || h > MAX_DIM) {
+                    if (w > h) { h = Math.round(h * MAX_DIM / w); w = MAX_DIM; }
+                    else { w = Math.round(w * MAX_DIM / h); h = MAX_DIM; }
+                }
+
+                const canvas = document.createElement('canvas');
+                canvas.width = w;
+                canvas.height = h;
+                canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+
+                const dataUrl = canvas.toDataURL('image/jpeg', 0.7);
+                const base64 = dataUrl.split(',')[1];
+                resolve({ dataUrl, base64 });
+            };
+            img.onerror = reject;
+            img.src = URL.createObjectURL(file);
+        });
+    }
+
     function addFiles(fileList) {
         const files = Array.from(fileList).filter(f => f.type.startsWith('image/'));
 
@@ -168,20 +199,26 @@
             // Check if already added
             if (selectedPhotos.some(p => p.name === file.name && p.file.size === file.size)) continue;
 
-            const reader = new FileReader();
-            reader.onload = () => {
-                const dataUrl = reader.result;
-                const base64 = dataUrl.split(',')[1]; // Remove data:image/xxx;base64, prefix
+            compressImage(file).then(({ dataUrl, base64 }) => {
                 selectedPhotos.push({
                     file,
                     dataUrl,
                     base64,
                     name: file.name,
-                    type: file.type,
+                    type: 'image/jpeg', // always JPEG after compression
                 });
                 renderPhotoPreviews();
-            };
-            reader.readAsDataURL(file);
+            }).catch(() => {
+                // Fallback: use original if compression fails
+                const reader = new FileReader();
+                reader.onload = () => {
+                    const dataUrl = reader.result;
+                    const base64 = dataUrl.split(',')[1];
+                    selectedPhotos.push({ file, dataUrl, base64, name: file.name, type: file.type });
+                    renderPhotoPreviews();
+                };
+                reader.readAsDataURL(file);
+            });
         }
     }
 
