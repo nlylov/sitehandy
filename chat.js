@@ -438,7 +438,7 @@
     if (storedThreadId) {
       state.threadId = storedThreadId;
       if (document.getElementById('repair-asap-chat-messages').children.length === 0) {
-        addMessageToUI('bot', 'Hello! How can I help with your repair today?');
+        addMessageToUI('bot', 'Hi! 👋 I\'m here to help with your project. What do you need done?');
       }
       return;
     }
@@ -448,7 +448,7 @@
         const data = await response.json();
         state.threadId = data.threadId;
         localStorage.setItem(config.storageKey, state.threadId);
-        addMessageToUI('bot', 'Hello! How can I help with your repair today?');
+        addMessageToUI('bot', 'Hi! 👋 I\'m here to help with your project. What do you need done?');
       }
     } catch (e) { console.error('Init failed', e); }
   }
@@ -470,7 +470,7 @@
       const response = await fetch(`${config.apiEndpoint}/api/message`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ threadId: state.threadId, message: message })
+        body: JSON.stringify({ threadId: state.threadId, message: message, pageContext: window.location.pathname })
       });
 
       removeLoading();
@@ -547,7 +547,8 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           threadId: state.threadId,
-          photo: { data: base64, name: file.name, type: 'image/jpeg' }
+          photo: { data: base64, name: file.name, type: 'image/jpeg' },
+          pageContext: window.location.pathname
         })
       });
 
