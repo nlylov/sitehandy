@@ -91,9 +91,9 @@
             "url": "https://asap.repair",
             "address": {
                 "@type": "PostalAddress",
-                "addressLocality": "New York",
+                "streetAddress": "99-60 64th Ave", "addressLocality": "Rego Park",
                 "addressRegion": "NY",
-                "addressCountry": "US"
+                "postalCode": "11374", "addressCountry": "US"
             },
             "aggregateRating": {
                 "@type": "AggregateRating",
@@ -112,7 +112,9 @@
                 { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "IKEA Furniture Assembly" } },
                 { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bed & Bed Frame Assembly" } },
                 { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wardrobe & Closet Assembly" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wall-Mounted Furniture Installation" } }
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desk Assembly" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dresser & Nightstand Assembly" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Murphy Bed Installation" } }
             ]
         }
     }
@@ -343,7 +345,6 @@
             <div class="svc-features__grid">
                 <a href="/services/furniture-assembly/ikea-assembly/" class="svc-features__card">
                     <div class="svc-features__icon">
-                        <!-- IKEA box icon -->
                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <path
@@ -356,9 +357,8 @@
                     <p>PAX, KALLAX, MALM, HEMNES, BESTA and every IKEA system — any size, any complexity.</p>
                     <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/furniture-assembly/beds/" class="svc-features__card">
+                <a href="/services/furniture-assembly/bed-assembly/" class="svc-features__card">
                     <div class="svc-features__icon">
-                        <!-- bed icon -->
                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M2 4v16" />
@@ -367,13 +367,12 @@
                             <path d="M6 8v9" />
                         </svg>
                     </div>
-                    <h3>Beds & Bed Frames</h3>
+                    <h3>Beds &amp; Bed Frames</h3>
                     <p>Platform beds, storage beds, bunk beds, loft beds, and adjustable frames.</p>
                     <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/furniture-assembly/wardrobes/" class="svc-features__card">
+                <a href="/services/furniture-assembly/wardrobe-assembly/" class="svc-features__card">
                     <div class="svc-features__icon">
-                        <!-- wardrobe icon -->
                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="3" y="2" width="18" height="20" rx="2" />
@@ -382,23 +381,53 @@
                             <path d="M14 10h1" />
                         </svg>
                     </div>
-                    <h3>Wardrobes & Closets</h3>
+                    <h3>Wardrobes &amp; Closets</h3>
                     <p>PAX systems, freestanding wardrobes, and custom closet organizers.</p>
                     <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/furniture-assembly/wall-mounted/" class="svc-features__card">
+                <a href="/services/furniture-assembly/desk-assembly/" class="svc-features__card">
                     <div class="svc-features__icon">
-                        <!-- wall-mounted shelf icon -->
                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="4" y="2" width="16" height="20" rx="1" />
-                            <line x1="4" y1="7" x2="20" y2="7" />
-                            <line x1="4" y1="12" x2="20" y2="12" />
-                            <line x1="4" y1="17" x2="20" y2="17" />
+                            <rect x="2" y="7" width="20" height="3" rx="1" />
+                            <path d="M4 10v8" />
+                            <path d="M20 10v8" />
+                            <path d="M7 10v4h4v-4" />
                         </svg>
                     </div>
-                    <h3>Wall-Mounted Furniture</h3>
-                    <p>Floating shelves, wall cabinets, entertainment centers, and mounted storage units.</p>
+                    <h3>Desk Assembly</h3>
+                    <p>Standing desks, L-shaped desks, executive desks, gaming desks — any brand, any complexity.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
+                </a>
+                <a href="/services/furniture-assembly/dresser-assembly/" class="svc-features__card">
+                    <div class="svc-features__icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <line x1="3" y1="9" x2="21" y2="9" />
+                            <line x1="3" y1="15" x2="21" y2="15" />
+                            <path d="M10 6h4" />
+                            <path d="M10 12h4" />
+                            <path d="M10 18h4" />
+                        </svg>
+                    </div>
+                    <h3>Dressers &amp; Nightstands</h3>
+                    <p>Standard dressers, tall chests, double dressers, nightstands — wall anchoring included.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
+                </a>
+                <a href="/services/furniture-assembly/wall-bed-assembly/" class="svc-features__card">
+                    <div class="svc-features__icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="4" y="2" width="16" height="20" rx="2" />
+                            <path d="M4 14h16" />
+                            <path d="M8 14v-4a4 4 0 018 0v4" />
+                            <circle cx="8" cy="18" r="1" />
+                            <circle cx="16" cy="18" r="1" />
+                        </svg>
+                    </div>
+                    <h3>Murphy Beds</h3>
+                    <p>Vertical, horizontal, cabinet, and bookcase wall beds — assembled, anchored, and tested.</p>
                     <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
             </div>

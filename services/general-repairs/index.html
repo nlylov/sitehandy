@@ -55,9 +55,15 @@
     {
         "@context": "https://schema.org", "@type": "BreadcrumbList",
         "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://asap.repair/" },
-            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://asap.repair/#services" },
-            { "@type": "ListItem", "position": 3, "name": "General Repairs", "item": "https://asap.repair/services/general-repairs/" }
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Drywall Repair" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Door Repair" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Door Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Caulking & Sealing" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lock Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Window Repair" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Blind Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cabinet Hardware Installation" } }
+            
         ]
     }
     </script>
@@ -69,7 +75,7 @@
         "description": "Professional general home repairs in New York City. Door fixes, drywall patches, shelving, caulking, weather-stripping, and miscellaneous handyman work. Licensed & insured.",
         "provider": {
             "@type": "LocalBusiness", "name": "Repair Asap LLC", "telephone": "+1-775-310-7770", "url": "https://asap.repair",
-            "address": { "@type": "PostalAddress", "addressLocality": "New York", "addressRegion": "NY", "addressCountry": "US" },
+            "address": { "@type": "PostalAddress", "streetAddress": "99-60 64th Ave", "addressLocality": "Rego Park", "addressRegion": "NY", "postalCode": "11374", "addressCountry": "US" },
             "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "63" }
         },
         "areaServed": { "@type": "City", "name": "New York City" },
@@ -227,70 +233,54 @@
         <div class="container">
             <span class="section-tag">Choose a Service</span>
             <h2 class="section-title">What Needs <span class="text-accent">Fixing?</span></h2>
-            <div class="svc-features__grid">
+                        <div class="svc-features__grid">
+                <a href="/services/general-repairs/drywall-repair/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/><path d="M3 9h18"/></svg></div>
+                    <h3>Drywall Repair</h3>
+                    <p>Holes, cracks, and water damage patched and painted.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
+                </a>
                 <a href="/services/general-repairs/door-repair/" class="svc-features__card">
-                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-                            <polyline points="9 22 9 12 15 12 15 22" />
-                        </svg></div>
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/><circle cx="15" cy="12" r="1"/></svg></div>
                     <h3>Door Repair</h3>
-                    <p>Sticking doors, broken hinges, handles, locks, and proper alignment.</p><span
-                        class="svc-features__link">Learn More &rarr;</span>
+                    <p>Sticking, squeaking, misaligned, and damaged doors fixed.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/general-repairs/drywall-patch/" class="svc-features__card">
-                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="18" height="18" rx="2" />
-                            <circle cx="12" cy="12" r="3" />
-                        </svg></div>
-                    <h3>Drywall Patching</h3>
-                    <p>Holes, cracks, and dents — patched, sanded, and primed for painting.</p><span
-                        class="svc-features__link">Learn More &rarr;</span>
-                </a>
-                <a href="/services/general-repairs/shelving/" class="svc-features__card">
-                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 21h18" />
-                            <path d="M3 7h18" />
-                            <path d="M3 14h18" />
-                            <path d="M5 7v14" />
-                            <path d="M19 7v14" />
-                        </svg></div>
-                    <h3>Shelving &amp; Storage</h3>
-                    <p>Floating shelves, closet rods, and wall-mounted storage installation.</p><span
-                        class="svc-features__link">Learn More &rarr;</span>
+                <a href="/services/general-repairs/door-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="15" cy="12" r="1"/><path d="M5 12h2"/></svg></div>
+                    <h3>Door Installation</h3>
+                    <p>Interior, closet, pocket, and barn doors hung and trimmed.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
                 <a href="/services/general-repairs/caulking/" class="svc-features__card">
-                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
-                        </svg></div>
-                    <h3>Caulking &amp; Sealing</h3>
-                    <p>Bathroom, kitchen, and window caulking with clean, waterproof seals.</p><span
-                        class="svc-features__link">Learn More &rarr;</span>
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22l4-4"/><path d="M15 3l6 6-11 11-6-6z"/></svg></div>
+                    <h3>Caulking</h3>
+                    <p>Bathroom, kitchen, and window caulking — sealed tight.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/general-repairs/window-fixes/" class="svc-features__card">
-                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="4" width="20" height="16" rx="2" />
-                            <path d="M2 10h20" />
-                            <path d="M12 4v16" />
-                        </svg></div>
-                    <h3>Window Fixes</h3>
-                    <p>Locks, tracks, weather-stripping, and damaged screen replacement.</p><span
-                        class="svc-features__link">Learn More &rarr;</span>
+                <a href="/services/general-repairs/lock-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/><circle cx="12" cy="16" r="1"/></svg></div>
+                    <h3>Lock Installation</h3>
+                    <p>Deadbolts, smart locks, and door knobs installed and tested.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/general-repairs/odd-jobs/" class="svc-features__card">
-                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 19.5A2.5 2.5 0 016.5 17H20" />
-                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" />
-                        </svg></div>
-                    <h3>Odd Jobs</h3>
-                    <p>Curtain rods, towel bars, baby-proofing, door stops, and more.</p><span
-                        class="svc-features__link">Learn More &rarr;</span>
+                <a href="/services/general-repairs/window-repair/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/></svg></div>
+                    <h3>Window Repair</h3>
+                    <p>Broken panes, stuck sashes, and hardware replacement.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
+                </a>
+                <a href="/services/general-repairs/blind-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"/><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="11" x2="20" y2="11"/><line x1="4" y1="15" x2="20" y2="15"/></svg></div>
+                    <h3>Blind Installation</h3>
+                    <p>Venetian, roller, cellular, Roman — any window type.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
+                </a>
+                <a href="/services/general-repairs/cabinet-hardware-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="9" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><path d="M5 7h3"/><path d="M16 7h3"/></svg></div>
+                    <h3>Cabinet Hardware</h3>
+                    <p>Handles, knobs, and pulls drilled, aligned, and installed.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
             </div>
         </div>

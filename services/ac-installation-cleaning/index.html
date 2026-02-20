@@ -70,7 +70,7 @@
         "description": "Professional AC installation, cleaning, and maintenance in New York City. Window units, portable ACs, PTAC, and mini-splits. Licensed & insured.",
         "provider": {
             "@type": "LocalBusiness", "name": "Repair Asap LLC", "telephone": "+1-775-310-7770", "url": "https://asap.repair",
-            "address": { "@type": "PostalAddress", "addressLocality": "New York", "addressRegion": "NY", "addressCountry": "US" },
+            "address": { "@type": "PostalAddress", "streetAddress": "99-60 64th Ave", "addressLocality": "Rego Park", "addressRegion": "NY", "postalCode": "11374", "addressCountry": "US" },
             "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "63" }
         },
         "areaServed": { "@type": "City", "name": "New York City" },
@@ -78,9 +78,12 @@
             "@type": "OfferCatalog", "name": "AC Services",
             "itemListElement": [
                 { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Window AC Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Through-Wall AC Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Portable AC Installation" } },
                 { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "PTAC Installation" } },
                 { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AC Deep Cleaning" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mini-Split Service" } }
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AC Removal" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AC Bracket Installation" } }
             ]
         }
     }
@@ -208,11 +211,11 @@
                 <div class="svc-brands__item">
                     <div class="svc-brands__icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
+                            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+                            <line x1="4" y1="22" x2="4" y2="15" />
                         </svg></div>
-                    <h3>Mini-Split Service</h3>
-                    <p>Filter cleaning, coil maintenance, and minor repairs for ductless mini-split systems.</p>
+                    <h3>AC Bracket Install</h3>
+                    <p>NYC-compliant support brackets for window AC units — secure mounting to any façade type.</p>
                 </div>
             </div>
         </div>
@@ -238,7 +241,7 @@
             <span class="section-tag">Choose a Service</span>
             <h2 class="section-title">What Do You <span class="text-accent">Need Done?</span></h2>
             <div class="svc-features__grid">
-                <a href="/services/ac-installation-cleaning/window-ac/" class="svc-features__card">
+                <a href="/services/ac-installation-cleaning/window-ac-installation/" class="svc-features__card">
                     <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="2" y="4" width="20" height="12" rx="2" />
@@ -246,31 +249,44 @@
                             <path d="M12 16v4" />
                         </svg></div>
                     <h3>Window AC Install</h3>
-                    <p>Bracket, mounting, insulation, and side panel sealing for any window type.</p><span
-                        class="svc-features__link">Learn More &rarr;</span>
+                    <p>Bracket, mounting, insulation, and side panel sealing for any window type.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/ac-installation-cleaning/portable-ac/" class="svc-features__card">
-                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="4" y="2" width="16" height="20" rx="2" />
-                            <circle cx="12" cy="14" r="3" />
-                        </svg></div>
-                    <h3>Portable AC Setup</h3>
-                    <p>Hose routing, window kit installation, and drainage configuration.</p><span
-                        class="svc-features__link">Learn More &rarr;</span>
-                </a>
-                <a href="/services/ac-installation-cleaning/ptac/" class="svc-features__card">
+                <a href="/services/ac-installation-cleaning/through-wall-ac-installation/" class="svc-features__card">
                     <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="2" y="6" width="20" height="12" rx="2" />
                             <path d="M6 10h4" />
                             <path d="M14 10h4" />
                         </svg></div>
-                    <h3>PTAC / Through-Wall</h3>
-                    <p>Unit replacement, sleeve inspection, and electrical hookup for co-ops and condos.</p><span
-                        class="svc-features__link">Learn More &rarr;</span>
+                    <h3>Through-Wall AC</h3>
+                    <p>Sleeve AC units fitted, sealed, and tested in existing wall openings.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/ac-installation-cleaning/deep-cleaning/" class="svc-features__card">
+                <a href="/services/ac-installation-cleaning/portable-ac-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="4" y="2" width="16" height="20" rx="2" />
+                            <circle cx="12" cy="14" r="3" />
+                        </svg></div>
+                    <h3>Portable AC Setup</h3>
+                    <p>Hose routing, window kit installation, and drainage configuration.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
+                </a>
+                <a href="/services/ac-installation-cleaning/ptac-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="6" width="20" height="12" rx="2" />
+                            <path d="M6 10h4" />
+                            <path d="M14 10h4" />
+                            <path d="M6 14h4" />
+                            <path d="M14 14h4" />
+                        </svg></div>
+                    <h3>PTAC Installation</h3>
+                    <p>Unit replacement, sleeve inspection, and electrical hookup for co-ops and condos.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
+                </a>
+                <a href="/services/ac-installation-cleaning/ac-deep-cleaning/" class="svc-features__card">
                     <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M12 3v18" />
@@ -279,28 +295,28 @@
                             <circle cx="18" cy="18" r="2" />
                         </svg></div>
                     <h3>AC Deep Cleaning</h3>
-                    <p>Full filter wash, coil cleaning, drain pan flush, and sanitizing.</p><span
-                        class="svc-features__link">Learn More &rarr;</span>
+                    <p>Full filter wash, coil cleaning, drain pan flush, and sanitizing.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/ac-installation-cleaning/removal/" class="svc-features__card">
+                <a href="/services/ac-installation-cleaning/ac-removal/" class="svc-features__card">
                     <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="3" y="3" width="18" height="18" rx="2" />
                             <path d="M3 9h18" />
                         </svg></div>
-                    <h3>AC Removal &amp; Storage</h3>
-                    <p>Safe end-of-season removal, window resealing, and optional storage prep.</p><span
-                        class="svc-features__link">Learn More &rarr;</span>
+                    <h3>AC Removal</h3>
+                    <p>Safe end-of-season removal, window resealing, and optional storage prep.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/ac-installation-cleaning/mini-split/" class="svc-features__card">
+                <a href="/services/ac-installation-cleaning/ac-bracket-installation/" class="svc-features__card">
                     <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
+                            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+                            <line x1="4" y1="22" x2="4" y2="15" />
                         </svg></div>
-                    <h3>Mini-Split Service</h3>
-                    <p>Filter cleaning, coil maintenance, and minor repairs for ductless systems.</p><span
-                        class="svc-features__link">Learn More &rarr;</span>
+                    <h3>AC Bracket Install</h3>
+                    <p>NYC-compliant support brackets mounted securely — required by law.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
             </div>
         </div>

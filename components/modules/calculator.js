@@ -315,6 +315,614 @@ const CONFIGS = {
         },
         cta: { text: 'Get Exact Quote', href: '/#contact' },
         disclaimer: 'Estimates based on standard assembly. Final price confirmed after review.'
+    },
+    tv: {
+        title: 'TV Mounting Estimate',
+        subtitle: 'Select your TV size and wall type for an estimated price range.',
+        categories: [
+            {
+                label: 'TV Size',
+                id: 'series',
+                options: [
+                    { value: '', label: 'Choose TV size…' },
+                    { value: 'small', label: '32″ – 43″' },
+                    { value: 'medium', label: '50″ – 55″' },
+                    { value: 'large', label: '60″ – 75″' },
+                    { value: 'xlarge', label: '77″ – 85″+' }
+                ]
+            },
+            {
+                label: 'Wall Type & Mount',
+                id: 'size',
+                dependsOn: 'series',
+                optionSets: {
+                    small: [
+                        { value: '', label: 'Choose setup…' },
+                        { value: 'sm', label: 'Drywall — Fixed / Tilt Mount' },
+                        { value: 'md', label: 'Drywall — Full-Motion Mount' },
+                        { value: 'lg', label: 'Brick / Concrete — Any Mount' }
+                    ],
+                    medium: [
+                        { value: '', label: 'Choose setup…' },
+                        { value: 'sm', label: 'Drywall — Fixed / Tilt Mount' },
+                        { value: 'md', label: 'Drywall — Full-Motion Mount' },
+                        { value: 'lg', label: 'Brick / Concrete — Any Mount' }
+                    ],
+                    large: [
+                        { value: '', label: 'Choose setup…' },
+                        { value: 'sm', label: 'Drywall — Fixed / Tilt Mount' },
+                        { value: 'md', label: 'Drywall — Full-Motion Mount' },
+                        { value: 'lg', label: 'Brick / Concrete — Any Mount' }
+                    ],
+                    xlarge: [
+                        { value: '', label: 'Choose setup…' },
+                        { value: 'sm', label: 'Drywall — Fixed / Tilt Mount' },
+                        { value: 'md', label: 'Drywall — Full-Motion Mount' },
+                        { value: 'lg', label: 'Brick / Concrete — Any Mount' }
+                    ]
+                }
+            }
+        ],
+        pricing: {
+            small: { sm: [120, 180], md: [160, 220], lg: [200, 280] },
+            medium: { sm: [150, 220], md: [200, 280], lg: [250, 340] },
+            large: { sm: [200, 280], md: [250, 350], lg: [300, 420] },
+            xlarge: { sm: [280, 380], md: [340, 450], lg: [400, 550] }
+        },
+        cta: { text: 'Get Exact Quote', href: '/#contact' },
+        disclaimer: 'Estimates include mount, cable concealment, and labor. Mount hardware not included unless specified.'
+    },
+    shelf: {
+        title: 'Shelf Mounting Estimate',
+        subtitle: 'Select your shelf type and quantity for an estimated price range.',
+        categories: [
+            {
+                label: 'Shelf Type',
+                id: 'series',
+                options: [
+                    { value: '', label: 'Choose shelf type…' },
+                    { value: 'floating', label: 'Floating Shelf' },
+                    { value: 'bracket', label: 'Bracket Shelf' },
+                    { value: 'ledge', label: 'Picture Ledge / Decorative' },
+                    { value: 'heavy', label: 'Heavy-Duty / Garage Shelf' },
+                    { value: 'corner', label: 'Corner Shelf' },
+                    { value: 'other', label: 'Other Shelf Type' }
+                ]
+            },
+            {
+                label: 'How Many?',
+                id: 'size',
+                dependsOn: 'series',
+                optionSets: {
+                    floating: [
+                        { value: '', label: 'Choose quantity…' },
+                        { value: 'sm', label: '1 shelf' },
+                        { value: 'md', label: '2–3 shelves' },
+                        { value: 'lg', label: '4+ shelves' }
+                    ],
+                    bracket: [
+                        { value: '', label: 'Choose quantity…' },
+                        { value: 'sm', label: '1 shelf' },
+                        { value: 'md', label: '2–3 shelves' },
+                        { value: 'lg', label: '4+ shelves' }
+                    ],
+                    ledge: [
+                        { value: '', label: 'Choose quantity…' },
+                        { value: 'sm', label: '1 ledge' },
+                        { value: 'md', label: '2–3 ledges' },
+                        { value: 'lg', label: '4+ ledges' }
+                    ],
+                    heavy: [
+                        { value: '', label: 'Choose quantity…' },
+                        { value: 'sm', label: '1 shelf' },
+                        { value: 'md', label: '2–3 shelves' },
+                        { value: 'lg', label: '4+ shelves / full wall' }
+                    ],
+                    corner: [
+                        { value: '', label: 'Choose quantity…' },
+                        { value: 'sm', label: '1 corner shelf' },
+                        { value: 'md', label: '2–3 corner shelves' },
+                        { value: 'lg', label: '4+ corner shelves' }
+                    ],
+                    other: [
+                        { value: '', label: 'Choose quantity…' },
+                        { value: 'sm', label: '1 shelf' },
+                        { value: 'md', label: '2–3 shelves' },
+                        { value: 'lg', label: '4+ shelves' }
+                    ]
+                }
+            }
+        ],
+        pricing: {
+            floating: { sm: [60, 100], md: [120, 200], lg: [200, 320] },
+            bracket: { sm: [50, 80], md: [100, 160], lg: [160, 260] },
+            ledge: { sm: [50, 80], md: [90, 150], lg: [150, 240] },
+            heavy: { sm: [80, 130], md: [160, 260], lg: [260, 400] },
+            corner: { sm: [60, 100], md: [120, 190], lg: [190, 300] },
+            other: { sm: [50, 100], md: [100, 180], lg: [180, 300] }
+        },
+        cta: { text: 'Get Exact Quote', href: '/#contact' },
+        disclaimer: 'Estimates based on standard installation. Final price confirmed after reviewing your wall and shelves.'
+    },
+    'curtain-rod': {
+        title: 'Curtain Rod Estimate',
+        subtitle: 'Select your rod type and number of windows for an estimated price range.',
+        categories: [
+            {
+                label: 'Rod Type',
+                id: 'series',
+                options: [
+                    { value: '', label: 'Choose rod type…' },
+                    { value: 'single', label: 'Single Rod' },
+                    { value: 'double', label: 'Double Rod' },
+                    { value: 'ceiling', label: 'Ceiling Track' },
+                    { value: 'bay', label: 'Bay Window Rod' },
+                    { value: 'tension', label: 'Tension Rod' },
+                    { value: 'other', label: 'Other Rod Type' }
+                ]
+            },
+            {
+                label: 'How Many Windows?',
+                id: 'size',
+                dependsOn: 'series',
+                optionSets: {
+                    single: [
+                        { value: '', label: 'Choose quantity…' },
+                        { value: 'sm', label: '1 window' },
+                        { value: 'md', label: '2–3 windows' },
+                        { value: 'lg', label: '4+ windows' }
+                    ],
+                    double: [
+                        { value: '', label: 'Choose quantity…' },
+                        { value: 'sm', label: '1 window' },
+                        { value: 'md', label: '2–3 windows' },
+                        { value: 'lg', label: '4+ windows' }
+                    ],
+                    ceiling: [
+                        { value: '', label: 'Choose quantity…' },
+                        { value: 'sm', label: '1 window' },
+                        { value: 'md', label: '2–3 windows' },
+                        { value: 'lg', label: '4+ windows / room divider' }
+                    ],
+                    bay: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: '3-sided bay' },
+                        { value: 'md', label: '5-sided bay' },
+                        { value: 'lg', label: 'Multiple bay windows' }
+                    ],
+                    tension: [
+                        { value: '', label: 'Choose quantity…' },
+                        { value: 'sm', label: '1 rod' },
+                        { value: 'md', label: '2–3 rods' },
+                        { value: 'lg', label: '4+ rods' }
+                    ],
+                    other: [
+                        { value: '', label: 'Choose quantity…' },
+                        { value: 'sm', label: '1 window' },
+                        { value: 'md', label: '2–3 windows' },
+                        { value: 'lg', label: '4+ windows' }
+                    ]
+                }
+            }
+        ],
+        pricing: {
+            single: { sm: [50, 80], md: [120, 200], lg: [200, 320] },
+            double: { sm: [70, 110], md: [160, 260], lg: [260, 400] },
+            ceiling: { sm: [80, 130], md: [180, 300], lg: [300, 460] },
+            bay: { sm: [100, 160], md: [160, 250], lg: [280, 420] },
+            tension: { sm: [30, 50], md: [70, 120], lg: [120, 200] },
+            other: { sm: [50, 100], md: [120, 220], lg: [220, 360] }
+        },
+        cta: { text: 'Get Exact Quote', href: '/#contact' },
+        disclaimer: 'Estimates based on standard installation. Final price confirmed after reviewing your windows and rods.'
+    },
+    mirror: {
+        title: 'Mirror Mounting Estimate',
+        subtitle: 'Select your mirror type and size for an estimated price range.',
+        categories: [
+            {
+                label: 'Mirror Type',
+                id: 'series',
+                options: [
+                    { value: '', label: 'Choose mirror type…' },
+                    { value: 'vanity', label: 'Bathroom Vanity Mirror' },
+                    { value: 'full-length', label: 'Full-Length Mirror' },
+                    { value: 'decorative', label: 'Decorative / Accent Mirror' },
+                    { value: 'oversized', label: 'Oversized / Heavy Mirror' },
+                    { value: 'frameless', label: 'Frameless Mirror' },
+                    { value: 'other', label: 'Other Mirror' }
+                ]
+            },
+            {
+                label: 'Size & Wall',
+                id: 'size',
+                dependsOn: 'series',
+                optionSets: {
+                    vanity: [
+                        { value: '', label: 'Choose size…' },
+                        { value: 'sm', label: 'Small (up to 24″)' },
+                        { value: 'md', label: 'Medium (24″–48″)' },
+                        { value: 'lg', label: 'Large (48″+) or tile wall' }
+                    ],
+                    'full-length': [
+                        { value: '', label: 'Choose mount…' },
+                        { value: 'sm', label: 'Leaner (secured to wall)' },
+                        { value: 'md', label: 'Wall-hung (drywall)' },
+                        { value: 'lg', label: 'Wall-hung (brick / concrete)' }
+                    ],
+                    decorative: [
+                        { value: '', label: 'Choose weight…' },
+                        { value: 'sm', label: 'Light (under 15 lbs)' },
+                        { value: 'md', label: 'Medium (15–40 lbs)' },
+                        { value: 'lg', label: 'Heavy (40+ lbs)' }
+                    ],
+                    oversized: [
+                        { value: '', label: 'Choose wall type…' },
+                        { value: 'sm', label: 'Drywall (into studs)' },
+                        { value: 'md', label: 'Plaster wall' },
+                        { value: 'lg', label: 'Brick / concrete' }
+                    ],
+                    frameless: [
+                        { value: '', label: 'Choose size…' },
+                        { value: 'sm', label: 'Small (up to 24″)' },
+                        { value: 'md', label: 'Medium (24″–48″)' },
+                        { value: 'lg', label: 'Large (48″+)' }
+                    ],
+                    other: [
+                        { value: '', label: 'Choose complexity…' },
+                        { value: 'sm', label: 'Simple / light' },
+                        { value: 'md', label: 'Medium weight' },
+                        { value: 'lg', label: 'Heavy / complex' }
+                    ]
+                }
+            }
+        ],
+        pricing: {
+            vanity: { sm: [60, 90], md: [90, 140], lg: [140, 220] },
+            'full-length': { sm: [60, 100], md: [100, 160], lg: [160, 250] },
+            decorative: { sm: [50, 80], md: [80, 130], lg: [130, 200] },
+            oversized: { sm: [120, 180], md: [180, 280], lg: [250, 380] },
+            frameless: { sm: [70, 110], md: [110, 170], lg: [170, 260] },
+            other: { sm: [50, 100], md: [100, 180], lg: [180, 300] }
+        },
+        cta: { text: 'Get Exact Quote', href: '/#contact' },
+        disclaimer: 'Estimates based on standard installation. Final price confirmed after reviewing your mirror and wall.'
+    },
+    projector: {
+        title: 'Projector Mounting Estimate',
+        subtitle: 'Select your mount type and ceiling for an estimated price range.',
+        categories: [
+            {
+                label: 'Mount Location',
+                id: 'series',
+                options: [
+                    { value: '', label: 'Choose mount type…' },
+                    { value: 'ceiling', label: 'Ceiling Mount' },
+                    { value: 'wall', label: 'Wall Mount' },
+                    { value: 'shelf', label: 'Shelf / Table Bracket' },
+                    { value: 'other', label: 'Other Setup' }
+                ]
+            },
+            {
+                label: 'Ceiling / Wall Type',
+                id: 'size',
+                dependsOn: 'series',
+                optionSets: {
+                    ceiling: [
+                        { value: '', label: 'Choose surface…' },
+                        { value: 'sm', label: 'Drywall ceiling' },
+                        { value: 'md', label: 'Drop ceiling (suspended)' },
+                        { value: 'lg', label: 'Concrete ceiling' }
+                    ],
+                    wall: [
+                        { value: '', label: 'Choose surface…' },
+                        { value: 'sm', label: 'Drywall' },
+                        { value: 'md', label: 'Plaster' },
+                        { value: 'lg', label: 'Brick / concrete' }
+                    ],
+                    shelf: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Mount only' },
+                        { value: 'md', label: 'Mount + cable routing' },
+                        { value: 'lg', label: 'Mount + cable + alignment' }
+                    ],
+                    other: [
+                        { value: '', label: 'Choose complexity…' },
+                        { value: 'sm', label: 'Simple' },
+                        { value: 'md', label: 'Medium' },
+                        { value: 'lg', label: 'Complex' }
+                    ]
+                }
+            }
+        ],
+        pricing: {
+            ceiling: { sm: [150, 220], md: [200, 300], lg: [280, 400] },
+            wall: { sm: [120, 180], md: [160, 250], lg: [220, 340] },
+            shelf: { sm: [60, 100], md: [100, 160], lg: [140, 220] },
+            other: { sm: [100, 180], md: [180, 280], lg: [280, 420] }
+        },
+        cta: { text: 'Get Exact Quote', href: '/#contact' },
+        disclaimer: 'Estimates include mount and cable routing. Projector and cables not included.'
+    },
+    'projector-screen': {
+        title: 'Projector Screen Estimate',
+        subtitle: 'Select your screen type and size for an estimated price range.',
+        categories: [
+            {
+                label: 'Screen Type',
+                id: 'series',
+                options: [
+                    { value: '', label: 'Choose screen type…' },
+                    { value: 'fixed', label: 'Fixed-Frame Screen' },
+                    { value: 'pulldown', label: 'Pull-Down (Manual)' },
+                    { value: 'motorized', label: 'Motorized Electric' },
+                    { value: 'tab-tension', label: 'Tab-Tensioned Screen' },
+                    { value: 'other', label: 'Other Screen' }
+                ]
+            },
+            {
+                label: 'Screen Size',
+                id: 'size',
+                dependsOn: 'series',
+                optionSets: {
+                    fixed: [
+                        { value: '', label: 'Choose size…' },
+                        { value: 'sm', label: 'Up to 100″' },
+                        { value: 'md', label: '100″ – 120″' },
+                        { value: 'lg', label: '120″+' }
+                    ],
+                    pulldown: [
+                        { value: '', label: 'Choose size…' },
+                        { value: 'sm', label: 'Up to 100″' },
+                        { value: 'md', label: '100″ – 120″' },
+                        { value: 'lg', label: '120″+' }
+                    ],
+                    motorized: [
+                        { value: '', label: 'Choose size…' },
+                        { value: 'sm', label: 'Up to 100″' },
+                        { value: 'md', label: '100″ – 120″' },
+                        { value: 'lg', label: '120″+' }
+                    ],
+                    'tab-tension': [
+                        { value: '', label: 'Choose size…' },
+                        { value: 'sm', label: 'Up to 100″' },
+                        { value: 'md', label: '100″ – 120″' },
+                        { value: 'lg', label: '120″+' }
+                    ],
+                    other: [
+                        { value: '', label: 'Choose size…' },
+                        { value: 'sm', label: 'Small' },
+                        { value: 'md', label: 'Medium' },
+                        { value: 'lg', label: 'Large' }
+                    ]
+                }
+            }
+        ],
+        pricing: {
+            fixed: { sm: [120, 180], md: [180, 280], lg: [280, 400] },
+            pulldown: { sm: [80, 130], md: [130, 200], lg: [200, 300] },
+            motorized: { sm: [150, 230], md: [230, 350], lg: [350, 500] },
+            'tab-tension': { sm: [160, 250], md: [250, 380], lg: [380, 550] },
+            other: { sm: [80, 150], md: [150, 250], lg: [250, 400] }
+        },
+        cta: { text: 'Get Exact Quote', href: '/#contact' },
+        disclaimer: 'Estimates include mounting and alignment. Screen hardware not included unless specified.'
+    },
+    desk: {
+        title: 'Desk Assembly Estimate',
+        subtitle: 'Select your desk type and complexity for an estimated price range.',
+        categories: [
+            {
+                label: 'Desk Type',
+                id: 'series',
+                options: [
+                    { value: '', label: 'Choose desk type…' },
+                    { value: 'simple', label: 'Simple Writing Desk' },
+                    { value: 'lshaped', label: 'L-Shaped / Corner Desk' },
+                    { value: 'standing', label: 'Standing / Adjustable Desk' },
+                    { value: 'executive', label: 'Executive / Large Desk' },
+                    { value: 'gaming', label: 'Gaming Desk' },
+                    { value: 'other', label: 'Other Desk' }
+                ]
+            },
+            {
+                label: 'Complexity',
+                id: 'size',
+                dependsOn: 'series',
+                optionSets: {
+                    simple: [
+                        { value: '', label: 'Choose complexity…' },
+                        { value: 'sm', label: 'Basic (no drawers)' },
+                        { value: 'md', label: 'With drawers / hutch' },
+                        { value: 'lg', label: 'With hutch + shelving' }
+                    ],
+                    lshaped: [
+                        { value: '', label: 'Choose complexity…' },
+                        { value: 'sm', label: 'Basic L-shape' },
+                        { value: 'md', label: 'With drawers / filing' },
+                        { value: 'lg', label: 'With hutch + storage' }
+                    ],
+                    standing: [
+                        { value: '', label: 'Choose type…' },
+                        { value: 'sm', label: 'Manual crank' },
+                        { value: 'md', label: 'Electric — single motor' },
+                        { value: 'lg', label: 'Electric — dual motor + accessories' }
+                    ],
+                    executive: [
+                        { value: '', label: 'Choose complexity…' },
+                        { value: 'sm', label: 'Standard' },
+                        { value: 'md', label: 'With credenza' },
+                        { value: 'lg', label: 'With credenza + hutch' }
+                    ],
+                    gaming: [
+                        { value: '', label: 'Choose complexity…' },
+                        { value: 'sm', label: 'Basic frame' },
+                        { value: 'md', label: 'With monitor arm / cable mgmt' },
+                        { value: 'lg', label: 'Full setup + accessories' }
+                    ],
+                    other: [
+                        { value: '', label: 'Choose complexity…' },
+                        { value: 'sm', label: 'Simple' },
+                        { value: 'md', label: 'Medium' },
+                        { value: 'lg', label: 'Complex' }
+                    ]
+                }
+            }
+        ],
+        pricing: {
+            simple: { sm: [60, 100], md: [100, 160], lg: [160, 240] },
+            lshaped: { sm: [100, 160], md: [160, 240], lg: [240, 360] },
+            standing: { sm: [80, 130], md: [130, 200], lg: [200, 300] },
+            executive: { sm: [120, 180], md: [200, 300], lg: [300, 450] },
+            gaming: { sm: [70, 120], md: [120, 200], lg: [200, 320] },
+            other: { sm: [60, 120], md: [120, 200], lg: [200, 340] }
+        },
+        cta: { text: 'Get Exact Quote', href: '/#contact' },
+        disclaimer: 'Estimates based on standard assembly. Final price confirmed after reviewing your desk.'
+    },
+    dresser: {
+        title: 'Dresser Assembly Estimate',
+        subtitle: 'Select your dresser type and size for an estimated price range.',
+        categories: [
+            {
+                label: 'Dresser Type',
+                id: 'series',
+                options: [
+                    { value: '', label: 'Choose dresser type…' },
+                    { value: 'standard', label: 'Standard Dresser' },
+                    { value: 'tall', label: 'Tall / Chest of Drawers' },
+                    { value: 'wide', label: 'Wide / Double Dresser' },
+                    { value: 'combo', label: 'Dresser + Mirror Combo' },
+                    { value: 'nightstand', label: 'Nightstand / Side Table' },
+                    { value: 'other', label: 'Other Storage' }
+                ]
+            },
+            {
+                label: 'Size / Drawers',
+                id: 'size',
+                dependsOn: 'series',
+                optionSets: {
+                    standard: [
+                        { value: '', label: 'Choose size…' },
+                        { value: 'sm', label: '3–4 drawers' },
+                        { value: 'md', label: '5–6 drawers' },
+                        { value: 'lg', label: '7+ drawers' }
+                    ],
+                    tall: [
+                        { value: '', label: 'Choose size…' },
+                        { value: 'sm', label: '4–5 drawers' },
+                        { value: 'md', label: '6–7 drawers' },
+                        { value: 'lg', label: '8+ drawers' }
+                    ],
+                    wide: [
+                        { value: '', label: 'Choose size…' },
+                        { value: 'sm', label: '6 drawers' },
+                        { value: 'md', label: '8 drawers' },
+                        { value: 'lg', label: '10+ drawers' }
+                    ],
+                    combo: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Dresser only' },
+                        { value: 'md', label: 'Dresser + mirror mount' },
+                        { value: 'lg', label: 'Dresser + mirror + wall anchor' }
+                    ],
+                    nightstand: [
+                        { value: '', label: 'Choose quantity…' },
+                        { value: 'sm', label: '1 nightstand' },
+                        { value: 'md', label: '2 nightstands' },
+                        { value: 'lg', label: '3+ nightstands' }
+                    ],
+                    other: [
+                        { value: '', label: 'Choose complexity…' },
+                        { value: 'sm', label: 'Simple' },
+                        { value: 'md', label: 'Medium' },
+                        { value: 'lg', label: 'Complex' }
+                    ]
+                }
+            }
+        ],
+        pricing: {
+            standard: { sm: [60, 100], md: [100, 150], lg: [150, 220] },
+            tall: { sm: [70, 110], md: [110, 170], lg: [170, 250] },
+            wide: { sm: [80, 130], md: [130, 200], lg: [200, 300] },
+            combo: { sm: [80, 130], md: [130, 200], lg: [200, 280] },
+            nightstand: { sm: [40, 70], md: [70, 120], lg: [110, 170] },
+            other: { sm: [50, 100], md: [100, 180], lg: [180, 280] }
+        },
+        cta: { text: 'Get Exact Quote', href: '/#contact' },
+        disclaimer: 'Estimates based on standard assembly. Wall anchoring included where required.'
+    },
+    'wall-bed': {
+        title: 'Murphy Bed Estimate',
+        subtitle: 'Select your Murphy bed type and size for an estimated price range.',
+        categories: [
+            {
+                label: 'Murphy Bed Type',
+                id: 'series',
+                options: [
+                    { value: '', label: 'Choose bed type…' },
+                    { value: 'vertical', label: 'Vertical Murphy Bed' },
+                    { value: 'horizontal', label: 'Horizontal Murphy Bed' },
+                    { value: 'cabinet', label: 'Cabinet / Wall Bed System' },
+                    { value: 'bookcase', label: 'Bookcase Murphy Bed' },
+                    { value: 'desk-combo', label: 'Desk + Murphy Bed Combo' },
+                    { value: 'other', label: 'Other Wall Bed' }
+                ]
+            },
+            {
+                label: 'Bed Size',
+                id: 'size',
+                dependsOn: 'series',
+                optionSets: {
+                    vertical: [
+                        { value: '', label: 'Choose size…' },
+                        { value: 'sm', label: 'Twin / Twin XL' },
+                        { value: 'md', label: 'Full / Queen' },
+                        { value: 'lg', label: 'King / Cal King' }
+                    ],
+                    horizontal: [
+                        { value: '', label: 'Choose size…' },
+                        { value: 'sm', label: 'Twin / Twin XL' },
+                        { value: 'md', label: 'Full' },
+                        { value: 'lg', label: 'Queen' }
+                    ],
+                    cabinet: [
+                        { value: '', label: 'Choose size…' },
+                        { value: 'sm', label: 'Twin / Twin XL' },
+                        { value: 'md', label: 'Full / Queen' },
+                        { value: 'lg', label: 'Queen + side cabinets' }
+                    ],
+                    bookcase: [
+                        { value: '', label: 'Choose size…' },
+                        { value: 'sm', label: 'Twin / Twin XL' },
+                        { value: 'md', label: 'Full / Queen' },
+                        { value: 'lg', label: 'Queen + shelving units' }
+                    ],
+                    'desk-combo': [
+                        { value: '', label: 'Choose size…' },
+                        { value: 'sm', label: 'Twin + small desk' },
+                        { value: 'md', label: 'Full + desk' },
+                        { value: 'lg', label: 'Queen + full desk system' }
+                    ],
+                    other: [
+                        { value: '', label: 'Choose complexity…' },
+                        { value: 'sm', label: 'Standard' },
+                        { value: 'md', label: 'With storage' },
+                        { value: 'lg', label: 'Full system' }
+                    ]
+                }
+            }
+        ],
+        pricing: {
+            vertical: { sm: [350, 500], md: [500, 750], lg: [750, 1100] },
+            horizontal: { sm: [350, 500], md: [500, 700], lg: [700, 1000] },
+            cabinet: { sm: [400, 600], md: [600, 900], lg: [900, 1400] },
+            bookcase: { sm: [400, 600], md: [600, 900], lg: [900, 1300] },
+            'desk-combo': { sm: [450, 650], md: [650, 1000], lg: [1000, 1500] },
+            other: { sm: [350, 550], md: [550, 850], lg: [850, 1300] }
+        },
+        cta: { text: 'Get Exact Quote', href: '/#contact' },
+        disclaimer: 'Estimates include assembly, wall anchoring, and mechanism testing. Hardware and bed frame included in estimate.'
     }
 };
 

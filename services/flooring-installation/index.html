@@ -71,9 +71,14 @@
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://asap.repair/" },
-            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://asap.repair/#services" },
-            { "@type": "ListItem", "position": 3, "name": "Flooring Installation", "item": "https://asap.repair/services/flooring-installation/" }
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Laminate Floor Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vinyl Floor Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Peel & Stick Floor Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Click-Lock Floor Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Baseboard Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Subfloor Preparation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Floor Repair" } }
+            
         ]
     }
     </script>
@@ -91,9 +96,9 @@
             "url": "https://asap.repair",
             "address": {
                 "@type": "PostalAddress",
-                "addressLocality": "New York",
+                "streetAddress": "99-60 64th Ave", "addressLocality": "Rego Park",
                 "addressRegion": "NY",
-                "addressCountry": "US"
+                "postalCode": "11374", "addressCountry": "US"
             },
             "aggregateRating": {
                 "@type": "AggregateRating",
@@ -333,84 +338,47 @@
         <div class="container">
             <span class="section-tag">Choose a Service</span>
             <h2 class="section-title">What Type of <span class="text-accent">Floor?</span></h2>
-            <div class="svc-features__grid">
-                <a href="/services/flooring-installation/laminate/" class="svc-features__card">
-                    <div class="svc-features__icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="18" height="18" rx="1" />
-                            <line x1="3" y1="9" x2="21" y2="9" />
-                            <line x1="3" y1="15" x2="21" y2="15" />
-                            <line x1="12" y1="3" x2="12" y2="9" />
-                        </svg>
-                    </div>
+                        <div class="svc-features__grid">
+                <a href="/services/flooring-installation/laminate-floor-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="1"/><line x1="8" y1="6" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="18"/></svg></div>
                     <h3>Laminate Flooring</h3>
-                    <p>Click-lock laminate planks for bedrooms, living rooms, and hallways.</p>
+                    <p>Click-together laminate planks installed with underlayment.</p>
                     <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/flooring-installation/vinyl-plank/" class="svc-features__card">
-                    <div class="svc-features__icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="18" height="18" rx="1" />
-                            <line x1="3" y1="9" x2="21" y2="9" />
-                            <line x1="3" y1="15" x2="21" y2="15" />
-                            <line x1="14" y1="9" x2="14" y2="15" />
-                        </svg>
-                    </div>
-                    <h3>Vinyl Plank (LVP)</h3>
-                    <p>Waterproof luxury vinyl plank — ideal for kitchens, bathrooms, and basements.</p>
+                <a href="/services/flooring-installation/vinyl-floor-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="1"/><line x1="12" y1="6" x2="12" y2="18"/><line x1="2" y1="12" x2="22" y2="12"/></svg></div>
+                    <h3>Vinyl Flooring</h3>
+                    <p>Luxury vinyl plank and tile — waterproof and durable.</p>
                     <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/flooring-installation/click-lock-tile/" class="svc-features__card">
-                    <div class="svc-features__icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="18" height="18" rx="1" />
-                            <line x1="3" y1="12" x2="21" y2="12" />
-                            <line x1="12" y1="3" x2="12" y2="21" />
-                        </svg>
-                    </div>
+                <a href="/services/flooring-installation/peel-stick-floor-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="1"/><path d="M2 12h20"/><path d="M7 6v12"/><path d="M17 6v12"/></svg></div>
+                    <h3>Peel &amp; Stick</h3>
+                    <p>Self-adhesive tiles and planks — quick and clean install.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
+                </a>
+                <a href="/services/flooring-installation/click-lock-floor-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="8" width="20" height="8" rx="1"/><path d="M2 12h20"/><path d="M10 8v8"/></svg></div>
                     <h3>Click-Lock Tile</h3>
-                    <p>Interlocking porcelain and stone-look tiles — no grout needed, fast installation.</p>
+                    <p>Interlocking tile and plank systems — no glue needed.</p>
                     <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/flooring-installation/peel-stick/" class="svc-features__card">
-                    <div class="svc-features__icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="18" height="18" rx="1" />
-                            <path d="M7 7h4v4H7z" />
-                            <path d="M13 13h4v4h-4z" />
-                        </svg>
-                    </div>
-                    <h3>Peel &amp; Stick Vinyl</h3>
-                    <p>Self-adhesive tiles and planks — quick refresh, renter-friendly, no special tools needed.</p>
+                <a href="/services/flooring-installation/baseboard-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M2 16h20"/><path d="M4 16v4"/><path d="M20 16v4"/></svg></div>
+                    <h3>Baseboards</h3>
+                    <p>Baseboard trim cut, fitted, and painted for a clean finish.</p>
                     <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/flooring-installation/baseboard-trim/" class="svc-features__card">
-                    <div class="svc-features__icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 21h18" />
-                            <path d="M3 21V3" />
-                            <path d="M7 21V7h10v14" />
-                        </svg>
-                    </div>
-                    <h3>Baseboard &amp; Trim</h3>
-                    <p>Baseboard, quarter-round, shoe molding, and transition strip installation.</p>
-                    <span class="svc-features__link">Learn More &rarr;</span>
-                </a>
-                <a href="/services/flooring-installation/subfloor-prep/" class="svc-features__card">
-                    <div class="svc-features__icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
-                        </svg>
-                    </div>
+                <a href="/services/flooring-installation/subfloor-preparation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="14" width="20" height="6" rx="1"/><path d="M5 14v-4"/><path d="M12 14v-6"/><path d="M19 14v-4"/></svg></div>
                     <h3>Subfloor Prep</h3>
-                    <p>Old flooring removal, leveling compound, underlayment, and moisture barriers.</p>
+                    <p>Leveling, patching, and moisture barrier for a solid base.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
+                </a>
+                <a href="/services/flooring-installation/floor-repair/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+                    <h3>Floor Repair</h3>
+                    <p>Scratches, dents, water damage, and loose plank repair.</p>
                     <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
             </div>

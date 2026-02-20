@@ -55,9 +55,14 @@
     {
         "@context": "https://schema.org", "@type": "BreadcrumbList",
         "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://asap.repair/" },
-            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://asap.repair/#services" },
-            { "@type": "ListItem", "position": 3, "name": "Plumbing", "item": "https://asap.repair/services/plumbing/" }
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Faucet Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Toilet Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Garbage Disposal Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Leak Repair" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Shut-Off Valve Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sink Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bathroom Fixture Installation" } }
+            
         ]
     }
     </script>
@@ -69,7 +74,7 @@
         "description": "Professional plumbing services in New York City. Faucet installation, toilet repair, garbage disposal, leak fixes, and fixture replacement. Licensed & insured.",
         "provider": {
             "@type": "LocalBusiness", "name": "Repair Asap LLC", "telephone": "+1-775-310-7770", "url": "https://asap.repair",
-            "address": { "@type": "PostalAddress", "addressLocality": "New York", "addressRegion": "NY", "addressCountry": "US" },
+            "address": { "@type": "PostalAddress", "streetAddress": "99-60 64th Ave", "addressLocality": "Rego Park", "addressRegion": "NY", "postalCode": "11374", "addressCountry": "US" },
             "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "63" }
         },
         "areaServed": { "@type": "City", "name": "New York City" },
@@ -231,69 +236,48 @@
         <div class="container">
             <span class="section-tag">Choose a Service</span>
             <h2 class="section-title">What Do You <span class="text-accent">Need Fixed?</span></h2>
-            <div class="svc-features__grid">
-                <a href="/services/plumbing/faucet-install/" class="svc-features__card">
-                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2v6" />
-                            <path d="M8 8h8" />
-                            <path d="M10 8v8a2 2 0 004 0V8" />
-                        </svg></div>
-                    <h3>Faucet Install &amp; Repair</h3>
-                    <p>Kitchen and bathroom faucet replacement, cartridge swaps, and drip fixes.</p><span
-                        class="svc-features__link">Learn More &rarr;</span>
+                        <div class="svc-features__grid">
+                <a href="/services/plumbing/faucet-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="M6 8h12a2 2 0 010 4H6"/><path d="M6 12v6a2 2 0 002 2h2"/></svg></div>
+                    <h3>Faucet Install</h3>
+                    <p>Kitchen and bathroom faucets swapped and leak-tested.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/plumbing/toilet-install/" class="svc-features__card">
-                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <ellipse cx="12" cy="6" rx="8" ry="3" />
-                            <path d="M4 6v5c0 1.66 3.58 3 8 3s8-1.34 8-3V6" />
-                        </svg></div>
-                    <h3>Toilet Install &amp; Repair</h3>
-                    <p>Full toilet replacement, wax ring, fill valve, flapper, and running toilet fixes.</p><span
-                        class="svc-features__link">Learn More &rarr;</span>
+                <a href="/services/plumbing/toilet-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10V5a2 2 0 012-2h2"/><ellipse cx="12" cy="16" rx="6" ry="4"/><path d="M6 16h12"/><path d="M10 20h4"/></svg></div>
+                    <h3>Toilet Install</h3>
+                    <p>Old toilet removed, new one set, sealed, and tested.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/plumbing/garbage-disposal/" class="svc-features__card">
-                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="M8 12l2 2 4-4" />
-                        </svg></div>
+                <a href="/services/plumbing/garbage-disposal-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="14" r="6"/><path d="M9 8h6"/><path d="M12 2v6"/><path d="M10 14l2-2 2 2"/></svg></div>
                     <h3>Garbage Disposal</h3>
-                    <p>New disposal installation with wiring and drain hookup, or old unit replacement.</p><span
-                        class="svc-features__link">Learn More &rarr;</span>
+                    <p>Disposal mounted, wired, plumbed, and tested.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
                 <a href="/services/plumbing/leak-repair/" class="svc-features__card">
-                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z" />
-                        </svg></div>
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l-5.5 9A6.5 6.5 0 0012 22a6.5 6.5 0 005.5-11L12 2z"/></svg></div>
                     <h3>Leak Repair</h3>
-                    <p>Leak diagnosis and repair for pipes, supply lines, and under-sink connections.</p><span
-                        class="svc-features__link">Learn More &rarr;</span>
+                    <p>Pipes, faucets, toilets, and supply line leaks fixed.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/plumbing/shut-off-valves/" class="svc-features__card">
-                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2v6" />
-                            <path d="M12 22v-4" />
-                            <path d="M4 12h16" />
-                            <circle cx="12" cy="12" r="2" />
-                        </svg></div>
+                <a href="/services/plumbing/shut-off-valve-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/></svg></div>
                     <h3>Shut-Off Valves</h3>
-                    <p>Corroded or stuck valve replacement under sinks and behind toilets.</p><span
-                        class="svc-features__link">Learn More &rarr;</span>
+                    <p>Angle stops and gate valves replaced for reliable control.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/plumbing/fixture-replacement/" class="svc-features__card">
-                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="8" width="18" height="12" rx="2" />
-                            <path d="M7 8v-2a5 5 0 0110 0v2" />
-                        </svg></div>
-                    <h3>Fixture Replacement</h3>
-                    <p>Showerheads, sink drains, supply lines, P-traps, and more.</p><span
-                        class="svc-features__link">Learn More &rarr;</span>
+                <a href="/services/plumbing/sink-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="8" rx="2"/><path d="M12 16v4"/><path d="M8 22h8"/><path d="M12 4v4"/></svg></div>
+                    <h3>Sink Install</h3>
+                    <p>Kitchen, bathroom, and utility sinks connected and tested.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
+                </a>
+                <a href="/services/plumbing/bathroom-fixture-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h16"/><path d="M4 14v4a2 2 0 002 2h12a2 2 0 002-2v-4"/><path d="M12 4v10"/><circle cx="12" cy="4" r="2"/></svg></div>
+                    <h3>Bathroom Fixtures</h3>
+                    <p>Showerheads, towel bars, hooks, and accessories mounted.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
             </div>
         </div>

@@ -8,9 +8,10 @@
 
     async function loadComponents() {
         try {
-            const [headerRes, footerRes] = await Promise.all([
+            const [headerRes, footerRes, modalRes] = await Promise.all([
                 fetch('/components/header.html'),
-                fetch('/components/footer.html')
+                fetch('/components/footer.html'),
+                fetch('/components/quote-modal.html')
             ]);
 
             const headerEl = document.getElementById('site-header');
@@ -24,6 +25,20 @@
             if (footerEl && footerRes.ok) {
                 footerEl.innerHTML = await footerRes.text();
                 footerEl.classList.add('loaded');
+            }
+
+            // Inject quote modal into body
+            if (modalRes.ok) {
+                const modalDiv = document.createElement('div');
+                modalDiv.id = 'site-quote-modal';
+                modalDiv.innerHTML = await modalRes.text();
+                document.body.appendChild(modalDiv);
+
+                // Load modal JS
+                const modalScript = document.createElement('script');
+                modalScript.src = '/components/quote-modal.js';
+                modalScript.defer = true;
+                document.body.appendChild(modalScript);
             }
 
             // Signal to main.js that DOM components are ready

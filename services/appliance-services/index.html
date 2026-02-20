@@ -71,9 +71,14 @@
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://asap.repair/" },
-            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://asap.repair/#services" },
-            { "@type": "ListItem", "position": 3, "name": "Appliance Services", "item": "https://asap.repair/services/appliance-services/" }
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dishwasher Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Washer Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dryer Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Washer-Dryer Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Microwave Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Refrigerator Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Range Installation" } }
+            
         ]
     }
     </script>
@@ -91,9 +96,9 @@
             "url": "https://asap.repair",
             "address": {
                 "@type": "PostalAddress",
-                "addressLocality": "New York",
+                "streetAddress": "99-60 64th Ave", "addressLocality": "Rego Park",
                 "addressRegion": "NY",
-                "addressCountry": "US"
+                "postalCode": "11374", "addressCountry": "US"
             },
             "aggregateRating": {
                 "@type": "AggregateRating",
@@ -335,84 +340,47 @@
         <div class="container">
             <span class="section-tag">Choose a Service</span>
             <h2 class="section-title">What Do You <span class="text-accent">Need Done?</span></h2>
-            <div class="svc-features__grid">
-                <a href="/services/appliance-services/oven-range/" class="svc-features__card">
-                    <div class="svc-features__icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="4" width="20" height="16" rx="2" />
-                            <line x1="2" y1="10" x2="22" y2="10" />
-                            <circle cx="8" cy="15" r="1" />
-                            <circle cx="16" cy="15" r="1" />
-                        </svg>
-                    </div>
-                    <h3>Oven Hood &amp; Range Install</h3>
-                    <p>Wall-mount hoods, under-cabinet hoods, slide-in ranges, and cooktop connections.</p>
+                        <div class="svc-features__grid">
+                <a href="/services/appliance-services/dishwasher-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2" width="18" height="20" rx="2"/><circle cx="12" cy="14" r="4"/><path d="M8 6h8"/></svg></div>
+                    <h3>Dishwasher Install</h3>
+                    <p>New dishwasher connected, leveled, and leak-tested.</p>
                     <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/appliance-services/dishwasher/" class="svc-features__card">
-                    <div class="svc-features__icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="2" width="18" height="20" rx="2" />
-                            <path d="M3 10h18" />
-                            <circle cx="12" cy="6" r="1.5" />
-                        </svg>
-                    </div>
-                    <h3>Dishwasher Install &amp; Hookup</h3>
-                    <p>Water supply, drain, and electrical — complete under-counter installation.</p>
+                <a href="/services/appliance-services/washer-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2" width="18" height="20" rx="2"/><circle cx="12" cy="13" r="5"/><path d="M7 5h3"/></svg></div>
+                    <h3>Washer Install</h3>
+                    <p>Top-load, front-load, stackable — connected and tested.</p>
                     <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/appliance-services/washer-dryer/" class="svc-features__card">
-                    <div class="svc-features__icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="2" width="20" height="20" rx="2" />
-                            <circle cx="12" cy="14" r="4" />
-                            <path d="M12 10v-4" />
-                        </svg>
-                    </div>
-                    <h3>Washer &amp; Dryer Hookup</h3>
-                    <p>Supply lines, drain hoses, venting, stacking kits, and pedestal assembly.</p>
+                <a href="/services/appliance-services/dryer-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2" width="18" height="20" rx="2"/><circle cx="12" cy="13" r="5"/><path d="M14 5h3"/></svg></div>
+                    <h3>Dryer Install</h3>
+                    <p>Electric and gas dryers — vented, connected, and tested.</p>
                     <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/appliance-services/microwave/" class="svc-features__card">
-                    <div class="svc-features__icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="4" y="2" width="16" height="10" rx="2" />
-                            <path d="M8 12v4" />
-                            <path d="M16 12v4" />
-                            <path d="M4 16h16" />
-                        </svg>
-                    </div>
-                    <h3>Microwave Mounting</h3>
-                    <p>Over-the-range microwave bracket install, venting, and secure wall mounting.</p>
+                <a href="/services/appliance-services/washer-dryer-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="10" rx="2"/><rect x="4" y="12" width="16" height="10" rx="2"/><circle cx="12" cy="7" r="2"/><circle cx="12" cy="17" r="2"/></svg></div>
+                    <h3>Washer-Dryer Combo</h3>
+                    <p>Stackable and combo units — stacked, connected, and tested.</p>
                     <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/appliance-services/garbage-disposal/" class="svc-features__card">
-                    <div class="svc-features__icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2v6" />
-                            <path d="M12 22v-6" />
-                            <circle cx="12" cy="12" r="4" />
-                        </svg>
-                    </div>
-                    <h3>Garbage Disposal</h3>
-                    <p>Removal of old unit, new disposal install, and electrical connection.</p>
+                <a href="/services/appliance-services/microwave-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><rect x="5" y="9" width="10" height="6" rx="1"/><circle cx="18" cy="12" r="1"/></svg></div>
+                    <h3>Microwave Install</h3>
+                    <p>Over-the-range and built-in microwaves mounted and connected.</p>
                     <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/appliance-services/repair/" class="svc-features__card">
-                    <div class="svc-features__icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
-                        </svg>
-                    </div>
-                    <h3>Small Appliance Repair</h3>
-                    <p>Diagnostics, part replacement, and repairs for household appliances.</p>
+                <a href="/services/appliance-services/refrigerator-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="4" y1="10" x2="20" y2="10"/><path d="M15 6h1"/><path d="M15 14h1"/></svg></div>
+                    <h3>Refrigerator Install</h3>
+                    <p>Fridge connected to water line, leveled, and tested.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
+                </a>
+                <a href="/services/appliance-services/range-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><circle cx="8" cy="7" r="1.5"/><circle cx="16" cy="7" r="1.5"/></svg></div>
+                    <h3>Range &amp; Oven Install</h3>
+                    <p>Gas and electric ranges connected and tested.</p>
                     <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
             </div>

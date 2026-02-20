@@ -55,9 +55,15 @@
     {
         "@context": "https://schema.org", "@type": "BreadcrumbList",
         "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://asap.repair/" },
-            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://asap.repair/#services" },
-            { "@type": "ListItem", "position": 3, "name": "Electrical", "item": "https://asap.repair/services/electrical/" }
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Light Fixture Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Outlet Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Switch Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ceiling Fan Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "USB Outlet Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Smart Device Installation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Electrical Troubleshooting" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chandelier Installation" } }
+            
         ]
     }
     </script>
@@ -69,7 +75,7 @@
         "description": "Professional electrical services in New York City. Outlet installation, light fixtures, ceiling fans, dimmer switches, USB outlets, and smart home wiring. Licensed & insured.",
         "provider": {
             "@type": "LocalBusiness", "name": "Repair Asap LLC", "telephone": "+1-775-310-7770", "url": "https://asap.repair",
-            "address": { "@type": "PostalAddress", "addressLocality": "New York", "addressRegion": "NY", "addressCountry": "US" },
+            "address": { "@type": "PostalAddress", "streetAddress": "99-60 64th Ave", "addressLocality": "Rego Park", "addressRegion": "NY", "postalCode": "11374", "addressCountry": "US" },
             "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "63" }
         },
         "areaServed": { "@type": "City", "name": "New York City" },
@@ -235,73 +241,54 @@
         <div class="container">
             <span class="section-tag">Choose a Service</span>
             <h2 class="section-title">What Do You <span class="text-accent">Need Done?</span></h2>
-            <div class="svc-features__grid">
-                <a href="/services/electrical/outlets-switches/" class="svc-features__card">
-                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="4" y="4" width="16" height="16" rx="2" />
-                            <circle cx="10" cy="10" r="1" />
-                            <circle cx="14" cy="10" r="1" />
-                            <path d="M10 14h4" />
-                        </svg></div>
-                    <h3>Outlets &amp; Switches</h3>
-                    <p>Standard, GFCI, USB, smart outlets, dimmers, and switch installation.</p><span
-                        class="svc-features__link">Learn More &rarr;</span>
-                </a>
-                <a href="/services/electrical/light-fixtures/" class="svc-features__card">
-                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M9 18h6" />
-                            <path d="M10 22h4" />
-                            <path
-                                d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0018 8 6 6 0 006 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 018.91 14" />
-                        </svg></div>
+                        <div class="svc-features__grid">
+                <a href="/services/electrical/light-fixture-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0018 8 6 6 0 006 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 018.91 14"/></svg></div>
                     <h3>Light Fixtures</h3>
-                    <p>Chandeliers, pendants, vanity lights, recessed cans, and track lighting.</p><span
-                        class="svc-features__link">Learn More &rarr;</span>
+                    <p>Flush mounts, pendants, vanity lights, and sconces.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/electrical/ceiling-fans/" class="svc-features__card">
-                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="3" />
-                            <path d="M12 1v2" />
-                            <path d="M12 21v2" />
-                            <path d="M4.22 4.22l1.42 1.42" />
-                            <path d="M18.36 18.36l1.42 1.42" />
-                        </svg></div>
+                <a href="/services/electrical/outlet-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="9" cy="10" r="1"/><circle cx="15" cy="10" r="1"/><path d="M10 15h4"/></svg></div>
+                    <h3>Outlet Installation</h3>
+                    <p>Standard, GFCI, and 220V outlets installed to code.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
+                </a>
+                <a href="/services/electrical/switch-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><circle cx="12" cy="9" r="2"/></svg></div>
+                    <h3>Switch Installation</h3>
+                    <p>Standard, dimmer, smart, and 3-way switches.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
+                </a>
+                <a href="/services/electrical/ceiling-fan-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 9V2"/><path d="M15 12h7"/><path d="M12 15v7"/><path d="M9 12H2"/></svg></div>
                     <h3>Ceiling Fans</h3>
-                    <p>Fan-rated box, wiring, assembly, remote setup, and balancing.</p><span
-                        class="svc-features__link">Learn More &rarr;</span>
+                    <p>Fans installed, balanced, and wired with remote control.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/electrical/usb-outlets/" class="svc-features__card">
-                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                        </svg></div>
+                <a href="/services/electrical/usb-outlet-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><rect x="8" y="6" width="8" height="4" rx="1"/><path d="M10 14h4"/><path d="M10 17h4"/></svg></div>
                     <h3>USB Outlets</h3>
-                    <p>Upgrade to USB-A and USB-C combo outlets for built-in device charging.</p><span
-                        class="svc-features__link">Learn More &rarr;</span>
+                    <p>USB-A and USB-C outlets — charge without adapters.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/electrical/smart-home/" class="svc-features__card">
-                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12.55a11 11 0 0114.08 0" />
-                            <path d="M1.42 9a16 16 0 0121.16 0" />
-                            <circle cx="12" cy="20" r="1" />
-                        </svg></div>
-                    <h3>Smart Home Wiring</h3>
-                    <p>Smart switches, Wi-Fi outlets, doorbell wiring, and thermostat install.</p><span
-                        class="svc-features__link">Learn More &rarr;</span>
+                <a href="/services/electrical/smart-device-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><circle cx="12" cy="20" r="1"/></svg></div>
+                    <h3>Smart Devices</h3>
+                    <p>Smart switches, dimmers, sensors, and hubs.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
-                <a href="/services/electrical/troubleshooting/" class="svc-features__card">
-                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
-                        </svg></div>
+                <a href="/services/electrical/electrical-troubleshooting/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
                     <h3>Troubleshooting</h3>
-                    <p>Dead outlets, tripped breakers, and flickering lights — diagnosed and fixed.</p><span
-                        class="svc-features__link">Learn More &rarr;</span>
+                    <p>Circuit tracing, breaker issues, and wiring diagnostics.</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
+                </a>
+                <a href="/services/electrical/chandelier-installation/" class="svc-features__card">
+                    <div class="svc-features__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 6l-6 6"/><path d="M12 6l6 6"/><path d="M12 6v6"/><circle cx="6" cy="14" r="2"/><circle cx="12" cy="14" r="2"/><circle cx="18" cy="14" r="2"/></svg></div>
+                    <h3>Chandelier Install</h3>
+                    <p>Crystal, modern, antique — hung, wired, and tested ($$$).</p>
+                    <span class="svc-features__link">Learn More &rarr;</span>
                 </a>
             </div>
         </div>

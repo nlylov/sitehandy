@@ -304,21 +304,21 @@ document.addEventListener('components-loaded', () => {
               </button>
               <div class="mobile-services__list">
                 <a href="/services/furniture-assembly/" class="mobile-services__link">Furniture Assembly</a>
-                <a href="/#services" class="mobile-services__link">TV & Wall Mounting</a>
-                <a href="/#services" class="mobile-services__link">Appliance Services</a>
-                <a href="/#services" class="mobile-services__link">Flooring Installation</a>
-                <a href="/#services" class="mobile-services__link">Painting & Wall Finishes</a>
-                <a href="/#services" class="mobile-services__link">AC Installation & Cleaning</a>
-                <a href="/#services" class="mobile-services__link">Plumbing</a>
-                <a href="/#services" class="mobile-services__link">Electrical</a>
-                <a href="/#services" class="mobile-services__link">General Repairs</a>
+                <a href="/services/tv-wall-mounting/" class="mobile-services__link">TV & Wall Mounting</a>
+                <a href="/services/appliance-services/" class="mobile-services__link">Appliance Services</a>
+                <a href="/services/flooring-installation/" class="mobile-services__link">Flooring Installation</a>
+                <a href="/services/painting/" class="mobile-services__link">Painting & Wall Finishes</a>
+                <a href="/services/ac-installation-cleaning/" class="mobile-services__link">AC Installation & Cleaning</a>
+                <a href="/services/plumbing/" class="mobile-services__link">Plumbing</a>
+                <a href="/services/electrical/" class="mobile-services__link">Electrical</a>
+                <a href="/services/general-repairs/" class="mobile-services__link">General Repairs</a>
               </div>
             </div>
             <a href="/#why-us" class="nav-link">Why Us</a>
             <a href="/#reviews" class="nav-link">Reviews</a>
             <a href="/#faq" class="nav-link">FAQ</a>
             <a href="/#contact" class="nav-link">Contact</a>
-            <a href="/#contact" class="btn btn--accent" style="margin-top:16px">Get a Free Quote</a>
+            <button type="button" class="btn btn--accent" style="margin-top:16px" data-open-quote>Get a Free Quote</button>
           </nav>
         `;
         document.body.appendChild(overlay);

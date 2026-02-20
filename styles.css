@@ -1545,8 +1545,11 @@ button.portfolio-card__video {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 80px 0 40px;
   opacity: 0;
   visibility: hidden;
   transition: all 0.4s var(--ease);
@@ -1560,6 +1563,9 @@ button.portfolio-card__video {
 .nav-overlay .header__nav {
   flex-direction: column;
   gap: 24px;
+  width: 100%;
+  max-width: 400px;
+  align-items: center;
 }
 
 .nav-overlay .nav-link {
@@ -1595,7 +1601,7 @@ button.portfolio-card__video {
 }
 
 .mobile-services__list.open {
-  max-height: 400px;
+  max-height: 600px;
   opacity: 1;
   margin-top: 16px;
 }
@@ -1612,6 +1618,301 @@ button.portfolio-card__video {
 .mobile-services__link:hover {
   color: var(--accent);
   border-left-color: var(--accent);
+}
+
+/* ============================================
+   QUOTE MODAL
+   ============================================ */
+.quote-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s var(--ease);
+  padding: 20px;
+}
+
+.quote-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.quote-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.quote-modal__container {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 40px;
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.35s var(--ease);
+}
+
+.quote-modal.active .quote-modal__container {
+  transform: translateY(0) scale(1);
+}
+
+.quote-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 8px;
+  transition: all 0.2s var(--ease);
+  z-index: 2;
+}
+
+.quote-modal__close:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.quote-modal__header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.quote-modal__badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  background: rgba(193, 154, 74, 0.1);
+  border: 1px solid rgba(193, 154, 74, 0.2);
+  border-radius: 100px;
+  padding: 6px 16px;
+  margin-bottom: 12px;
+}
+
+.quote-modal__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.quote-modal__subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.quote-modal__form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.quote-modal__form .form-group {
+  margin-bottom: 16px;
+}
+
+.quote-modal__form .form-label {
+  font-size: 13px;
+}
+
+.quote-modal__form .form-input {
+  font-size: 14px;
+  padding: 10px 14px;
+}
+
+.quote-modal__form .form-textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+.quote-modal__form .form-privacy {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 12px;
+  color: var(--text-muted);
+}
+
+.quote-modal__form .form-privacy a {
+  color: var(--accent);
+}
+
+.quote-modal__success {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.quote-modal__success h3 {
+  font-size: 22px;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.quote-modal__success p {
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.quote-modal__contact {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* Photo Upload Drop Zone */
+.photo-drop {
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.25s var(--ease);
+  text-align: center;
+}
+
+.photo-drop:hover,
+.photo-drop.dragover {
+  border-color: var(--accent);
+  background: rgba(193, 154, 74, 0.05);
+}
+
+.photo-drop__prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.photo-drop__prompt svg {
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.photo-drop__prompt strong {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(193, 154, 74, 0.3);
+}
+
+.photo-drop__hint {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.photo-drop__preview {
+  display: none;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.photo-drop__thumb {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.photo-drop__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-drop__remove {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.photo-drop__remove:hover {
+  background: #e53e3e;
+}
+
+.photo-drop__add {
+  width: 72px;
+  height: 72px;
+  border-radius: 10px;
+  border: 2px dashed var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all 0.2s var(--ease);
+}
+
+.photo-drop__add:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.quote-modal__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent);
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+@media (max-width: 600px) {
+  .quote-modal {
+    padding: 10px;
+    align-items: flex-end;
+  }
+
+  .quote-modal__container {
+    padding: 24px 20px;
+    border-radius: 16px 16px 0 0;
+    max-height: 92vh;
+  }
+
+  .quote-modal__form .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .quote-modal__title {
+    font-size: 20px;
+  }
 }
 
 /* ============================================
