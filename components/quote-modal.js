@@ -30,6 +30,8 @@
     const timeSlotGroup = document.getElementById('timeSlotGroup');
     const timeSlotsEl = document.getElementById('timeSlots');
     const timeInput = document.getElementById('modal-time');
+    const addressGroup = document.getElementById('addressGroup');
+    const addressInput = document.getElementById('modal-address');
 
     let selectedPhotos = []; // Array of { file, dataUrl, base64, name, type }
 
@@ -46,6 +48,8 @@
             // Reset previous selection
             timeInput.value = '';
             timeSlotGroup.style.display = 'block';
+            // Show address field when date is selected
+            if (addressGroup) addressGroup.style.display = 'block';
             timeSlotsEl.innerHTML = '<div class="time-slots__loading"><span class="spinner-sm"></span> Loading available times...</div>';
 
             try {
@@ -401,6 +405,16 @@
             isValid = false;
         }
 
+        // Address (required only when date is selected = booking a visit)
+        if (dateInput && dateInput.value && addressInput) {
+            if (!addressInput.value.trim()) {
+                showError(addressInput);
+                isValid = false;
+            } else {
+                addressInput.classList.add('success');
+            }
+        }
+
         if (!isValid) return;
 
         // Show loading state
@@ -422,6 +436,7 @@
                 type: p.type,
             })),
             time: timeInput?.value || '',
+            address: addressInput?.value?.trim() || '',
         };
 
         try {
