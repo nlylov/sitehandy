@@ -2161,7 +2161,9 @@ button.portfolio-card__video {
   .quote-modal__container {
     padding: 0 20px 24px;
     border-radius: 16px 16px 0 0;
-    max-height: 92vh;
+    max-height: 100vh;
+    max-height: 100dvh;
+    padding-top: env(safe-area-inset-top, 0px);
   }
 
   .quote-modal__close {
@@ -2170,7 +2172,7 @@ button.portfolio-card__video {
     float: right;
     background: var(--surface);
     margin: 0 -8px 0 0;
-    padding: 12px 8px;
+    padding: 16px 8px 8px;
     z-index: 10;
   }
 
