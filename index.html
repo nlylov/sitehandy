@@ -393,10 +393,8 @@
         <span class="section-tag">Client Feedback</span>
         <h2 class="section-title">What Our Clients Say</h2>
       </div>
-      <!-- Trustindex Google Reviews Widget -->
-      <div class="reviews__trustindex reveal">
-        <script defer async src='https://cdn.trustindex.io/loader.js?e086e0f6537a0927ee66b407e2f'></script>
-      </div>
+      <!-- Trustindex Google Reviews Widget (lazy-loaded on scroll) -->
+      <div class="reviews__trustindex reveal" id="trustindex-container"></div>
     </div>
   </section>
 
@@ -737,10 +735,30 @@
     </div>
   </div>
 
-  <script src="/components/loader.js"></script>
+  <script defer src="/components/loader.js"></script>
   <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB11jssTUP9P1ntNvQIYvt-D0MO4hMVIgY&libraries=places&callback=initPlacesAutocomplete"></script>
-  <script src="/main.js"></script>
+  <script defer src="/main.js"></script>
+
+  <!-- Lazy-load Trustindex widget when scrolled into view -->
+  <script>
+    (function() {
+      var loaded = false;
+      var container = document.getElementById('trustindex-container');
+      if (!container) return;
+      var observer = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting && !loaded) {
+          loaded = true;
+          var s = document.createElement('script');
+          s.src = 'https://cdn.trustindex.io/loader.js?e086e0f6537a0927ee66b407e2f';
+          s.async = true;
+          container.appendChild(s);
+          observer.disconnect();
+        }
+      }, { rootMargin: '200px' });
+      observer.observe(container);
+    })();
+  </script>
 </body>
 
 </html>
