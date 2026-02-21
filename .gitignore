@@ -6,3 +6,8 @@
 .idea/
 node_modules/
 .env
+
+# Internal docs — don't deploy to Netlify
+SEO_ROADMAP.md
+knowledge-base.md
+add_seo_tags.py
