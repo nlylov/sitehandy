@@ -7,12 +7,12 @@
   <title>Repair Asap LLC — New York City's Premier Handyman Service</title>
   <meta name="description"
     content="Licensed &amp; insured handyman service in NYC. Furniture assembly, TV mounting, painting, electrical, plumbing &amp; more. Same-day availability. Call now for a free quote.">
-    <link rel="canonical" href="https://asap.repair/">
+  <link rel="canonical" href="https://asap.repair/">
   <meta property="og:title" content="Repair Asap LLC — NYC's Premier Handyman Service">
   <meta property="og:description"
     content="Professional handyman services for New York City. Licensed, insured, 5-star rated. Book your free estimate today.">
   <meta property="og:type" content="website">
-    <meta property="og:url" content="https://asap.repair/">
+  <meta property="og:url" content="https://asap.repair/">
   <meta name="theme-color" content="#0a0f1c">
 
   <!-- Favicons -->
@@ -28,6 +28,9 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet">
+
+  <!-- Preload critical above-the-fold image -->
+  <link rel="preload" as="image" type="image/webp" href="/assets/images/hero-image.webp">
 
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -104,9 +107,9 @@
       </div>
       <div class="hero__visual reveal">
         <div class="hero__image-wrapper">
-          <img src="/assets/images/hero-image.png"
+          <img src="/assets/images/hero-image.webp"
             alt="Professional handyman installing a floating shelf in a modern NYC apartment" class="hero__image"
-            loading="eager">
+            width="640" height="640" fetchpriority="high">
           <div class="hero__image-glow"></div>
         </div>
       </div>
@@ -146,7 +149,7 @@
       </div>
       <div class="services__grid">
         <a href="/services/furniture-assembly/" class="service-card reveal"
-          style="background-image: url('/assets/services/service-furniture.png')">
+          style="background-image: url('/assets/services/service-furniture.webp')">
           <div class="service-card__overlay"></div>
           <div class="service-card__body">
             <h3 class="service-card__title">Furniture Assembly</h3>
@@ -155,7 +158,7 @@
           </div>
         </a>
         <a href="/services/tv-wall-mounting/" class="service-card reveal"
-          style="background-image: url('/assets/services/service-tv-mounting.png')">
+          style="background-image: url('/assets/services/service-tv-mounting.webp')">
           <div class="service-card__overlay"></div>
           <div class="service-card__body">
             <h3 class="service-card__title">TV &amp; Wall Mounting</h3>
@@ -164,7 +167,7 @@
           </div>
         </a>
         <a href="/services/appliance-services/" class="service-card reveal"
-          style="background-image: url('/assets/services/service-appliance.png')">
+          style="background-image: url('/assets/services/service-appliance.webp')">
           <div class="service-card__overlay"></div>
           <div class="service-card__body">
             <h3 class="service-card__title">Appliance Services</h3>
@@ -173,7 +176,7 @@
           </div>
         </a>
         <a href="/services/flooring-installation/" class="service-card reveal"
-          style="background-image: url('/assets/services/service-flooring.png')">
+          style="background-image: url('/assets/services/service-flooring.webp')">
           <div class="service-card__overlay"></div>
           <div class="service-card__body">
             <h3 class="service-card__title">Flooring Installation</h3>
@@ -182,7 +185,7 @@
           </div>
         </a>
         <a href="/services/painting/" class="service-card reveal"
-          style="background-image: url('/assets/services/service-painting.png')">
+          style="background-image: url('/assets/services/service-painting.webp')">
           <div class="service-card__overlay"></div>
           <div class="service-card__body">
             <h3 class="service-card__title">Painting &amp; Wall Finishes</h3>
@@ -191,7 +194,7 @@
           </div>
         </a>
         <a href="/services/ac-installation-cleaning/" class="service-card reveal"
-          style="background-image: url('/assets/services/service-ac.png')">
+          style="background-image: url('/assets/services/service-ac.webp')">
           <div class="service-card__overlay"></div>
           <div class="service-card__body">
             <h3 class="service-card__title">AC Installation &amp; Cleaning</h3>
@@ -200,7 +203,7 @@
           </div>
         </a>
         <a href="/services/plumbing/" class="service-card reveal"
-          style="background-image: url('/assets/services/service-plumbing.png')">
+          style="background-image: url('/assets/services/service-plumbing.webp')">
           <div class="service-card__overlay"></div>
           <div class="service-card__body">
             <h3 class="service-card__title">Plumbing</h3>
@@ -209,7 +212,7 @@
           </div>
         </a>
         <a href="/services/electrical/" class="service-card reveal"
-          style="background-image: url('/assets/services/service-electrical.png')">
+          style="background-image: url('/assets/services/service-electrical.webp')">
           <div class="service-card__overlay"></div>
           <div class="service-card__body">
             <h3 class="service-card__title">Electrical</h3>
@@ -218,7 +221,7 @@
           </div>
         </a>
         <a href="/services/general-repairs/" class="service-card reveal"
-          style="background-image: url('/assets/services/service-home-repairs.png')">
+          style="background-image: url('/assets/services/service-home-repairs.webp')">
           <div class="service-card__overlay"></div>
           <div class="service-card__body">
             <h3 class="service-card__title">General Repairs</h3>
@@ -742,11 +745,11 @@
 
   <!-- Lazy-load Trustindex widget when scrolled into view -->
   <script>
-    (function() {
+    (function () {
       var loaded = false;
       var container = document.getElementById('trustindex-container');
       if (!container) return;
-      var observer = new IntersectionObserver(function(entries) {
+      var observer = new IntersectionObserver(function (entries) {
         if (entries[0].isIntersecting && !loaded) {
           loaded = true;
           var s = document.createElement('script');
