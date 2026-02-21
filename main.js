@@ -101,6 +101,72 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('quoteForm');
   const submitBtn = document.getElementById('submitBtn');
 
+  // Inline form calendar picker elements
+  const inlineDateInput = form?.querySelector('#date');
+  const inlineTimeSlotGroup = document.getElementById('inlineTimeSlotGroup');
+  const inlineTimeSlotsEl = document.getElementById('inlineTimeSlots');
+  const inlineTimeInput = document.getElementById('inline-time');
+  const inlineAddressGroup = document.getElementById('inlineAddressGroup');
+  const inlineAddressInput = document.getElementById('inline-address');
+  const inlineDateClear = document.getElementById('inlineDateClear');
+  const SLOTS_API = 'https://repair-asap-proxy.vercel.app/api/calendar-slots';
+
+  // Date change → fetch time slots
+  if (inlineDateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    inlineDateInput.setAttribute('min', today);
+
+    inlineDateInput.addEventListener('change', async () => {
+      const date = inlineDateInput.value;
+      if (inlineDateClear) inlineDateClear.style.display = date ? 'block' : 'none';
+      if (!date || !inlineTimeSlotGroup || !inlineTimeSlotsEl) return;
+
+      inlineTimeInput.value = '';
+      inlineTimeSlotGroup.style.display = 'block';
+      if (inlineAddressGroup) inlineAddressGroup.style.display = 'block';
+      inlineTimeSlotsEl.innerHTML = '<div class="time-slots__loading"><span class="spinner-sm"></span> Loading available times...</div>';
+
+      try {
+        const resp = await fetch(`${SLOTS_API}?date=${date}`);
+        const data = await resp.json();
+
+        if (!data.slots || data.slots.length === 0) {
+          inlineTimeSlotsEl.innerHTML = '<p class="time-slots__empty">No available times on this date. Please try another day.</p>';
+          return;
+        }
+
+        inlineTimeSlotsEl.innerHTML = data.slots.map((slot, i) => {
+          const raw = data.raw?.[i] || slot;
+          return `<button type="button" class="time-slot" data-time="${raw}" data-label="${slot}">${slot}</button>`;
+        }).join('');
+
+        inlineTimeSlotsEl.querySelectorAll('.time-slot').forEach(btn => {
+          btn.addEventListener('click', () => {
+            inlineTimeSlotsEl.querySelectorAll('.time-slot').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            inlineTimeInput.value = btn.dataset.time;
+            if (inlineTimeSlotGroup) inlineTimeSlotGroup.classList.remove('has-error');
+          });
+        });
+      } catch (err) {
+        inlineTimeSlotsEl.innerHTML = '<p class="time-slots__empty">Failed to load times. You can still submit without a time selection.</p>';
+      }
+    });
+  }
+
+  // Clear date button
+  if (inlineDateClear && inlineDateInput) {
+    inlineDateClear.addEventListener('click', () => {
+      inlineDateInput.value = '';
+      inlineDateClear.style.display = 'none';
+      if (inlineTimeSlotGroup) inlineTimeSlotGroup.style.display = 'none';
+      if (inlineTimeSlotsEl) inlineTimeSlotsEl.innerHTML = '';
+      if (inlineTimeInput) inlineTimeInput.value = '';
+      if (inlineAddressGroup) inlineAddressGroup.style.display = 'none';
+      if (inlineAddressInput) { inlineAddressInput.value = ''; inlineAddressInput.classList.remove('error', 'success'); }
+    });
+  }
+
   if (form) {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -177,6 +243,16 @@ document.addEventListener('DOMContentLoaded', () => {
         isValid = false;
       }
 
+      // Address required when date selected
+      if (inlineDateInput && inlineDateInput.value && inlineAddressInput) {
+        if (!inlineAddressInput.value.trim()) {
+          showError(inlineAddressInput);
+          isValid = false;
+        } else {
+          inlineAddressInput.classList.add('success');
+        }
+      }
+
       if (isValid) {
         // Show loading state
         submitBtn.classList.add('loading');
@@ -191,6 +267,8 @@ document.addEventListener('DOMContentLoaded', () => {
           date: form.querySelector('#date')?.value || '',
           message: form.querySelector('#message')?.value.trim() || '',
           photos: [],
+          time: inlineTimeInput?.value || '',
+          address: inlineAddressInput?.value?.trim() || '',
         };
 
         try {
@@ -203,18 +281,47 @@ document.addEventListener('DOMContentLoaded', () => {
           const result = await response.json();
 
           if (response.ok && result.success) {
-            form.innerHTML = `
-              <div style="text-align:center; padding:40px 20px;">
-                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:20px">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                  <polyline points="22 4 12 14.01 9 11.01"/>
-                </svg>
-                <h3 style="font-size:24px; margin-bottom:12px;">Quote Request Received</h3>
-                <p style="color:var(--text-secondary); font-size:16px; line-height:1.7;">Thank you! We'll get back to you within 30 minutes during business hours.</p>
-              </div>
-            `;
+            // Dynamic success screen with booking details
+            let successHtml = '';
+            if (result.booked && payload.time) {
+              const activeSlot = inlineTimeSlotsEl?.querySelector('.time-slot.active');
+              const timeLabel = activeSlot?.dataset?.label || payload.time;
+              successHtml = `
+                <div style="text-align:center; padding:40px 20px;">
+                  <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:20px">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                  </svg>
+                  <h3 style="font-size:24px; margin-bottom:12px;">Appointment Confirmed! 📅</h3>
+                  <p style="color:var(--text-secondary); font-size:16px; line-height:1.7; margin-bottom:16px;">Your visit has been scheduled. Our technician will text you 30 minutes before arrival.</p>
+                  <div class="booking-details">
+                    <div class="booking-detail"><span>📅</span> <strong>${payload.date}</strong> at <strong>${timeLabel}</strong></div>
+                    ${payload.address ? `<div class="booking-detail"><span>📍</span> ${payload.address}</div>` : ''}
+                    <div class="booking-detail"><span>🔧</span> ${payload.service || 'Handyman Service'}</div>
+                  </div>
+                </div>
+              `;
+            } else {
+              successHtml = `
+                <div style="text-align:center; padding:40px 20px;">
+                  <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:20px">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                  </svg>
+                  <h3 style="font-size:24px; margin-bottom:12px;">Quote Request Received</h3>
+                  <p style="color:var(--text-secondary); font-size:16px; line-height:1.7;">Thank you! We'll get back to you within 30 minutes during business hours.</p>
+                </div>
+              `;
+            }
+            form.innerHTML = successHtml;
           } else {
-            alert(result.error || 'Something went wrong. Please try again or call us.');
+            const errMsg = result.error || 'Something went wrong.';
+            if (errMsg.includes('slot') || errMsg.includes('Booking failed') || errMsg.includes('409')) {
+              alert('That time slot was just taken! Please select another time.');
+              if (inlineDateInput?.value) inlineDateInput.dispatchEvent(new Event('change'));
+            } else {
+              alert(errMsg + ' Please try again or call us.');
+            }
           }
         } catch (err) {
           console.error('Quote submission error:', err);

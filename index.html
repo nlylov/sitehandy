@@ -570,10 +570,28 @@
               </select>
               <span class="form-error">Please select a service</span>
             </div>
-            <div class="form-group">
-              <label for="date" class="form-label">Preferred Date</label>
+            <div class="form-group" style="position:relative">
+              <label for="date" class="form-label">Preferred Date <span
+                  style="color:var(--text-muted);font-weight:400">(optional)</span></label>
               <input type="date" id="date" name="date" class="form-input">
+              <button type="button" class="date-clear" id="inlineDateClear" style="display:none"
+                aria-label="Clear date">&times;</button>
             </div>
+          </div>
+          <!-- Time Slot Picker -->
+          <div class="form-group" id="inlineTimeSlotGroup" style="display:none">
+            <label class="form-label">Available Times</label>
+            <div class="time-slots" id="inlineTimeSlots"></div>
+            <input type="hidden" id="inline-time" name="time">
+            <span class="form-error">Please select a time slot</span>
+          </div>
+          <!-- Address (required when date selected) -->
+          <div class="form-group" id="inlineAddressGroup" style="display:none">
+            <label for="inline-address" class="form-label">Service Address <span
+                style="color:var(--accent);font-weight:500">*</span></label>
+            <input type="text" id="inline-address" name="address" class="form-input"
+              placeholder="123 Main St, Apt 4B, New York, NY">
+            <span class="form-error">Address is required when booking a date</span>
           </div>
           <div class="form-group">
             <label for="message" class="form-label">Describe Your Project</label>
