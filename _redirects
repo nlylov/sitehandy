@@ -19,6 +19,12 @@
 /service-conditions                   /terms-of-service/                 301
 /service-conditions.html              /terms-of-service/                 301
 
+# ---- ALTERNATIVE SLUG GUESSES (common variations that 404) ----
+/services/home-installation-repairs/*   /services/general-repairs/:splat    301
+/services/electrical-services/*         /services/electrical/:splat         301
+/services/appliance-installation/*      /services/appliance-services/:splat 301
+/services/flooring/*                    /services/flooring-installation/:splat 301
+
 # ---- OLD .html EXTENSIONS (from original site — may be indexed by Google) ----
 /faq.html                             /faq/                              301
 /knowledge                            /faq/                              301
