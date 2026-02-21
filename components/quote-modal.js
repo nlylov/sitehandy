@@ -151,6 +151,41 @@
         if (existing) existing.remove();
     }
 
+    // ---- Returning Customer Detection ----
+    const phoneField = form.querySelector('#modal-phone');
+    const nameField = form.querySelector('#modal-name');
+    const CUSTOMER_API = 'https://repair-asap-proxy.vercel.app/api/check-customer';
+    let customerChecked = false;
+
+    if (phoneField) {
+        phoneField.addEventListener('blur', async () => {
+            const digits = phoneField.value.replace(/\D/g, '');
+            if (digits.length < 10 || customerChecked) return;
+            customerChecked = true;
+
+            try {
+                const resp = await fetch(`${CUSTOMER_API}?phone=${encodeURIComponent(phoneField.value)}`);
+                const data = await resp.json();
+                if (data.found && data.name) {
+                    // Auto-fill name if empty
+                    if (nameField && !nameField.value.trim()) {
+                        nameField.value = data.name;
+                        nameField.classList.add('success');
+                    }
+                    // Show welcome banner
+                    if (!document.getElementById('welcomeBanner')) {
+                        const banner = document.createElement('div');
+                        banner.id = 'welcomeBanner';
+                        banner.className = 'welcome-banner';
+                        banner.innerHTML = `👋 Welcome back, <strong>${data.name}</strong>! Great to see you again.`;
+                        const header = modal.querySelector('.quote-modal__header');
+                        if (header) header.after(banner);
+                    }
+                }
+            } catch (e) { /* silent */ }
+        });
+    }
+
     // ---- Close ----
     function resetForm() {
         form.reset();
@@ -167,6 +202,9 @@
         if (addressGroup) addressGroup.style.display = 'none';
         if (addressInput) { addressInput.value = ''; addressInput.classList.remove('error', 'success'); }
         if (dateClearBtn) dateClearBtn.style.display = 'none';
+        customerChecked = false;
+        const wb = document.getElementById('welcomeBanner');
+        if (wb) wb.remove();
         clearNudgeTimer();
     }
 
