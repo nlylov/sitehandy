@@ -545,10 +545,8 @@ document.addEventListener('components-loaded', () => {
                 <a href="/services/general-repairs/" class="mobile-services__link">General Repairs</a>
               </div>
             </div>
-            <a href="/#why-us" class="nav-link">Why Us</a>
             <a href="/#reviews" class="nav-link">Reviews</a>
-            <a href="/#faq" class="nav-link">FAQ</a>
-            <a href="/#contact" class="nav-link">Contact</a>
+            <a href="/faq/" class="nav-link">FAQ</a>
             <button type="button" class="btn btn--accent" style="margin-top:16px" data-open-quote>Get a Free Quote</button>
           </nav>
         `;
