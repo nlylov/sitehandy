@@ -262,14 +262,23 @@ document.addEventListener('DOMContentLoaded', () => {
         isValid = false;
       }
 
-      // Address required when date selected
+      // Address required when date selected — must be real address
       if (inlineDateInput && inlineDateInput.value && inlineAddressInput) {
-        if (!inlineAddressInput.value.trim()) {
+        const addr = inlineAddressInput.value.trim();
+        if (!addr || addr.length < 10 || !/[a-zA-Z]/.test(addr)) {
           showError(inlineAddressInput);
           isValid = false;
+          const errSpan = inlineAddressInput.closest('.form-group')?.querySelector('.form-error');
+          if (errSpan) errSpan.textContent = addr.length < 10 ? 'Please enter a full street address (e.g., 123 Main St, Apt 4B, New York)' : 'Address must include a street name';
         } else {
           inlineAddressInput.classList.add('success');
         }
+      }
+
+      // Time slot required when date is selected
+      if (inlineDateInput && inlineDateInput.value && inlineTimeInput && !inlineTimeInput.value) {
+        if (inlineTimeSlotGroup) inlineTimeSlotGroup.classList.add('has-error');
+        isValid = false;
       }
 
       if (isValid) {

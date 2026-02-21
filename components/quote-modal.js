@@ -527,12 +527,22 @@
 
         // Address (required only when date is selected = booking a visit)
         if (dateInput && dateInput.value && addressInput) {
-            if (!addressInput.value.trim()) {
+            const addr = addressInput.value.trim();
+            if (!addr || addr.length < 10 || !/[a-zA-Z]/.test(addr)) {
                 showError(addressInput);
                 isValid = false;
+                // Update error text for clarity
+                const errSpan = addressInput.closest('.form-group')?.querySelector('.form-error');
+                if (errSpan) errSpan.textContent = addr.length < 10 ? 'Please enter a full street address (e.g., 123 Main St, Apt 4B, New York)' : 'Address must include a street name';
             } else {
                 addressInput.classList.add('success');
             }
+        }
+
+        // Time slot required when date is selected
+        if (dateInput && dateInput.value && timeInput && !timeInput.value) {
+            if (timeSlotGroup) timeSlotGroup.classList.add('has-error');
+            isValid = false;
         }
 
         if (!isValid) return;
