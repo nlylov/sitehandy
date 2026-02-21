@@ -63,10 +63,12 @@
                     </select>
                     <span class="form-error">Please select a service</span>
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="position:relative">
                     <label for="modal-date" class="form-label">Preferred Date <span
                             style="color:var(--text-muted);font-weight:400">(optional)</span></label>
                     <input type="date" id="modal-date" name="date" class="form-input">
+                    <button type="button" class="date-clear" id="dateClear" style="display:none"
+                        aria-label="Clear date">&times;</button>
                 </div>
             </div>
             <!-- Time Slot Picker (appears after date selection) -->
@@ -133,11 +135,10 @@
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                 <polyline points="22 4 12 14.01 9 11.01" />
             </svg>
-            <h3>Quote Request Received</h3>
-            <p>Thank you! We'll get back to you within 30 minutes during business hours.</p>
-            <button type="button" class="btn btn--outline"
-                onclick="document.getElementById('quoteModal').classList.remove('active');document.body.style.overflow='';"
-                style="margin-top:20px">Close</button>
+            <h3 id="successTitle">Quote Request Received</h3>
+            <p id="successMessage">Thank you! We'll get back to you within 30 minutes during business hours.</p>
+            <div id="successBookingDetails" style="display:none" class="booking-details"></div>
+            <button type="button" class="btn btn--outline" id="successCloseBtn" style="margin-top:20px">Close</button>
         </div>
 
         <div class="quote-modal__contact">

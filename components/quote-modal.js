@@ -84,6 +84,23 @@
         });
     }
 
+    // ---- Clear Date Button ----
+    const dateClearBtn = document.getElementById('dateClear');
+    if (dateInput && dateClearBtn) {
+        dateInput.addEventListener('change', () => {
+            dateClearBtn.style.display = dateInput.value ? 'block' : 'none';
+        });
+        dateClearBtn.addEventListener('click', () => {
+            dateInput.value = '';
+            dateClearBtn.style.display = 'none';
+            if (timeSlotGroup) timeSlotGroup.style.display = 'none';
+            if (timeSlotsEl) timeSlotsEl.innerHTML = '';
+            if (timeInput) timeInput.value = '';
+            if (addressGroup) { addressGroup.style.display = 'none'; }
+            if (addressInput) { addressInput.value = ''; addressInput.classList.remove('error', 'success'); }
+        });
+    }
+
     // ---- Open ----
     window.openQuoteModal = function (serviceValue) {
         modal.classList.add('active');
@@ -108,11 +125,57 @@
         }, 400);
     };
 
+    // ---- Abandoned Form Nudge ----
+    let nudgeTimer = null;
+    function startNudgeTimer() {
+        clearNudgeTimer();
+        nudgeTimer = setTimeout(() => {
+            if (!modal.classList.contains('active')) return;
+            if (submitBtn.classList.contains('loading')) return;
+            // Check if form has some data but hasn't been submitted
+            const hasData = form.querySelector('#modal-name')?.value || form.querySelector('#modal-phone')?.value;
+            if (hasData && form.style.display !== 'none') {
+                const nudge = document.createElement('div');
+                nudge.className = 'form-nudge';
+                nudge.innerHTML = '💡 Need help? Call us at <a href="tel:+17753107770" style="color:var(--accent);font-weight:600">+1 (775) 310-7770</a>';
+                nudge.id = 'formNudge';
+                if (!document.getElementById('formNudge')) {
+                    submitBtn.parentNode.insertBefore(nudge, submitBtn);
+                }
+            }
+        }, 120000); // 2 minutes
+    }
+    function clearNudgeTimer() {
+        if (nudgeTimer) { clearTimeout(nudgeTimer); nudgeTimer = null; }
+        const existing = document.getElementById('formNudge');
+        if (existing) existing.remove();
+    }
+
     // ---- Close ----
+    function resetForm() {
+        form.reset();
+        form.style.display = '';
+        successEl.style.display = 'none';
+        form.querySelectorAll('.form-group').forEach(g => g.classList.remove('has-error'));
+        form.querySelectorAll('.form-input').forEach(i => i.classList.remove('error', 'success'));
+        selectedPhotos = [];
+        if (photoPreview) { photoPreview.innerHTML = ''; photoPreview.style.display = 'none'; }
+        if (photoPrompt) photoPrompt.style.display = '';
+        if (timeSlotGroup) timeSlotGroup.style.display = 'none';
+        if (timeSlotsEl) timeSlotsEl.innerHTML = '';
+        if (timeInput) timeInput.value = '';
+        if (addressGroup) addressGroup.style.display = 'none';
+        if (addressInput) { addressInput.value = ''; addressInput.classList.remove('error', 'success'); }
+        if (dateClearBtn) dateClearBtn.style.display = 'none';
+        clearNudgeTimer();
+    }
+
     function closeModal() {
         modal.classList.remove('active');
         modal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
+        // Reset after close animation
+        setTimeout(resetForm, 400);
     }
 
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
@@ -449,11 +512,45 @@
             const result = await response.json();
 
             if (response.ok && result.success) {
+                // Dynamic success screen
+                const titleEl = document.getElementById('successTitle');
+                const msgEl = document.getElementById('successMessage');
+                const detailsEl = document.getElementById('successBookingDetails');
+
+                if (result.booked && payload.time) {
+                    // Parse the time for display
+                    let timeLabel = '';
+                    const activeSlot = timeSlotsEl?.querySelector('.time-slot.active');
+                    timeLabel = activeSlot?.dataset?.label || payload.time;
+
+                    titleEl.textContent = 'Appointment Confirmed! 📅';
+                    msgEl.textContent = 'Your visit has been scheduled. Our technician will text you 30 minutes before arrival.';
+                    detailsEl.style.display = 'block';
+                    detailsEl.innerHTML = [
+                        `<div class="booking-detail"><span>📅</span> <strong>${payload.date}</strong> at <strong>${timeLabel}</strong></div>`,
+                        payload.address ? `<div class="booking-detail"><span>📍</span> ${payload.address}</div>` : '',
+                        `<div class="booking-detail"><span>🔧</span> ${payload.service || 'Handyman Service'}</div>`,
+                    ].filter(Boolean).join('');
+                } else {
+                    titleEl.textContent = 'Quote Request Received';
+                    msgEl.textContent = 'Thank you! We\'ll get back to you within 30 minutes during business hours.';
+                    detailsEl.style.display = 'none';
+                }
+
                 form.style.display = 'none';
                 successEl.style.display = 'block';
                 selectedPhotos = [];
+                clearNudgeTimer();
             } else {
-                alert(result.error || 'Something went wrong. Please try again or call us.');
+                // Race condition: slot may have been taken
+                const errMsg = result.error || 'Something went wrong.';
+                if (errMsg.includes('slot') || errMsg.includes('Booking failed') || errMsg.includes('409')) {
+                    alert('That time slot was just taken! Please select another time.');
+                    // Re-fetch slots for the date
+                    if (dateInput.value) dateInput.dispatchEvent(new Event('change'));
+                } else {
+                    alert(errMsg + ' Please try again or call us.');
+                }
             }
         } catch (err) {
             console.error('Quote submission error:', err);
@@ -463,4 +560,11 @@
             submitBtn.disabled = false;
         }
     });
+
+    // ---- Success Close Button ----
+    const successCloseBtn = document.getElementById('successCloseBtn');
+    if (successCloseBtn) successCloseBtn.addEventListener('click', closeModal);
+
+    // ---- Start nudge on form interaction ----
+    form.addEventListener('input', () => { if (!nudgeTimer) startNudgeTimer(); }, { once: true });
 })();
