@@ -5,6 +5,7 @@
     'use strict';
 
     const API_URL = 'https://repair-asap-proxy.vercel.app/api/quote';
+    const SLOTS_API = 'https://repair-asap-proxy.vercel.app/api/calendar-slots';
     const MAX_PHOTOS = 5;
     const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
 
@@ -25,12 +26,58 @@
     const photoPrompt = document.getElementById('photoPrompt');
     const photoPreview = document.getElementById('photoPreview');
 
+    // Time slot elements
+    const timeSlotGroup = document.getElementById('timeSlotGroup');
+    const timeSlotsEl = document.getElementById('timeSlots');
+    const timeInput = document.getElementById('modal-time');
+
     let selectedPhotos = []; // Array of { file, dataUrl, base64, name, type }
 
     // Set min date
     if (dateInput) {
         const today = new Date().toISOString().split('T')[0];
         dateInput.setAttribute('min', today);
+
+        // Fetch available slots when date changes
+        dateInput.addEventListener('change', async () => {
+            const date = dateInput.value;
+            if (!date || !timeSlotGroup || !timeSlotsEl) return;
+
+            // Reset previous selection
+            timeInput.value = '';
+            timeSlotGroup.style.display = 'block';
+            timeSlotsEl.innerHTML = '<div class="time-slots__loading"><span class="spinner-sm"></span> Loading available times...</div>';
+
+            try {
+                const resp = await fetch(`${SLOTS_API}?date=${date}`);
+                const data = await resp.json();
+
+                if (!data.slots || data.slots.length === 0) {
+                    timeSlotsEl.innerHTML = '<p class="time-slots__empty">No available times on this date. Please try another day.</p>';
+                    return;
+                }
+
+                // Render slot pills
+                timeSlotsEl.innerHTML = data.slots.map((slot, i) => {
+                    const raw = data.raw?.[i] || slot;
+                    return `<button type="button" class="time-slot" data-time="${raw}" data-label="${slot}">${slot}</button>`;
+                }).join('');
+
+                // Add click handlers
+                timeSlotsEl.querySelectorAll('.time-slot').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        timeSlotsEl.querySelectorAll('.time-slot').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        timeInput.value = btn.dataset.time;
+                        // Clear error if shown
+                        const grp = timeSlotGroup;
+                        if (grp) grp.classList.remove('has-error');
+                    });
+                });
+            } catch (err) {
+                timeSlotsEl.innerHTML = '<p class="time-slots__empty">Failed to load times. You can still submit without a time selection.</p>';
+            }
+        });
     }
 
     // ---- Open ----
@@ -374,6 +421,7 @@
                 name: p.name,
                 type: p.type,
             })),
+            time: timeInput?.value || '',
         };
 
         try {

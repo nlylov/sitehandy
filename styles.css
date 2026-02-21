@@ -1954,6 +1954,70 @@ button.portfolio-card__video {
   margin-left: 8px;
 }
 
+/* ---- Time Slot Picker ---- */
+.time-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.time-slot {
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-secondary, #b0b0b0);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.time-slot:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(var(--accent-rgb, 255, 140, 50), 0.08);
+}
+
+.time-slot.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 2px 8px rgba(var(--accent-rgb, 255, 140, 50), 0.3);
+}
+
+.time-slots__loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted, #888);
+  font-size: 0.875rem;
+  padding: 8px 0;
+}
+
+.time-slots__empty {
+  color: var(--text-muted, #888);
+  font-size: 0.875rem;
+  margin: 4px 0;
+}
+
+.spinner-sm {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media (max-width: 600px) {
   .quote-modal {
     padding: 10px;

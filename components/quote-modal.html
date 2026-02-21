@@ -64,9 +64,17 @@
                     <span class="form-error">Please select a service</span>
                 </div>
                 <div class="form-group">
-                    <label for="modal-date" class="form-label">Preferred Date</label>
+                    <label for="modal-date" class="form-label">Preferred Date <span
+                            style="color:var(--text-muted);font-weight:400">(optional)</span></label>
                     <input type="date" id="modal-date" name="date" class="form-input">
                 </div>
+            </div>
+            <!-- Time Slot Picker (appears after date selection) -->
+            <div class="form-group" id="timeSlotGroup" style="display:none">
+                <label class="form-label">Available Times</label>
+                <div class="time-slots" id="timeSlots"></div>
+                <input type="hidden" id="modal-time" name="time">
+                <span class="form-error">Please select a time slot</span>
             </div>
             <div class="form-group">
                 <label for="modal-message" class="form-label">Describe Your Project</label>
