@@ -12,6 +12,11 @@
     const modal = document.getElementById('quoteModal');
     if (!modal) return;
 
+    // Re-init Places Autocomplete for dynamically loaded modal address field
+    if (window.initPlacesAutocomplete && typeof google !== 'undefined') {
+        window.initPlacesAutocomplete();
+    }
+
     const backdrop = modal.querySelector('.quote-modal__backdrop');
     const closeBtn = document.getElementById('quoteModalClose');
     const form = document.getElementById('quoteModalForm');

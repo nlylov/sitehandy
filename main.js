@@ -2,6 +2,56 @@
    REPAIR ASAP LLC — Main JavaScript
    ============================================ */
 
+// ---- Google Places Autocomplete ----
+function initPlacesAutocomplete() {
+  const addressFields = [
+    { input: document.getElementById('inline-address'), zip: document.getElementById('zip') },
+    { input: document.getElementById('modal-address'), zip: document.getElementById('modal-zip') },
+  ];
+
+  addressFields.forEach(({ input, zip }) => {
+    if (!input) return;
+
+    const autocomplete = new google.maps.places.Autocomplete(input, {
+      types: ['address'],
+      componentRestrictions: { country: 'us' },
+      fields: ['address_components', 'formatted_address'],
+    });
+
+    autocomplete.addListener('place_changed', () => {
+      const place = autocomplete.getPlace();
+      if (!place.address_components) return;
+
+      // Set the full formatted address
+      input.value = place.formatted_address;
+      input.classList.remove('error');
+      input.classList.add('success');
+
+      // Auto-fill ZIP code
+      const zipComponent = place.address_components.find(c =>
+        c.types.includes('postal_code')
+      );
+      if (zipComponent && zip) {
+        zip.value = zipComponent.short_name;
+        zip.classList.remove('error');
+        zip.classList.add('success');
+      }
+    });
+
+    // Prevent form submission when pressing Enter in autocomplete dropdown
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const pacContainer = document.querySelector('.pac-container');
+        if (pacContainer && pacContainer.style.display !== 'none') {
+          e.preventDefault();
+        }
+      }
+    });
+  });
+}
+// Make it a global callback for the Google Maps script
+window.initPlacesAutocomplete = initPlacesAutocomplete;
+
 /* --------------------------------------------------
    PAGE-SPECIFIC INIT (runs immediately on DOMContentLoaded)
    These features don't depend on the dynamically loaded

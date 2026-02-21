@@ -2104,6 +2104,53 @@ button.portfolio-card__video {
   animation: fadeSlideIn 0.4s ease;
 }
 
+/* ---- Google Places Autocomplete Dark Theme ---- */
+.pac-container {
+  background: var(--bg-card, #0e1726);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  font-family: inherit;
+  margin-top: 4px;
+  z-index: 100001;
+}
+
+.pac-item {
+  background: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--text-secondary, #94a3b8);
+  padding: 10px 14px;
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.pac-item:first-child {
+  border-top: none;
+}
+
+.pac-item:hover,
+.pac-item-selected {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.pac-item-query {
+  color: var(--text-primary, #f1f5f9);
+  font-weight: 500;
+}
+
+.pac-icon {
+  display: none;
+}
+
+.pac-matched {
+  color: var(--accent, #c9913b);
+  font-weight: 600;
+}
+
+.pac-logo::after {
+  display: none;
+}
+
 @media (max-width: 600px) {
   .quote-modal {
     padding: 10px;
