@@ -1,0 +1,35 @@
+# ============================================
+# Repair ASAP LLC — 301 Redirects
+# Old site URLs → New site URLs
+# ============================================
+
+# ---- SERVICE HUBS (renamed slugs) ----
+/services/mounting-hanging/*          /services/tv-wall-mounting/:splat  301
+/services/minor-home-repairs/*        /services/general-repairs/:splat   301
+/services/minor-plumbing-repairs/*    /services/plumbing/:splat          301
+/services/interior-painting/*         /services/painting/:splat          301
+/services/drywall-repair-finishing/*  /services/general-repairs/         301
+/services/minor-tiling-backsplash/*   /services/general-repairs/         301
+
+# ---- REMOVED PAGES ----
+/booking/                             /                                  301
+/booking                              /                                  301
+/booking.html                         /                                  301
+/service-conditions/                  /terms-of-service/                 301
+/service-conditions                   /terms-of-service/                 301
+/service-conditions.html              /terms-of-service/                 301
+
+# ---- OLD .html EXTENSIONS (from original site — may be indexed by Google) ----
+/faq.html                             /faq/                              301
+/knowledge                            /faq/                              301
+/knowledge/                           /faq/                              301
+/privacy-policy.html                  /privacy-policy/                   301
+/terms-of-service.html                /terms-of-service/                 301
+/services/ac-installation-cleaning.html     /services/ac-installation-cleaning/    301
+/services/furniture-assembly.html           /services/furniture-assembly/          301
+/services/mounting-hanging.html             /services/tv-wall-mounting/            301
+/services/minor-home-repairs.html           /services/general-repairs/             301
+/services/minor-plumbing-repairs.html       /services/plumbing/                    301
+/services/interior-painting.html            /services/painting/                    301
+/services/drywall-repair-finishing.html     /services/general-repairs/             301
+/services/minor-tiling-backsplash.html      /services/general-repairs/             301
