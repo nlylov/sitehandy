@@ -3165,6 +3165,62 @@ button.portfolio-card__video {
   border-bottom: 1px solid var(--border);
 }
 
+/* ---------- Related Services ---------- */
+.svc-related {
+  padding: var(--section-pad) 0;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.svc-related .section-subtitle a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.svc-related .section-subtitle a:hover {
+  text-decoration: underline;
+}
+
+.svc-related__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.svc-related__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s var(--ease);
+}
+
+.svc-related__link:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.svc-related__link:hover svg {
+  color: var(--accent);
+  transform: translateX(3px);
+}
+
+.svc-related__link svg {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: all 0.3s var(--ease);
+}
+
 /* ---------- Service Pages — Responsive ---------- */
 @media (max-width: 1024px) {
   .svc-brands__grid {
@@ -3210,6 +3266,10 @@ button.portfolio-card__video {
   .svc-process__steps,
   .svc-why__grid,
   .svc-testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .svc-related__grid {
     grid-template-columns: 1fr;
   }
 
