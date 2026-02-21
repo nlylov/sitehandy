@@ -1659,6 +1659,7 @@ button.portfolio-card__video {
   max-height: 90vh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
   padding: 40px;
   transform: translateY(20px) scale(0.97);
   transition: transform 0.35s var(--ease);
@@ -2153,14 +2154,24 @@ button.portfolio-card__video {
 
 @media (max-width: 600px) {
   .quote-modal {
-    padding: 10px;
+    padding: 0;
     align-items: flex-end;
   }
 
   .quote-modal__container {
-    padding: 24px 20px;
+    padding: 0 20px 24px;
     border-radius: 16px 16px 0 0;
     max-height: 92vh;
+  }
+
+  .quote-modal__close {
+    position: sticky;
+    top: 0;
+    float: right;
+    background: var(--surface);
+    margin: 0 -8px 0 0;
+    padding: 12px 8px;
+    z-index: 10;
   }
 
   .quote-modal__form .form-row {
