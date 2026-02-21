@@ -48,8 +48,13 @@
             // Reset previous selection
             timeInput.value = '';
             timeSlotGroup.style.display = 'block';
-            // Show address field when date is selected
+            // Show address field and mark ZIP required when date is selected
             if (addressGroup) addressGroup.style.display = 'block';
+            // Mark ZIP as required for booking
+            const zipLabel = form.querySelector('#modal-zip')?.closest('.form-group')?.querySelector('.form-label');
+            if (zipLabel && !zipLabel.querySelector('.zip-required')) {
+                zipLabel.innerHTML = zipLabel.innerHTML.replace('(optional)', '<span class="zip-required" style="color:var(--accent);font-weight:500">*</span>');
+            }
             timeSlotsEl.innerHTML = '<div class="time-slots__loading"><span class="spinner-sm"></span> Loading available times...</div>';
 
             try {
@@ -98,6 +103,11 @@
             if (timeInput) timeInput.value = '';
             if (addressGroup) { addressGroup.style.display = 'none'; }
             if (addressInput) { addressInput.value = ''; addressInput.classList.remove('error', 'success'); }
+            // Restore ZIP as optional
+            const zipLabel = form.querySelector('#modal-zip')?.closest('.form-group')?.querySelector('.form-label');
+            if (zipLabel && zipLabel.querySelector('.zip-required')) {
+                zipLabel.innerHTML = 'ZIP Code <span style="color:var(--text-muted);font-weight:400">(optional)</span>';
+            }
         });
     }
 
@@ -487,9 +497,18 @@
             serviceSelect.classList.add('success');
         }
 
-        // ZIP code (optional, but validate format if provided)
+        // ZIP code (optional normally, REQUIRED when booking a date)
         const zip = form.querySelector('#modal-zip');
-        if (zip && zip.value.trim()) {
+        if (dateInput && dateInput.value) {
+            // Booking mode: ZIP is required
+            if (!zip?.value.trim() || !/^\d{5}$/.test(zip.value.trim())) {
+                showError(zip);
+                isValid = false;
+            } else {
+                zip.classList.add('success');
+            }
+        } else if (zip && zip.value.trim()) {
+            // Optional mode: validate format only if provided
             if (!/^\d{5}$/.test(zip.value.trim())) {
                 showError(zip);
                 isValid = false;
