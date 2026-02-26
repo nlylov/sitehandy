@@ -489,6 +489,406 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && lightbox && lightbox.classList.contains('active')) closeLightbox();
   });
+
+  // ---- AC Installation Pricing Calculator (Smart) ----
+  const calcWidget = document.querySelector('.svc-calculator__widget');
+  if (calcWidget) {
+    const btuSel = calcWidget.querySelector('#calc-btu');
+    const qtySel = calcWidget.querySelector('#calc-qty');
+    const windowSel = calcWidget.querySelector('#calc-window');
+    const floorSel = calcWidget.querySelector('#calc-floor');
+    const buildingSel = calcWidget.querySelector('#calc-building');
+    const toggles = Array.from(calcWidget.querySelectorAll('.svc-calculator__toggle'));
+    const priceEl = document.getElementById('calc-price');
+    const labelEl = document.getElementById('calc-label');
+    const badgeEl = document.getElementById('calc-badge');
+    const hintsEl = document.getElementById('calc-hints');
+    const ctaBtn = document.getElementById('calc-cta');
+
+    if (!btuSel || !priceEl) return;
+
+    function selOpt(el) { return el ? el.options[el.selectedIndex] : null; }
+    function oNum(el, attr) { return Number(selOpt(el)?.dataset[attr] || 0); }
+    function isOn(name) { return toggles.some(b => b.dataset.name === name && b.classList.contains('active')); }
+    function tPrice(name) {
+      const b = toggles.find(t => t.dataset.name === name);
+      return (b && b.classList.contains('active')) ? Number(b.dataset.price || 0) : 0;
+    }
+    function roundNearest5(n) { return Math.round(n / 5) * 5; }
+
+    function computeComplexity() {
+      let score = 0;
+      // BTU complexity
+      score += oNum(btuSel, 'complexity');
+      // Window type complexity
+      if (windowSel) score += oNum(windowSel, 'complexity');
+      // Floor complexity
+      if (floorSel) score += oNum(floorSel, 'complexity');
+      // Building type
+      if (buildingSel) score += oNum(buildingSel, 'complexity');
+      // Toggles
+      toggles.forEach(b => {
+        if (b.classList.contains('active')) score += Number(b.dataset.complexity || 0);
+      });
+      return score;
+    }
+
+    function getSmartHints() {
+      const hints = [];
+      const windowVal = selOpt(windowSel)?.value;
+      const floorVal = selOpt(floorSel)?.value;
+      const btuVal = selOpt(btuSel)?.value;
+      const buildingVal = selOpt(buildingSel)?.value;
+      const qty = Number(selOpt(qtySel)?.value || 1);
+
+      if (windowVal === 'casement')
+        hints.push({ icon: '⚠️', text: 'Casement installs often require custom framing or panel kits. Final quote requires photo review.' });
+      if (windowVal === 'top-section')
+        hints.push({ icon: '💡', text: 'Top-section installs work around radiators or bulky furniture below the sill — we do this regularly.' });
+      if (floorVal === '6+')
+        hints.push({ icon: '⚠️', text: 'High-floor installs may require stricter building rules or COI review — confirm with your management.' });
+      if (btuVal === '24k')
+        hints.push({ icon: '⚠️', text: 'Large 24,000+ BTU units usually require a 2-person install. Consider adding that toggle above.' });
+      if (buildingVal === 'coop-condo')
+        hints.push({ icon: '🏢', text: 'Co-op / condo buildings typically require COI and written approval before scheduling. We can provide the COI.' });
+      if (qty >= 3)
+        hints.push({ icon: '✅', text: `${qty} units — your multi-unit discount is applied automatically to the estimate.` });
+      if (isOn('plexiglass'))
+        hints.push({ icon: '🔲', text: 'Custom plexiglass/panel fitments may require an on-site measurement. Photo review recommended.' });
+      if (isOn('deep-frame'))
+        hints.push({ icon: '📐', text: 'Non-standard or deep window frames may need custom blocking. Confirm with a photo before booking.' });
+
+      return hints;
+    }
+
+    function updateCalc() {
+      // Base price from BTU
+      const lo_base = oNum(btuSel, 'lo');
+      const hi_base = oNum(btuSel, 'hi');
+
+      // Surcharges
+      const windowSurcharge = windowSel ? Number(selOpt(windowSel)?.dataset.surcharge || 0) : 0;
+      const floorSurcharge = floorSel ? Number(selOpt(floorSel)?.dataset.surcharge || 0) : 0;
+
+      // Toggle add-ons
+      const toggleTotal = toggles.reduce((s, b) => {
+        return s + (b.classList.contains('active') ? Number(b.dataset.price || 0) : 0);
+      }, 0);
+
+      const subtotalLo = lo_base + windowSurcharge + floorSurcharge + toggleTotal;
+      const subtotalHi = hi_base + windowSurcharge + floorSurcharge + toggleTotal;
+
+      // Multi-unit quantity
+      const qty = Number(selOpt(qtySel)?.value || 1);
+      const discount = Number(selOpt(qtySel)?.dataset.discount || 0) / 100;
+
+      const perUnitLo = roundNearest5(subtotalLo * (1 - discount));
+      const perUnitHi = roundNearest5(subtotalHi * (1 - discount));
+      const totalLo = roundNearest5(perUnitLo * qty);
+      const totalHi = roundNearest5(perUnitHi * qty);
+
+      // Complexity
+      const score = computeComplexity();
+      let tier, badgeColor;
+      if (score <= 2) {
+        tier = 'Standard Install'; badgeColor = '#22c55e';
+      } else if (score <= 5) {
+        tier = 'Advanced Install'; badgeColor = '#f59e0b';
+      } else {
+        tier = 'Photo Review Required'; badgeColor = '#ef4444';
+      }
+
+      // Update price
+      if (qty > 1) {
+        labelEl.textContent = `Estimated Flat Rate (${qty} units)`;
+        priceEl.innerHTML = `$${totalLo}&ndash;$${totalHi} <span style="font-size:0.55em;opacity:0.7;">($${perUnitLo}&ndash;$${perUnitHi}/unit)</span>`;
+      } else {
+        labelEl.textContent = 'Estimated Flat Rate';
+        priceEl.innerHTML = `$${totalLo}&ndash;$${totalHi}`;
+      }
+
+      // Complexity badge
+      badgeEl.textContent = tier;
+      badgeEl.style.background = badgeColor;
+      badgeEl.style.display = 'inline-block';
+
+      // Smart hints
+      const hints = getSmartHints();
+      if (hints.length) {
+        hintsEl.innerHTML = hints.map(h =>
+          `<div class="svc-calculator__hint"><span class="svc-calculator__hint-icon">${h.icon}</span><span>${h.text}</span></div>`
+        ).join('');
+        hintsEl.style.display = 'block';
+      } else {
+        hintsEl.innerHTML = '';
+        hintsEl.style.display = 'none';
+      }
+    }
+
+    // Wire up event handlers
+    [btuSel, qtySel, windowSel, floorSel, buildingSel].forEach(el => {
+      if (el) el.addEventListener('change', updateCalc);
+    });
+
+    toggles.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+        btn.setAttribute('aria-pressed', btn.classList.contains('active') ? 'true' : 'false');
+        updateCalc();
+      });
+    });
+
+    // CTA: open the quote popup modal and pre-fill the message with calculator selections
+    if (ctaBtn) {
+      ctaBtn.addEventListener('click', () => {
+        // Build human-readable summary for the message field
+        const btuLabel = selOpt(btuSel)?.text?.split(' (')[0] || '';
+        const qtyLabel = selOpt(qtySel)?.text || '1 unit';
+        const windowLabel = selOpt(windowSel)?.text?.split(' (+')[0] || '';
+        const floorLabel = selOpt(floorSel)?.text?.split(' (+')[0] || '';
+        const buildingLabel = selOpt(buildingSel)?.text || '';
+        const activeToggles = toggles
+          .filter(b => b.classList.contains('active') && b.dataset.price !== '0')
+          .map(b => b.textContent.trim().replace(/\s+/g, ' ').split(' (+')[0]);
+        const price = priceEl.innerText || '';
+
+        const summary = [
+          'Window AC Installation — Calculator Summary',
+          '',
+          `AC Size: ${btuLabel}`,
+          `Quantity: ${qtyLabel}`,
+          `Window Type: ${windowLabel}`,
+          `Floor Level: ${floorLabel}`,
+          `Building: ${buildingLabel}`,
+          activeToggles.length ? `Add-ons: ${activeToggles.join(', ')}` : '',
+          '',
+          `Estimated Range: ${price}`,
+        ].filter(s => s !== undefined).join('\n');
+
+        // Store structured data for CRM custom fields (picked up by quote-modal.js)
+        const priceNums = price.replace(/[^0-9–\-]/g, '').split(/[–\-]/);
+        window._calcQuoteData = {
+          btu_size: selOpt(btuSel)?.value || '',
+          qty: selOpt(qtySel)?.value || '1',
+          window_type: selOpt(windowSel)?.value || '',
+          floor: selOpt(floorSel)?.value || '',
+          building: selOpt(buildingSel)?.value || '',
+          addons: activeToggles.join(', '),
+          estimated_low: priceNums[0]?.trim() || '',
+          estimated_high: priceNums[1]?.trim() || '',
+          estimated_range: price,
+          source_page: 'window-ac-installation',
+        };
+
+        // Open the quote modal (selects "AC Installation & Cleaning" service automatically)
+        if (typeof window.openQuoteModal === 'function') {
+          window.openQuoteModal('AC Installation & Cleaning');
+          // Fill the message field after the modal opens (400ms matches animation)
+          setTimeout(() => {
+            const msgField = document.getElementById('modal-message');
+            if (msgField && !msgField.value.trim()) {
+              msgField.value = summary;
+              msgField.dispatchEvent(new Event('input', { bubbles: true }));
+            }
+          }, 450);
+        } else {
+          // Fallback if modal script hasn't loaded yet
+          sessionStorage.setItem('quoteRequest', summary);
+          window.location.href = '/#contact';
+        }
+      });
+    }
+
+    // Initial render
+    updateCalc();
+  }
+
+
+  // ---- Gallery v2: Filters, Show More, Lightbox with Arrows ----
+  const gallerySection = document.querySelector('.svc-gallery');
+  if (gallerySection) {
+    const allCards = Array.from(gallerySection.querySelectorAll('.svc-gallery__card'));
+    const filterBtns = gallerySection.querySelectorAll('.svc-gallery__filter-btn');
+    const moreBtn = gallerySection.querySelector('.svc-gallery__more-btn');
+    const INITIAL_LIMIT = 12;
+    // If no "Show All" button exists, show all cards immediately
+    let expanded = !moreBtn;
+    let activeFilter = 'all';
+
+    // --- Filter Tabs ---
+    function applyFilters() {
+      let visibleCount = 0;
+      allCards.forEach(card => {
+        const type = card.dataset.type || 'after';
+        const matchesFilter = activeFilter === 'all' || type === activeFilter;
+
+        if (matchesFilter) {
+          visibleCount++;
+          if (!expanded && visibleCount > INITIAL_LIMIT) {
+            card.classList.add('hidden');
+          } else {
+            card.classList.remove('hidden');
+          }
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Update show-more button
+      const totalMatching = allCards.filter(c => {
+        const t = c.dataset.type || 'after';
+        return activeFilter === 'all' || t === activeFilter;
+      }).length;
+
+      if (moreBtn) {
+        const moreWrap = moreBtn.closest('.svc-gallery__more-wrap');
+        if (totalMatching <= INITIAL_LIMIT) {
+          moreWrap.style.display = 'none';
+        } else {
+          moreWrap.style.display = '';
+          const remaining = totalMatching - INITIAL_LIMIT;
+          if (expanded) {
+            moreBtn.innerHTML = 'Show Less <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 15 12 9 18 15"/></svg>';
+            moreBtn.classList.add('expanded');
+          } else {
+            moreBtn.innerHTML = `Show All ${totalMatching} Photos <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>`;
+            moreBtn.classList.remove('expanded');
+          }
+        }
+      }
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeFilter = btn.dataset.filter;
+        expanded = false;
+        applyFilters();
+      });
+    });
+
+    if (moreBtn) {
+      moreBtn.addEventListener('click', () => {
+        expanded = !expanded;
+        applyFilters();
+        if (!expanded) {
+          gallerySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    }
+
+    // Initial filter apply
+    applyFilters();
+
+    // --- Lightbox with Prev/Next ---
+    const BADGE_COLORS = {
+      before: 'rgba(239,68,68,0.85)',
+      process: 'rgba(245,158,11,0.85)',
+      after: 'rgba(34,197,94,0.85)',
+      result: 'rgba(34,197,94,0.85)',
+      detail: 'rgba(59,130,246,0.85)',
+    };
+    const BADGE_LABELS = {
+      before: 'Before', process: 'In Progress', after: 'After',
+      result: 'Result', detail: 'Detail',
+    };
+
+    const glBox = document.createElement('div');
+    glBox.className = 'custom-lightbox';
+    glBox.innerHTML = `
+      <button class="custom-lightbox__close" aria-label="Close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <button class="custom-lightbox__arrow custom-lightbox__arrow--prev" aria-label="Previous">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="custom-lightbox__content">
+        <span class="custom-lightbox__badge" style="display:none"></span>
+        <img class="custom-lightbox__img" src="" alt="">
+        <div class="custom-lightbox__caption"></div>
+      </div>
+      <button class="custom-lightbox__arrow custom-lightbox__arrow--next" aria-label="Next">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+      </button>
+    `;
+    document.body.appendChild(glBox);
+
+    const glImg = glBox.querySelector('.custom-lightbox__img');
+    const glCap = glBox.querySelector('.custom-lightbox__caption');
+    const glBadge = glBox.querySelector('.custom-lightbox__badge');
+    const glClose = glBox.querySelector('.custom-lightbox__close');
+    const glPrev = glBox.querySelector('.custom-lightbox__arrow--prev');
+    const glNext = glBox.querySelector('.custom-lightbox__arrow--next');
+    let currentIndex = -1;
+
+    function getVisibleCards() {
+      return allCards.filter(c => !c.classList.contains('hidden'));
+    }
+
+    function showLightboxAt(idx) {
+      const visible = getVisibleCards();
+      if (idx < 0 || idx >= visible.length) return;
+      currentIndex = idx;
+      const card = visible[idx];
+      const wrap = card.querySelector('.svc-gallery__img-wrap');
+      const fullSrc = wrap?.dataset?.full || '';
+      const caption = wrap?.dataset?.caption || '';
+      const type = card.dataset.type || 'after';
+
+      glImg.src = fullSrc;
+      glImg.alt = caption;
+      glCap.textContent = caption;
+
+      // Badge
+      glBadge.textContent = BADGE_LABELS[type] || type;
+      glBadge.style.background = BADGE_COLORS[type] || BADGE_COLORS.after;
+      glBadge.style.color = '#fff';
+      glBadge.style.display = '';
+
+      // Arrow visibility
+      glPrev.style.display = idx === 0 ? 'none' : '';
+      glNext.style.display = idx === visible.length - 1 ? 'none' : '';
+    }
+
+    function openGalleryLightbox(e) {
+      e.preventDefault();
+      const card = e.currentTarget.closest('.svc-gallery__card');
+      const visible = getVisibleCards();
+      const idx = visible.indexOf(card);
+      if (idx === -1) return;
+      showLightboxAt(idx);
+      glBox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeGalleryLightbox() {
+      glBox.classList.remove('active');
+      document.body.style.overflow = '';
+      setTimeout(() => { glImg.src = ''; }, 300);
+    }
+
+    // Attach click to all image wrappers
+    allCards.forEach(card => {
+      const wrap = card.querySelector('.svc-gallery__img-wrap');
+      if (wrap) wrap.addEventListener('click', openGalleryLightbox);
+    });
+
+    glClose.addEventListener('click', closeGalleryLightbox);
+    glPrev.addEventListener('click', () => showLightboxAt(currentIndex - 1));
+    glNext.addEventListener('click', () => showLightboxAt(currentIndex + 1));
+
+    glBox.addEventListener('click', (e) => {
+      if (e.target === glBox) closeGalleryLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!glBox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeGalleryLightbox();
+      if (e.key === 'ArrowLeft') showLightboxAt(currentIndex - 1);
+      if (e.key === 'ArrowRight') showLightboxAt(currentIndex + 1);
+    });
+  }
 });
 
 
@@ -545,7 +945,7 @@ document.addEventListener('components-loaded', () => {
                 <a href="/services/general-repairs/" class="mobile-services__link">General Repairs</a>
               </div>
             </div>
-            <a href="/#reviews" class="nav-link">Reviews</a>
+            <a href="/reviews/" class="nav-link">Reviews</a>
             <a href="/faq/" class="nav-link">FAQ</a>
             <button type="button" class="btn btn--accent" style="margin-top:16px" data-open-quote>Get a Free Quote</button>
           </nav>

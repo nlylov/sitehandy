@@ -585,6 +585,8 @@
             })),
             time: timeInput?.value || '',
             address: addressInput?.value?.trim() || '',
+            // CRM custom fields from the smart calculator (set by main.js when CTA clicked)
+            custom_fields: window._calcQuoteData ? { ...window._calcQuoteData } : {},
         };
 
         try {

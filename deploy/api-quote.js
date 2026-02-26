@@ -86,7 +86,7 @@ async function uploadToGHLMedia(base64Data, fileName, mimeType) {
  */
 async function handleQuoteSubmission(req, res) {
     try {
-        const { name, phone, email, service, date, message, photos } = req.body;
+        const { name, phone, email, service, date, message, photos, custom_fields, zip, time, address } = req.body;
 
         // Validate required fields
         if (!name || !phone) {
@@ -126,7 +126,26 @@ async function handleQuoteSubmission(req, res) {
         const noteParts = [];
         if (service) noteParts.push(`Service: ${service}`);
         if (date) noteParts.push(`Preferred Date: ${date}`);
-        if (message) noteParts.push(`Message: ${message}`);
+        if (time) noteParts.push(`Preferred Time: ${time}`);
+        if (address) noteParts.push(`Address: ${address}`);
+        if (zip) noteParts.push(`ZIP: ${zip}`);
+        if (message) noteParts.push(`Message:\n${message}`);
+
+        // Append structured calculator data if provided
+        if (custom_fields && Object.keys(custom_fields).length > 0) {
+            const cf = custom_fields;
+            noteParts.push([
+                '--- Calculator Summary ---',
+                cf.btu_size ? `AC Size: ${cf.btu_size}` : '',
+                cf.qty ? `Quantity: ${cf.qty}` : '',
+                cf.window_type ? `Window Type: ${cf.window_type}` : '',
+                cf.floor ? `Floor: ${cf.floor}` : '',
+                cf.building ? `Building: ${cf.building}` : '',
+                cf.addons ? `Add-ons: ${cf.addons}` : '',
+                cf.estimated_range ? `Estimated Range: ${cf.estimated_range}` : '',
+            ].filter(Boolean).join('\n'));
+        }
+
         if (photoUrls.length > 0) {
             noteParts.push(`Photos (${photoUrls.length}):\n${photoUrls.join('\n')}`);
         }
