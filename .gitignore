@@ -11,3 +11,9 @@ node_modules/
 SEO_ROADMAP.md
 knowledge-base.md
 add_seo_tags.py
+
+# Temp directories
+sitehandy-tmp/
+venv/
+__pycache__/
+*.pyc
