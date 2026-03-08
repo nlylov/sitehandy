@@ -1067,6 +1067,462 @@ const CONFIGS = {
         },
         cta: { text: 'Get Exact Quote', href: '/#contact' },
         disclaimer: 'Estimates include stud locating, leveling, and secure mounting. Cabinet hardware not included unless specified.'
+    },
+    dishwasher: {
+        title: 'Dishwasher Installation Estimate',
+        subtitle: 'Select your installation type for an estimated price range.',
+        categories: [
+            {
+                label: 'Installation Type',
+                id: 'series',
+                options: [
+                    { value: '', label: 'Choose install type…' },
+                    { value: 'swap', label: 'Swap (replace existing)' },
+                    { value: 'new', label: 'New Install (no existing hookup)' },
+                    { value: 'builtin', label: 'Built-In / Panel-Ready' },
+                    { value: 'other', label: 'Other Setup' }
+                ]
+            },
+            {
+                label: 'Add-Ons',
+                id: 'size',
+                dependsOn: 'series',
+                optionSets: {
+                    swap: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Standard swap only' },
+                        { value: 'md', label: 'Swap + old unit haul-away' },
+                        { value: 'lg', label: 'Swap + new supply line + haul-away' }
+                    ],
+                    new: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Water + drain nearby' },
+                        { value: 'md', label: 'New supply line + drain hookup' },
+                        { value: 'lg', label: 'Full plumbing + electrical' }
+                    ],
+                    builtin: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Standard fit' },
+                        { value: 'md', label: 'Custom panel installation' },
+                        { value: 'lg', label: 'Custom + plumbing modifications' }
+                    ],
+                    other: [
+                        { value: '', label: 'Choose complexity…' },
+                        { value: 'sm', label: 'Simple' },
+                        { value: 'md', label: 'Medium' },
+                        { value: 'lg', label: 'Complex' }
+                    ]
+                }
+            }
+        ],
+        pricing: {
+            swap: { sm: [150, 220], md: [200, 280], lg: [250, 350] },
+            new: { sm: [250, 350], md: [350, 500], lg: [500, 750] },
+            builtin: { sm: [180, 260], md: [260, 380], lg: [380, 550] },
+            other: { sm: [150, 250], md: [250, 400], lg: [400, 600] }
+        },
+        cta: { text: 'Get Exact Quote', href: '/#contact' },
+        disclaimer: 'Estimates include hookup, leveling, and leak test. Appliance not included.'
+    },
+    dryer: {
+        title: 'Dryer Installation Estimate',
+        subtitle: 'Select your dryer type and setup for an estimated price range.',
+        categories: [
+            {
+                label: 'Dryer Type',
+                id: 'series',
+                options: [
+                    { value: '', label: 'Choose dryer type…' },
+                    { value: 'electric', label: 'Electric Dryer' },
+                    { value: 'gas', label: 'Gas Dryer' },
+                    { value: 'ventless', label: 'Ventless / Heat Pump Dryer' },
+                    { value: 'stackable', label: 'Stackable Dryer' },
+                    { value: 'other', label: 'Other Dryer' }
+                ]
+            },
+            {
+                label: 'Scope',
+                id: 'size',
+                dependsOn: 'series',
+                optionSets: {
+                    electric: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Standard swap (outlet exists)' },
+                        { value: 'md', label: 'Swap + venting' },
+                        { value: 'lg', label: 'New outlet + venting + haul-away' }
+                    ],
+                    gas: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Standard swap (gas line exists)' },
+                        { value: 'md', label: 'Swap + flex connector + venting' },
+                        { value: 'lg', label: 'New gas line + venting' }
+                    ],
+                    ventless: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Standard swap' },
+                        { value: 'md', label: 'Swap + drain hookup' },
+                        { value: 'lg', label: 'New install + drain + electrical' }
+                    ],
+                    stackable: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Stack on existing washer' },
+                        { value: 'md', label: 'Stack + venting' },
+                        { value: 'lg', label: 'Stack + venting + electrical' }
+                    ],
+                    other: [
+                        { value: '', label: 'Choose complexity…' },
+                        { value: 'sm', label: 'Simple' },
+                        { value: 'md', label: 'Medium' },
+                        { value: 'lg', label: 'Complex' }
+                    ]
+                }
+            }
+        ],
+        pricing: {
+            electric: { sm: [120, 180], md: [180, 260], lg: [280, 400] },
+            gas: { sm: [150, 220], md: [220, 320], lg: [350, 500] },
+            ventless: { sm: [130, 200], md: [200, 300], lg: [300, 450] },
+            stackable: { sm: [150, 220], md: [220, 320], lg: [320, 450] },
+            other: { sm: [120, 200], md: [200, 320], lg: [320, 500] }
+        },
+        cta: { text: 'Get Exact Quote', href: '/#contact' },
+        disclaimer: 'Estimates include hookup, venting, and testing. Appliance and parts not included.'
+    },
+    microwave: {
+        title: 'Microwave Installation Estimate',
+        subtitle: 'Select your microwave type for an estimated price range.',
+        categories: [
+            {
+                label: 'Microwave Type',
+                id: 'series',
+                options: [
+                    { value: '', label: 'Choose type…' },
+                    { value: 'otr', label: 'Over-the-Range (OTR)' },
+                    { value: 'builtin', label: 'Built-In / Wall Oven Combo' },
+                    { value: 'undermount', label: 'Under-Cabinet Mount' },
+                    { value: 'drawer', label: 'Microwave Drawer' },
+                    { value: 'other', label: 'Other Microwave' }
+                ]
+            },
+            {
+                label: 'Scope',
+                id: 'size',
+                dependsOn: 'series',
+                optionSets: {
+                    otr: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Swap existing OTR' },
+                        { value: 'md', label: 'New OTR (template + mounting)' },
+                        { value: 'lg', label: 'New OTR + venting + electrical' }
+                    ],
+                    builtin: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Swap existing unit' },
+                        { value: 'md', label: 'New install (trim kit)' },
+                        { value: 'lg', label: 'New install + electrical' }
+                    ],
+                    undermount: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Mount only' },
+                        { value: 'md', label: 'Mount + bracket fabrication' },
+                        { value: 'lg', label: 'Mount + electrical + venting' }
+                    ],
+                    drawer: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Swap existing drawer' },
+                        { value: 'md', label: 'New cutout + install' },
+                        { value: 'lg', label: 'New cutout + electrical + trim' }
+                    ],
+                    other: [
+                        { value: '', label: 'Choose complexity…' },
+                        { value: 'sm', label: 'Simple' },
+                        { value: 'md', label: 'Medium' },
+                        { value: 'lg', label: 'Complex' }
+                    ]
+                }
+            }
+        ],
+        pricing: {
+            otr: { sm: [120, 180], md: [180, 280], lg: [280, 420] },
+            builtin: { sm: [130, 200], md: [200, 300], lg: [300, 450] },
+            undermount: { sm: [100, 160], md: [160, 250], lg: [250, 380] },
+            drawer: { sm: [150, 220], md: [220, 340], lg: [340, 500] },
+            other: { sm: [100, 180], md: [180, 300], lg: [300, 450] }
+        },
+        cta: { text: 'Get Exact Quote', href: '/#contact' },
+        disclaimer: 'Estimates include mounting, venting, and electrical check. Microwave not included.'
+    },
+    range: {
+        title: 'Range & Oven Installation Estimate',
+        subtitle: 'Select your range type and setup for an estimated price range.',
+        categories: [
+            {
+                label: 'Range Type',
+                id: 'series',
+                options: [
+                    { value: '', label: 'Choose range type…' },
+                    { value: 'gas-freestanding', label: 'Gas Freestanding Range' },
+                    { value: 'electric-freestanding', label: 'Electric Freestanding Range' },
+                    { value: 'slide-in', label: 'Slide-In Range (Gas or Electric)' },
+                    { value: 'wall-oven', label: 'Wall Oven' },
+                    { value: 'cooktop', label: 'Cooktop Only' },
+                    { value: 'other', label: 'Other Range / Oven' }
+                ]
+            },
+            {
+                label: 'Scope',
+                id: 'size',
+                dependsOn: 'series',
+                optionSets: {
+                    'gas-freestanding': [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Standard swap' },
+                        { value: 'md', label: 'Swap + flex connector + anti-tip' },
+                        { value: 'lg', label: 'New gas line + electrical + haul-away' }
+                    ],
+                    'electric-freestanding': [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Standard swap' },
+                        { value: 'md', label: 'Swap + anti-tip bracket' },
+                        { value: 'lg', label: 'New outlet + anti-tip + haul-away' }
+                    ],
+                    'slide-in': [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Standard swap' },
+                        { value: 'md', label: 'Swap + trim / gap fill' },
+                        { value: 'lg', label: 'New hookup + countertop adjustment' }
+                    ],
+                    'wall-oven': [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Single oven swap' },
+                        { value: 'md', label: 'Double oven swap' },
+                        { value: 'lg', label: 'New cutout + electrical' }
+                    ],
+                    cooktop: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Electric cooktop swap' },
+                        { value: 'md', label: 'Gas cooktop swap + leak test' },
+                        { value: 'lg', label: 'New cutout + gas or electric' }
+                    ],
+                    other: [
+                        { value: '', label: 'Choose complexity…' },
+                        { value: 'sm', label: 'Simple' },
+                        { value: 'md', label: 'Medium' },
+                        { value: 'lg', label: 'Complex' }
+                    ]
+                }
+            }
+        ],
+        pricing: {
+            'gas-freestanding': { sm: [150, 220], md: [220, 320], lg: [350, 500] },
+            'electric-freestanding': { sm: [120, 180], md: [180, 260], lg: [280, 400] },
+            'slide-in': { sm: [150, 220], md: [220, 340], lg: [340, 500] },
+            'wall-oven': { sm: [180, 260], md: [260, 380], lg: [400, 600] },
+            cooktop: { sm: [130, 200], md: [200, 300], lg: [320, 480] },
+            other: { sm: [120, 220], md: [220, 350], lg: [350, 550] }
+        },
+        cta: { text: 'Get Exact Quote', href: '/#contact' },
+        disclaimer: 'Estimates include hookup, anti-tip installation, and testing. Appliance not included.'
+    },
+    refrigerator: {
+        title: 'Refrigerator Installation Estimate',
+        subtitle: 'Select your fridge type and setup for an estimated price range.',
+        categories: [
+            {
+                label: 'Refrigerator Type',
+                id: 'series',
+                options: [
+                    { value: '', label: 'Choose fridge type…' },
+                    { value: 'freestanding', label: 'Freestanding (Top / Bottom Freezer)' },
+                    { value: 'french-door', label: 'French Door' },
+                    { value: 'side-by-side', label: 'Side-by-Side' },
+                    { value: 'counter-depth', label: 'Counter-Depth / Built-In' },
+                    { value: 'mini', label: 'Mini / Wine Cooler' },
+                    { value: 'other', label: 'Other Refrigerator' }
+                ]
+            },
+            {
+                label: 'Add-Ons',
+                id: 'size',
+                dependsOn: 'series',
+                optionSets: {
+                    freestanding: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Delivery + leveling' },
+                        { value: 'md', label: 'Leveling + water line' },
+                        { value: 'lg', label: 'Water line + door reversal + haul-away' }
+                    ],
+                    'french-door': [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Delivery + leveling' },
+                        { value: 'md', label: 'Leveling + water line' },
+                        { value: 'lg', label: 'Water line + door removal / hinge swap' }
+                    ],
+                    'side-by-side': [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Delivery + leveling' },
+                        { value: 'md', label: 'Leveling + water line' },
+                        { value: 'lg', label: 'Water line + old unit haul-away' }
+                    ],
+                    'counter-depth': [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Standard fit + leveling' },
+                        { value: 'md', label: 'Fit + water line + trim' },
+                        { value: 'lg', label: 'Custom fit + plumbing + haul-away' }
+                    ],
+                    mini: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Placement only' },
+                        { value: 'md', label: 'Under-counter fit + leveling' },
+                        { value: 'lg', label: 'Built-in fit + trim + drain' }
+                    ],
+                    other: [
+                        { value: '', label: 'Choose complexity…' },
+                        { value: 'sm', label: 'Simple' },
+                        { value: 'md', label: 'Medium' },
+                        { value: 'lg', label: 'Complex' }
+                    ]
+                }
+            }
+        ],
+        pricing: {
+            freestanding: { sm: [100, 160], md: [160, 240], lg: [260, 380] },
+            'french-door': { sm: [120, 180], md: [180, 260], lg: [280, 400] },
+            'side-by-side': { sm: [120, 180], md: [180, 260], lg: [260, 380] },
+            'counter-depth': { sm: [150, 220], md: [220, 340], lg: [350, 500] },
+            mini: { sm: [60, 100], md: [100, 160], lg: [160, 260] },
+            other: { sm: [100, 180], md: [180, 300], lg: [300, 450] }
+        },
+        cta: { text: 'Get Exact Quote', href: '/#contact' },
+        disclaimer: 'Estimates include leveling, water line, and testing. Appliance not included.'
+    },
+    'washer-dryer': {
+        title: 'Washer & Dryer Combo Estimate',
+        subtitle: 'Select your combo type and setup for an estimated price range.',
+        categories: [
+            {
+                label: 'Combo Type',
+                id: 'series',
+                options: [
+                    { value: '', label: 'Choose combo type…' },
+                    { value: 'stacked', label: 'Stacked Washer + Dryer' },
+                    { value: 'sidebyside', label: 'Side-by-Side Washer + Dryer' },
+                    { value: 'allinone', label: 'All-in-One Combo Unit' },
+                    { value: 'laundry-center', label: 'Laundry Center' },
+                    { value: 'other', label: 'Other Setup' }
+                ]
+            },
+            {
+                label: 'Scope',
+                id: 'size',
+                dependsOn: 'series',
+                optionSets: {
+                    stacked: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Standard swap (hookups exist)' },
+                        { value: 'md', label: 'Swap + stacking kit + venting' },
+                        { value: 'lg', label: 'New hookups + venting + haul-away' }
+                    ],
+                    sidebyside: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Standard swap (hookups exist)' },
+                        { value: 'md', label: 'Swap + hoses + venting' },
+                        { value: 'lg', label: 'New hookups + venting + haul-away' }
+                    ],
+                    allinone: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Standard swap' },
+                        { value: 'md', label: 'Swap + drain hookup' },
+                        { value: 'lg', label: 'New install + plumbing + electrical' }
+                    ],
+                    'laundry-center': [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Standard swap' },
+                        { value: 'md', label: 'Swap + hoses + venting' },
+                        { value: 'lg', label: 'New install + full hookup' }
+                    ],
+                    other: [
+                        { value: '', label: 'Choose complexity…' },
+                        { value: 'sm', label: 'Simple' },
+                        { value: 'md', label: 'Medium' },
+                        { value: 'lg', label: 'Complex' }
+                    ]
+                }
+            }
+        ],
+        pricing: {
+            stacked: { sm: [200, 300], md: [300, 420], lg: [450, 650] },
+            sidebyside: { sm: [200, 300], md: [300, 420], lg: [450, 650] },
+            allinone: { sm: [150, 220], md: [220, 320], lg: [350, 500] },
+            'laundry-center': { sm: [180, 260], md: [260, 380], lg: [400, 580] },
+            other: { sm: [180, 280], md: [280, 420], lg: [420, 650] }
+        },
+        cta: { text: 'Get Exact Quote', href: '/#contact' },
+        disclaimer: 'Estimates include hookup, venting, and testing for both units. Appliances not included.'
+    },
+    washer: {
+        title: 'Washer Installation Estimate',
+        subtitle: 'Select your washer type and setup for an estimated price range.',
+        categories: [
+            {
+                label: 'Washer Type',
+                id: 'series',
+                options: [
+                    { value: '', label: 'Choose washer type…' },
+                    { value: 'topload', label: 'Top-Load Washer' },
+                    { value: 'frontload', label: 'Front-Load Washer' },
+                    { value: 'stackable', label: 'Stackable Washer' },
+                    { value: 'portable', label: 'Portable / Compact Washer' },
+                    { value: 'other', label: 'Other Washer' }
+                ]
+            },
+            {
+                label: 'Scope',
+                id: 'size',
+                dependsOn: 'series',
+                optionSets: {
+                    topload: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Standard swap (hookups exist)' },
+                        { value: 'md', label: 'Swap + new hoses + leveling' },
+                        { value: 'lg', label: 'New hookups + drain + haul-away' }
+                    ],
+                    frontload: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Standard swap (hookups exist)' },
+                        { value: 'md', label: 'Swap + pedestal install + hoses' },
+                        { value: 'lg', label: 'New hookups + drain + haul-away' }
+                    ],
+                    stackable: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Standard swap' },
+                        { value: 'md', label: 'Swap + new hoses + leveling' },
+                        { value: 'lg', label: 'New hookups + drain' }
+                    ],
+                    portable: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Sink adapter hookup' },
+                        { value: 'md', label: 'Dedicated faucet adapter' },
+                        { value: 'lg', label: 'Permanent drain connection' }
+                    ],
+                    other: [
+                        { value: '', label: 'Choose complexity…' },
+                        { value: 'sm', label: 'Simple' },
+                        { value: 'md', label: 'Medium' },
+                        { value: 'lg', label: 'Complex' }
+                    ]
+                }
+            }
+        ],
+        pricing: {
+            topload: { sm: [120, 180], md: [180, 260], lg: [280, 400] },
+            frontload: { sm: [130, 200], md: [200, 300], lg: [300, 440] },
+            stackable: { sm: [130, 200], md: [200, 280], lg: [300, 420] },
+            portable: { sm: [60, 100], md: [100, 160], lg: [160, 250] },
+            other: { sm: [120, 200], md: [200, 300], lg: [300, 450] }
+        },
+        cta: { text: 'Get Exact Quote', href: '/#contact' },
+        disclaimer: 'Estimates include hookup, leveling, and leak test. Appliance and hoses not included.'
     }
 };
 
