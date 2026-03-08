@@ -978,7 +978,7 @@ export default function calculator(container) {
                             <span class="mod-calc__price-sep">–</span>
                             <span class="mod-calc__price-hi">$0</span>
                         </div>
-                        <a href="${cfg.cta.href}" class="btn btn--accent btn--lg mod-calc__cta">${cfg.cta.text}</a>
+                        <button type="button" class="btn btn--accent btn--lg mod-calc__cta">${cfg.cta.text}</button>
                         <p class="mod-calc__disclaimer">${cfg.disclaimer}</p>
                     </div>
                 </div>
@@ -1064,5 +1064,71 @@ export default function calculator(container) {
         }
 
         requestAnimationFrame(tick);
+    }
+
+    // ---- CTA: open quote modal with pre-filled description ----
+    const ctaBtn = container.querySelector('.mod-calc__cta');
+    if (ctaBtn) {
+        ctaBtn.addEventListener('click', () => {
+            const series = selected.series;
+            const size = selected.size;
+
+            // Build human-readable summary from selections
+            let description = '';
+            if (series && size && cfg.pricing[series]?.[size]) {
+                const [lo, hi] = cfg.pricing[series][size];
+
+                // Get readable labels from the dropdown options
+                const seriesSelect = container.querySelector('[data-cat="series"]');
+                const sizeSelectEl = container.querySelector('[data-cat="size"]');
+                const seriesLabel = seriesSelect?.selectedOptions?.[0]?.text || series;
+                const sizeLabel = sizeSelectEl?.selectedOptions?.[0]?.text || size;
+
+                description = `${seriesLabel} — ${sizeLabel} (estimated $${lo}–$${hi})`;
+            }
+
+            // Store for quote-modal custom_fields
+            window._calcQuoteData = {
+                calculator_config: configKey,
+                calculator_series: series || '',
+                calculator_size: size || '',
+                calculator_estimate: description
+            };
+
+            // Open the quote modal
+            if (typeof window.openQuoteModal === 'function') {
+                const service = detectServiceFromURL();
+                window.openQuoteModal(service);
+
+                // Pre-fill modal message textarea
+                setTimeout(() => {
+                    const msgField = document.getElementById('modal-message');
+                    if (msgField && description) {
+                        msgField.value = description;
+                        msgField.classList.add('success');
+                    }
+                }, 100);
+            }
+        });
+    }
+
+    // Helper: detect service from URL (same logic as quote-modal)
+    function detectServiceFromURL() {
+        const SERVICE_MAP = {
+            'furniture-assembly': 'Furniture Assembly',
+            'tv-wall-mounting': 'TV & Wall Mounting',
+            'appliance-services': 'Appliance Services',
+            'flooring-installation': 'Flooring Installation',
+            'painting': 'Painting & Wall Finishes',
+            'ac-installation-cleaning': 'AC Installation & Cleaning',
+            'plumbing': 'Plumbing',
+            'electrical': 'Electrical',
+            'general-repairs': 'General Repairs'
+        };
+        const path = window.location.pathname;
+        for (const [slug, value] of Object.entries(SERVICE_MAP)) {
+            if (path.includes('/services/' + slug)) return value;
+        }
+        return null;
     }
 }
