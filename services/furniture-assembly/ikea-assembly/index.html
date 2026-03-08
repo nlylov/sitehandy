@@ -2,15 +2,15 @@
 <html lang="en">
 
 <head>
-  <!-- Google Analytics (GA4) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1ZRVGCMZ43"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-1ZRVGCMZ43');
-  </script>
     <meta charset="UTF-8">
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1ZRVGCMZ43"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-1ZRVGCMZ43');
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IKEA Furniture Assembly in NYC — Repair Asap LLC</title>
     <meta name="description"
@@ -116,7 +116,7 @@
             "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "5",
-                "reviewCount": "63"
+                "reviewCount": "97"
             }
         },
         "areaServed": {
@@ -161,6 +161,54 @@
                     "@type": "Answer",
                     "text": "We carry common IKEA hardware (cam locks, dowels, screws) and can often complete the assembly on the spot. For manufacturer-specific parts like drawer rails or hinges, we'll help you request replacements through IKEA and return to finish the job at no additional trip charge."
                 }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does IKEA assembly take?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It depends on the item. A KALLAX shelf or MALM nightstand takes about 30–60 minutes. A PAX wardrobe system with interiors typically takes 2–4 hours. Multi-item orders (e.g., bedroom set) may take a full day. We'll give you a time estimate with your quote."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you bring your own tools?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes — our technicians arrive fully equipped with professional cordless drills, impact drivers, levels, stud finders, and spare IKEA-specific hardware. You don't need to provide anything."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can you assemble already-opened or partially built IKEA furniture?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. We can pick up where you left off, or disassemble incorrectly built pieces and start fresh. We've rescued many half-finished PAX and MALM projects."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you remove all the packaging?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes — packaging removal is included with every assembly at no extra charge. We break down all cardboard, styrofoam, and plastic and take it with us or place it in your building's recycling area."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can you assemble IKEA kitchen cabinets?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes — we assemble IKEA METOD/SEKTION kitchen cabinet systems including base cabinets, wall cabinets, and tall units. For full kitchen installations involving plumbing or electrical connections, we'll discuss scope and provide a separate estimate."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you service all NYC boroughs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our primary service area covers Manhattan, Brooklyn, Queens, and Staten Island. For other areas, availability depends on schedule and project scope — contact us to check."
+                }
             }
         ]
     }
@@ -170,7 +218,7 @@
     <section class="svc-hero">
         <div class="svc-hero__bg">
             <img src="/assets/services/service-furniture.webp" alt="IKEA furniture assembly in NYC apartment"
-                class="svc-hero__img" loading="eager">
+                class="svc-hero__img" loading="eager" fetchpriority="high" width="1600" height="900">
             <div class="svc-hero__overlay"></div>
         </div>
         <div class="container svc-hero__inner">
@@ -226,13 +274,6 @@
         </div>
     </section>
 
-    <!-- ========== INSTANT QUOTE CALCULATOR (Module) ========== -->
-    <section class="spoke-module" id="calculator">
-        <div class="container">
-            <div data-module="calculator" data-config="ikea"></div>
-        </div>
-    </section>
-
     <!-- ========== SEO TEXT ========== -->
     <section class="svc-seo-text">
         <div class="container">
@@ -244,9 +285,50 @@
                     a 10-unit PAX closet setup in one visit.</p>
                 <p>Every assembly includes professional tools, precise leveling, wall anchoring for tip-over safety, and
                     full packaging removal. We quote a flat rate before we start — no hourly billing, no surprises — and
-                    every job is backed by a 1-year workmanship warranty. Use the instant calculator above to see your
+                    every job is backed by a 1-year workmanship warranty. Use the instant calculator below to see your
                     estimated cost, or send us a photo of your boxes for a confirmed quote within 30 minutes.</p>
             </div>
+        </div>
+    </section>
+
+    <!-- ========== HOW IT WORKS ========== -->
+    <section class="svc-process">
+        <div class="container">
+            <span class="section-tag">How It Works</span>
+            <h2 class="section-title">4 Steps to <span class="text-accent">Stress-Free Assembly</span></h2>
+            <div class="svc-process__grid">
+                <div class="svc-process__step">
+                    <div class="svc-process__number">1</div>
+                    <h3 class="svc-process__title">Send Us a Photo</h3>
+                    <p class="svc-process__text">Snap a picture of your IKEA boxes (or share the product link). We'll
+                        identify the item, confirm the article number, and prepare your quote.</p>
+                </div>
+                <div class="svc-process__step">
+                    <div class="svc-process__number">2</div>
+                    <h3 class="svc-process__title">Get a Flat-Rate Quote</h3>
+                    <p class="svc-process__text">Within 30 minutes you'll receive a fixed price — no hourly billing, no
+                        surprises. Price includes assembly, wall anchoring, and packaging removal.</p>
+                </div>
+                <div class="svc-process__step">
+                    <div class="svc-process__number">3</div>
+                    <h3 class="svc-process__title">Technician Arrives</h3>
+                    <p class="svc-process__text">Our technician arrives at your scheduled time with professional tools —
+                        cordless drills, levels, stud finders, and spare IKEA hardware.</p>
+                </div>
+                <div class="svc-process__step">
+                    <div class="svc-process__number">4</div>
+                    <h3 class="svc-process__title">Built, Anchored, Clean</h3>
+                    <p class="svc-process__text">Your furniture is assembled, leveled, and wall-anchored. All packaging
+                        is broken down and removed. You pay only after the job is done.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== INSTANT QUOTE CALCULATOR (Module) ========== -->
+    <section class="spoke-module" id="calculator">
+        <div class="container">
+            <div data-module="calculator" data-config="ikea"></div>
         </div>
     </section>
 
@@ -264,6 +346,62 @@
         </div>
     </section>
 
+    <!-- ========== NYC APARTMENT TIPS ========== -->
+    <section class="svc-regulations">
+        <div class="container">
+            <span class="section-tag">NYC Apartment Tips</span>
+            <h2 class="section-title">Assembly in <span class="text-accent">NYC Buildings</span></h2>
+            <p class="section-subtitle">IKEA furniture assembly in New York City comes with unique logistics.
+                We handle them all.</p>
+            <div class="svc-regulations__grid">
+                <div class="svc-regulations__card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" class="svc-regulations__icon">
+                        <rect x="1" y="3" width="15" height="13"></rect>
+                        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                        <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                        <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                    </svg>
+                    <h3>Elevator &amp; Freight Access</h3>
+                    <p>We coordinate with your doorman, reserve the freight elevator, and handle all building
+                        logistics. Just let us know your building's rules when you book.</p>
+                </div>
+                <div class="svc-regulations__card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" class="svc-regulations__icon">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    <h3>Walk-Up Buildings</h3>
+                    <p>5th floor? No problem. We carry tools (and furniture, if needed) up any number of flights.
+                        Walk-up delivery is included — no extra charge.</p>
+                </div>
+                <div class="svc-regulations__card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" class="svc-regulations__icon">
+                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    <h3>Certificate of Insurance (COI)</h3>
+                    <p>Most co-ops and condos require a COI before any work begins.
+                        We provide it for free within 24 hours — just ask when you book.</p>
+                </div>
+                <div class="svc-regulations__card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" class="svc-regulations__icon">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                    <h3>Wall Anchoring for NYC Walls</h3>
+                    <p>Drywall, plaster, brick — NYC apartments have it all. We bring the right anchors for
+                        every wall type and secure PAX wardrobes, BILLY bookcases, and tall dressers safely.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ========== SERVICE COMPARISON (Module) ========== -->
     <section class="spoke-module">
         <div class="container">
@@ -271,8 +409,8 @@
         </div>
     </section>
 
-<!-- ========== FAQ ========== -->
-<section class="svc-faq" id="faq">
+    <!-- ========== FAQ ========== -->
+    <section class="svc-faq" id="faq">
         <div class="container">
             <span class="section-tag">Common Questions</span>
             <h2 class="section-title">IKEA Assembly FAQ</h2>
@@ -335,6 +473,89 @@
                             charge.</p>
                     </div>
                 </details>
+                <details class="svc-faq__item">
+                    <summary class="svc-faq__question">
+                        <span>How long does IKEA assembly take?</span>
+                        <svg class="svc-faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </summary>
+                    <div class="svc-faq__answer">
+                        <p>It depends on the item. A KALLAX shelf or MALM nightstand takes about 30–60 minutes. A PAX
+                            wardrobe system with interiors typically takes 2–4 hours. Multi-item orders (e.g., bedroom
+                            set) may take a full day. We'll give you a time estimate with your quote.</p>
+                    </div>
+                </details>
+                <details class="svc-faq__item">
+                    <summary class="svc-faq__question">
+                        <span>Do you bring your own tools?</span>
+                        <svg class="svc-faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </summary>
+                    <div class="svc-faq__answer">
+                        <p>Yes — our technicians arrive fully equipped with professional cordless drills, impact
+                            drivers,
+                            levels, stud finders, and spare IKEA-specific hardware. You don't need to provide
+                            anything.</p>
+                    </div>
+                </details>
+                <details class="svc-faq__item">
+                    <summary class="svc-faq__question">
+                        <span>Can you assemble already-opened or partially built IKEA furniture?</span>
+                        <svg class="svc-faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </summary>
+                    <div class="svc-faq__answer">
+                        <p>Yes. We can pick up where you left off, or disassemble incorrectly built pieces and start
+                            fresh. We've rescued many half-finished PAX and MALM projects.</p>
+                    </div>
+                </details>
+                <details class="svc-faq__item">
+                    <summary class="svc-faq__question">
+                        <span>Do you remove all the packaging?</span>
+                        <svg class="svc-faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </summary>
+                    <div class="svc-faq__answer">
+                        <p>Yes — packaging removal is included with every assembly at no extra charge. We break down all
+                            cardboard, styrofoam, and plastic and take it with us or place it in your building's
+                            recycling area.</p>
+                    </div>
+                </details>
+                <details class="svc-faq__item">
+                    <summary class="svc-faq__question">
+                        <span>Can you assemble IKEA kitchen cabinets?</span>
+                        <svg class="svc-faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </summary>
+                    <div class="svc-faq__answer">
+                        <p>Yes — we assemble IKEA METOD/SEKTION kitchen cabinet systems including base cabinets, wall
+                            cabinets, and tall units. For full kitchen installations involving plumbing or electrical
+                            connections, we'll discuss scope and provide a separate estimate.</p>
+                    </div>
+                </details>
+                <details class="svc-faq__item">
+                    <summary class="svc-faq__question">
+                        <span>Do you service all NYC boroughs?</span>
+                        <svg class="svc-faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </summary>
+                    <div class="svc-faq__answer">
+                        <p>Our primary service area covers Manhattan, Brooklyn, Queens, and Staten Island. For other
+                            areas, availability depends on schedule and project scope — contact us to check.</p>
+                    </div>
+                </details>
             </div>
         </div>
     </section>
@@ -352,93 +573,156 @@
             </div>
             <div class="svc-gallery__grid">
                 <div class="svc-gallery__card" data-type="after">
-                    <div class="svc-gallery__img-wrap" data-full="/assets/photo/furniture-assembly/ikea-assembly/05c9be1641606825.webp" data-caption="Assembled white IKEA kitchen island with Hudson River view in a modern NYC apartment">
+                    <div class="svc-gallery__img-wrap"
+                        data-full="/assets/photo/furniture-assembly/ikea-assembly/05c9be1641606825.webp"
+                        data-caption="Assembled white IKEA kitchen island with Hudson River view in a modern NYC apartment">
                         <span class="svc-gallery__badge svc-gallery__badge--after">After</span>
-                        <img src="/assets/photo/thumbnails/furniture-assembly/ikea-assembly/05c9be1641606825.webp" alt="Assembled white IKEA kitchen island with Hudson River view in a modern NYC apartment" loading="lazy" width="400" height="400">
+                        <img src="/assets/photo/thumbnails/furniture-assembly/ikea-assembly/05c9be1641606825.webp"
+                            alt="Assembled white IKEA kitchen island with Hudson River view in a modern NYC apartment"
+                            loading="lazy" width="400" height="400">
                     </div>
-                    <div class="svc-gallery__caption">Assembled white IKEA kitchen island with Hudson River view in a modern NYC apartment</div>
+                    <div class="svc-gallery__caption">Assembled white IKEA kitchen island with Hudson River view in a
+                        modern NYC apartment</div>
                 </div>
                 <div class="svc-gallery__card" data-type="after">
-                    <div class="svc-gallery__img-wrap" data-full="/assets/photo/furniture-assembly/ikea-assembly/2869469e68c9d2cd.webp" data-caption="Wardrobe assembly — full closet system assembled">
+                    <div class="svc-gallery__img-wrap"
+                        data-full="/assets/photo/furniture-assembly/ikea-assembly/2869469e68c9d2cd.webp"
+                        data-caption="Wardrobe assembly — full closet system assembled">
                         <span class="svc-gallery__badge svc-gallery__badge--after">After</span>
-                        <img src="/assets/photo/thumbnails/furniture-assembly/ikea-assembly/2869469e68c9d2cd.webp" alt="Wardrobe assembly — full closet system assembled" loading="lazy" width="400" height="400">
+                        <img src="/assets/photo/thumbnails/furniture-assembly/ikea-assembly/2869469e68c9d2cd.webp"
+                            alt="Wardrobe assembly — full closet system assembled" loading="lazy" width="400"
+                            height="400">
                     </div>
                     <div class="svc-gallery__caption">Wardrobe assembly — full closet system assembled</div>
                 </div>
                 <div class="svc-gallery__card" data-type="process">
-                    <div class="svc-gallery__img-wrap" data-full="/assets/photo/furniture-assembly/ikea-assembly/5d48187ee24ef8f6.webp" data-caption="IKEA furniture assembly completed in a NYC residence">
+                    <div class="svc-gallery__img-wrap"
+                        data-full="/assets/photo/furniture-assembly/ikea-assembly/5d48187ee24ef8f6.webp"
+                        data-caption="IKEA furniture assembly completed in a NYC residence">
                         <span class="svc-gallery__badge svc-gallery__badge--process">In Progress</span>
-                        <img src="/assets/photo/thumbnails/furniture-assembly/ikea-assembly/5d48187ee24ef8f6.webp" alt="IKEA furniture assembly completed in a NYC residence" loading="lazy" width="400" height="400">
+                        <img src="/assets/photo/thumbnails/furniture-assembly/ikea-assembly/5d48187ee24ef8f6.webp"
+                            alt="IKEA furniture assembly completed in a NYC residence" loading="lazy" width="400"
+                            height="400">
                     </div>
                     <div class="svc-gallery__caption">IKEA furniture assembly completed in a NYC residence</div>
                 </div>
                 <div class="svc-gallery__card" data-type="process">
-                    <div class="svc-gallery__img-wrap" data-full="/assets/photo/furniture-assembly/ikea-assembly/d1331efc4b40bb0e.webp" data-caption="IKEA PAX wardrobe project with custom cornice and trim work">
+                    <div class="svc-gallery__img-wrap"
+                        data-full="/assets/photo/furniture-assembly/ikea-assembly/d1331efc4b40bb0e.webp"
+                        data-caption="IKEA PAX wardrobe project with custom cornice and trim work">
                         <span class="svc-gallery__badge svc-gallery__badge--process">In Progress</span>
-                        <img src="/assets/photo/thumbnails/furniture-assembly/ikea-assembly/d1331efc4b40bb0e.webp" alt="IKEA PAX wardrobe project with custom cornice and trim work" loading="lazy" width="400" height="400">
+                        <img src="/assets/photo/thumbnails/furniture-assembly/ikea-assembly/d1331efc4b40bb0e.webp"
+                            alt="IKEA PAX wardrobe project with custom cornice and trim work" loading="lazy" width="400"
+                            height="400">
                     </div>
                     <div class="svc-gallery__caption">IKEA PAX wardrobe project with custom cornice and trim work</div>
                 </div>
                 <div class="svc-gallery__card" data-type="process">
-                    <div class="svc-gallery__img-wrap" data-full="/assets/photo/furniture-assembly/ikea-assembly/711901c1203d43d1.webp" data-caption="IKEA PAX wardrobe project with custom cornice and trim work">
+                    <div class="svc-gallery__img-wrap"
+                        data-full="/assets/photo/furniture-assembly/ikea-assembly/711901c1203d43d1.webp"
+                        data-caption="IKEA PAX wardrobe project with custom cornice and trim work">
                         <span class="svc-gallery__badge svc-gallery__badge--process">In Progress</span>
-                        <img src="/assets/photo/thumbnails/furniture-assembly/ikea-assembly/711901c1203d43d1.webp" alt="IKEA PAX wardrobe project with custom cornice and trim work" loading="lazy" width="400" height="400">
+                        <img src="/assets/photo/thumbnails/furniture-assembly/ikea-assembly/711901c1203d43d1.webp"
+                            alt="IKEA PAX wardrobe project with custom cornice and trim work" loading="lazy" width="400"
+                            height="400">
                     </div>
                     <div class="svc-gallery__caption">IKEA PAX wardrobe project with custom cornice and trim work</div>
                 </div>
                 <div class="svc-gallery__card" data-type="after">
-                    <div class="svc-gallery__img-wrap" data-full="/assets/photo/furniture-assembly/ikea-assembly/a8fe330fffbebedf.webp" data-caption="IKEA PAX wardrobe installation with custom cornice molding and Murphy bed">
+                    <div class="svc-gallery__img-wrap"
+                        data-full="/assets/photo/furniture-assembly/ikea-assembly/a8fe330fffbebedf.webp"
+                        data-caption="IKEA PAX wardrobe installation with custom cornice molding and Murphy bed">
                         <span class="svc-gallery__badge svc-gallery__badge--after">After</span>
-                        <img src="/assets/photo/thumbnails/furniture-assembly/ikea-assembly/a8fe330fffbebedf.webp" alt="IKEA PAX wardrobe installation with custom cornice molding and Murphy bed" loading="lazy" width="400" height="400">
+                        <img src="/assets/photo/thumbnails/furniture-assembly/ikea-assembly/a8fe330fffbebedf.webp"
+                            alt="IKEA PAX wardrobe installation with custom cornice molding and Murphy bed"
+                            loading="lazy" width="400" height="400">
                     </div>
-                    <div class="svc-gallery__caption">IKEA PAX wardrobe installation with custom cornice molding and Murphy bed</div>
+                    <div class="svc-gallery__caption">IKEA PAX wardrobe installation with custom cornice molding and
+                        Murphy bed</div>
                 </div>
                 <div class="svc-gallery__card" data-type="after">
-                    <div class="svc-gallery__img-wrap" data-full="/assets/photo/furniture-assembly/ikea-assembly/16e4c517ebcb88ce.webp" data-caption="IKEA furniture assembly completed in a NYC residence">
+                    <div class="svc-gallery__img-wrap"
+                        data-full="/assets/photo/furniture-assembly/ikea-assembly/16e4c517ebcb88ce.webp"
+                        data-caption="IKEA furniture assembly completed in a NYC residence">
                         <span class="svc-gallery__badge svc-gallery__badge--after">After</span>
-                        <img src="/assets/photo/thumbnails/furniture-assembly/ikea-assembly/16e4c517ebcb88ce.webp" alt="IKEA furniture assembly completed in a NYC residence" loading="lazy" width="400" height="400">
+                        <img src="/assets/photo/thumbnails/furniture-assembly/ikea-assembly/16e4c517ebcb88ce.webp"
+                            alt="IKEA furniture assembly completed in a NYC residence" loading="lazy" width="400"
+                            height="400">
                     </div>
                     <div class="svc-gallery__caption">IKEA furniture assembly completed in a NYC residence</div>
                 </div>
                 <div class="svc-gallery__card" data-type="after">
-                    <div class="svc-gallery__img-wrap" data-full="/assets/photo/furniture-assembly/ikea-assembly/7a5d1c7f8f0d08a7.webp" data-caption="IKEA furniture assembly completed in a NYC residence">
+                    <div class="svc-gallery__img-wrap"
+                        data-full="/assets/photo/furniture-assembly/ikea-assembly/7a5d1c7f8f0d08a7.webp"
+                        data-caption="IKEA furniture assembly completed in a NYC residence">
                         <span class="svc-gallery__badge svc-gallery__badge--after">After</span>
-                        <img src="/assets/photo/thumbnails/furniture-assembly/ikea-assembly/7a5d1c7f8f0d08a7.webp" alt="IKEA furniture assembly completed in a NYC residence" loading="lazy" width="400" height="400">
+                        <img src="/assets/photo/thumbnails/furniture-assembly/ikea-assembly/7a5d1c7f8f0d08a7.webp"
+                            alt="IKEA furniture assembly completed in a NYC residence" loading="lazy" width="400"
+                            height="400">
                     </div>
                     <div class="svc-gallery__caption">IKEA furniture assembly completed in a NYC residence</div>
                 </div>
                 <div class="svc-gallery__card" data-type="after">
-                    <div class="svc-gallery__img-wrap" data-full="/assets/photo/furniture-assembly/ikea-assembly/429790453365402c.webp" data-caption="Wardrobe assembly — full closet system assembled">
+                    <div class="svc-gallery__img-wrap"
+                        data-full="/assets/photo/furniture-assembly/ikea-assembly/429790453365402c.webp"
+                        data-caption="Wardrobe assembly — full closet system assembled">
                         <span class="svc-gallery__badge svc-gallery__badge--after">After</span>
-                        <img src="/assets/photo/thumbnails/furniture-assembly/ikea-assembly/429790453365402c.webp" alt="Wardrobe assembly — full closet system assembled" loading="lazy" width="400" height="400">
+                        <img src="/assets/photo/thumbnails/furniture-assembly/ikea-assembly/429790453365402c.webp"
+                            alt="Wardrobe assembly — full closet system assembled" loading="lazy" width="400"
+                            height="400">
                     </div>
                     <div class="svc-gallery__caption">Wardrobe assembly — full closet system assembled</div>
                 </div>
                 <div class="svc-gallery__card" data-type="after">
-                    <div class="svc-gallery__img-wrap" data-full="/assets/photo/furniture-assembly/ikea-assembly/327a866a3c70e3ce.webp" data-caption="Wardrobe assembly — full closet system assembled">
+                    <div class="svc-gallery__img-wrap"
+                        data-full="/assets/photo/furniture-assembly/ikea-assembly/327a866a3c70e3ce.webp"
+                        data-caption="Wardrobe assembly — full closet system assembled">
                         <span class="svc-gallery__badge svc-gallery__badge--after">After</span>
-                        <img src="/assets/photo/thumbnails/furniture-assembly/ikea-assembly/327a866a3c70e3ce.webp" alt="Wardrobe assembly — full closet system assembled" loading="lazy" width="400" height="400">
+                        <img src="/assets/photo/thumbnails/furniture-assembly/ikea-assembly/327a866a3c70e3ce.webp"
+                            alt="Wardrobe assembly — full closet system assembled" loading="lazy" width="400"
+                            height="400">
                     </div>
                     <div class="svc-gallery__caption">Wardrobe assembly — full closet system assembled</div>
                 </div>
                 <div class="svc-gallery__card" data-type="after">
-                    <div class="svc-gallery__img-wrap" data-full="/assets/photo/furniture-assembly/ikea-assembly/a4ab9c67fcb8cfa4.webp" data-caption="Wardrobe assembly — full closet system assembled">
+                    <div class="svc-gallery__img-wrap"
+                        data-full="/assets/photo/furniture-assembly/ikea-assembly/a4ab9c67fcb8cfa4.webp"
+                        data-caption="Wardrobe assembly — full closet system assembled">
                         <span class="svc-gallery__badge svc-gallery__badge--after">After</span>
-                        <img src="/assets/photo/thumbnails/furniture-assembly/ikea-assembly/a4ab9c67fcb8cfa4.webp" alt="Wardrobe assembly — full closet system assembled" loading="lazy" width="400" height="400">
+                        <img src="/assets/photo/thumbnails/furniture-assembly/ikea-assembly/a4ab9c67fcb8cfa4.webp"
+                            alt="Wardrobe assembly — full closet system assembled" loading="lazy" width="400"
+                            height="400">
                     </div>
                     <div class="svc-gallery__caption">Wardrobe assembly — full closet system assembled</div>
                 </div>
             </div>
         </div>
     </section>
-<!-- ========== TESTIMONIALS ========== -->
-<section class="svc-testimonials">
+    <!-- ========== TESTIMONIALS ========== -->
+    <section class="svc-testimonials">
         <div class="container"><span class="section-tag">What Clients Say</span>
             <h2 class="section-title">Real Results, <span class="text-accent">Real Reviews</span></h2>
             <div class="svc-testimonials__grid">
                 <div class="svc-testimonials__card">
-                    <div class="svc-testimonials__stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg></div>
-                    <p class="svc-testimonials__text">&ldquo;Excellent service assembling my IKEA PAX wardrobe system. It looks built-in!&rdquo;</p>
+                    <div class="svc-testimonials__stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c"
+                            stroke="none">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg></div>
+                    <p class="svc-testimonials__text">&ldquo;Excellent service assembling my IKEA PAX wardrobe system.
+                        It looks built-in!&rdquo;</p>
                     <div class="svc-testimonials__author">
                         <div class="svc-testimonials__avatar">AR</div>
                         <div>
@@ -448,19 +732,54 @@
                     </div>
                 </div>
                 <div class="svc-testimonials__card">
-                    <div class="svc-testimonials__stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg></div>
-                    <p class="svc-testimonials__text">&ldquo;The work assembling my IKEA wardrobe was flawless. Great attention to detail.&rdquo;</p>
+                    <div class="svc-testimonials__stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c"
+                            stroke="none">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg></div>
+                    <p class="svc-testimonials__text">&ldquo;Assembled a very complex sectional sofa and a queen bed
+                        frame. Both look flawless. He was on time, efficient, and cleaned up everything after. Will
+                        definitely hire again.&rdquo;</p>
                     <div class="svc-testimonials__author">
-                        <div class="svc-testimonials__avatar">MB</div>
+                        <div class="svc-testimonials__avatar">IV</div>
                         <div>
-                            <div class="svc-testimonials__name">Michael B.</div>
-                            <div class="svc-testimonials__meta">Yelp</div>
+                            <div class="svc-testimonials__name">Isabel V.</div>
+                            <div class="svc-testimonials__meta">TaskRabbit</div>
                         </div>
                     </div>
                 </div>
                 <div class="svc-testimonials__card">
-                    <div class="svc-testimonials__stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg></div>
-                    <p class="svc-testimonials__text">&ldquo;Did an amazing job assembling our new IKEA shelving unit. Everything was level and secure. Very happy.&rdquo;</p>
+                    <div class="svc-testimonials__stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c"
+                            stroke="none">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg></div>
+                    <p class="svc-testimonials__text">&ldquo;Did an amazing job assembling our new IKEA shelving unit.
+                        Everything was level and secure. Very happy.&rdquo;</p>
                     <div class="svc-testimonials__author">
                         <div class="svc-testimonials__avatar">LK</div>
                         <div>
@@ -470,13 +789,31 @@
                     </div>
                 </div>
                 <div class="svc-testimonials__card">
-                    <div class="svc-testimonials__stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg></div>
-                    <p class="svc-testimonials__text">&ldquo;This is my second time using Repair ASAP to assemble furniture for me. Reasonable price. Speedy work. Punctual and considerate.&rdquo;</p>
+                    <div class="svc-testimonials__stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c"
+                            stroke="none">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c" stroke="none">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg></div>
+                    <p class="svc-testimonials__text">&ldquo;Built custom pullout shelves for our pantry and assembled
+                        two large IKEA cabinets. Exceptional craftsmanship — everything is perfectly square and sturdy.
+                        Highly recommend.&rdquo;</p>
                     <div class="svc-testimonials__author">
-                        <div class="svc-testimonials__avatar">DR</div>
+                        <div class="svc-testimonials__avatar">MS</div>
                         <div>
-                            <div class="svc-testimonials__name">Dee R.</div>
-                            <div class="svc-testimonials__meta">Yelp</div>
+                            <div class="svc-testimonials__name">Michael S.</div>
+                            <div class="svc-testimonials__meta">TaskRabbit</div>
                         </div>
                     </div>
                 </div>
@@ -489,27 +826,43 @@
     <section class="svc-related">
         <div class="container">
             <h2 class="section-title">Related Furniture Assembly Services</h2>
-            <p class="section-subtitle">Explore more services from our <a href="/services/furniture-assembly/">Furniture Assembly</a> category</p>
+            <p class="section-subtitle">Explore more services from our <a href="/services/furniture-assembly/">Furniture
+                    Assembly</a> category</p>
             <div class="svc-related__grid">
                 <a href="/services/furniture-assembly/bed-assembly/" class="svc-related__link">
                     <span class="svc-related__link-text">Bed Assembly</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6" />
+                    </svg>
                 </a>
                 <a href="/services/furniture-assembly/desk-assembly/" class="svc-related__link">
                     <span class="svc-related__link-text">Desk Assembly</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6" />
+                    </svg>
                 </a>
                 <a href="/services/furniture-assembly/wardrobe-assembly/" class="svc-related__link">
                     <span class="svc-related__link-text">Wardrobe Assembly</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6" />
+                    </svg>
                 </a>
                 <a href="/services/furniture-assembly/dresser-assembly/" class="svc-related__link">
                     <span class="svc-related__link-text">Dresser Assembly</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6" />
+                    </svg>
                 </a>
                 <a href="/services/furniture-assembly/wall-bed-assembly/" class="svc-related__link">
                     <span class="svc-related__link-text">Murphy Bed Installation</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6" />
+                    </svg>
                 </a>
             </div>
         </div>
