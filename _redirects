@@ -22,6 +22,16 @@ https://asap-repair.netlify.app/*  https://asap.repair/:splat  301!
 /service-conditions                   /terms-of-service/                 301
 /service-conditions.html              /terms-of-service/                 301
 
+# ---- 404 FIXES (GSC-reported URLs without /services/ prefix) ----
+/minor-home-repairs/                  /services/general-repairs/         301
+/minor-home-repairs                   /services/general-repairs/         301
+/furniture-assembly/                  /services/furniture-assembly/      301
+/furniture-assembly                   /services/furniture-assembly/      301
+/minor-plumbing-repairs/              /services/plumbing/                301
+/minor-plumbing-repairs               /services/plumbing/                301
+/assets/photos/minor-plumbing-repairs/  /services/plumbing/              301
+/assets/photos/*                      /                                  301
+
 # ---- ALTERNATIVE SLUG GUESSES (common variations that 404) ----
 /services/home-installation-repairs/*   /services/general-repairs/:splat    301
 /services/electrical-services/*         /services/electrical/:splat         301
