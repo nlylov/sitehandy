@@ -923,6 +923,150 @@ const CONFIGS = {
         },
         cta: { text: 'Get Exact Quote', href: '/#contact' },
         disclaimer: 'Estimates include assembly, wall anchoring, and mechanism testing. Hardware and bed frame included in estimate.'
+    },
+    art: {
+        title: 'Art Installation Estimate',
+        subtitle: 'Select your art type and scope for an estimated price range.',
+        categories: [
+            {
+                label: 'Art Type',
+                id: 'series',
+                options: [
+                    { value: '', label: 'Choose art type…' },
+                    { value: 'framed', label: 'Framed Art / Photo' },
+                    { value: 'canvas', label: 'Canvas Print' },
+                    { value: 'gallery-wall', label: 'Gallery Wall (multiple pieces)' },
+                    { value: 'heavy', label: 'Heavy Frame (40+ lbs)' },
+                    { value: 'mirror-decor', label: 'Decorative Mirror' },
+                    { value: 'other', label: 'Other Art Piece' }
+                ]
+            },
+            {
+                label: 'Scope',
+                id: 'size',
+                dependsOn: 'series',
+                optionSets: {
+                    framed: [
+                        { value: '', label: 'Choose quantity…' },
+                        { value: 'sm', label: '1 piece' },
+                        { value: 'md', label: '2–3 pieces' },
+                        { value: 'lg', label: '4+ pieces' }
+                    ],
+                    canvas: [
+                        { value: '', label: 'Choose quantity…' },
+                        { value: 'sm', label: '1 canvas' },
+                        { value: 'md', label: '2–3 canvases' },
+                        { value: 'lg', label: '4+ canvases / multi-panel set' }
+                    ],
+                    'gallery-wall': [
+                        { value: '', label: 'Choose pieces…' },
+                        { value: 'sm', label: '3–5 pieces' },
+                        { value: 'md', label: '6–10 pieces' },
+                        { value: 'lg', label: '10+ pieces' }
+                    ],
+                    heavy: [
+                        { value: '', label: 'Choose wall type…' },
+                        { value: 'sm', label: 'Drywall (into studs)' },
+                        { value: 'md', label: 'Plaster wall' },
+                        { value: 'lg', label: 'Brick / concrete' }
+                    ],
+                    'mirror-decor': [
+                        { value: '', label: 'Choose size…' },
+                        { value: 'sm', label: 'Small (under 24″)' },
+                        { value: 'md', label: 'Medium (24″–48″)' },
+                        { value: 'lg', label: 'Large (48″+)' }
+                    ],
+                    other: [
+                        { value: '', label: 'Choose complexity…' },
+                        { value: 'sm', label: 'Simple / light' },
+                        { value: 'md', label: 'Medium' },
+                        { value: 'lg', label: 'Complex / heavy' }
+                    ]
+                }
+            }
+        ],
+        pricing: {
+            framed: { sm: [40, 70], md: [80, 140], lg: [150, 260] },
+            canvas: { sm: [40, 70], md: [80, 140], lg: [150, 250] },
+            'gallery-wall': { sm: [120, 200], md: [200, 320], lg: [320, 480] },
+            heavy: { sm: [80, 130], md: [130, 200], lg: [200, 320] },
+            'mirror-decor': { sm: [50, 80], md: [80, 140], lg: [140, 220] },
+            other: { sm: [40, 80], md: [80, 160], lg: [160, 280] }
+        },
+        cta: { text: 'Get Exact Quote', href: '/#contact' },
+        disclaimer: 'Estimates include wall assessment, leveling, and hardware. Art pieces not included.'
+    },
+    'wall-cabinet': {
+        title: 'Wall Cabinet Installation Estimate',
+        subtitle: 'Select your cabinet type and scope for an estimated price range.',
+        categories: [
+            {
+                label: 'Cabinet Type',
+                id: 'series',
+                options: [
+                    { value: '', label: 'Choose cabinet type…' },
+                    { value: 'kitchen', label: 'Kitchen Upper Cabinet' },
+                    { value: 'bathroom', label: 'Bathroom / Medicine Cabinet' },
+                    { value: 'ikea', label: 'IKEA Wall Cabinet (METOD, EKET, BESTÅ)' },
+                    { value: 'laundry', label: 'Laundry / Garage Cabinet' },
+                    { value: 'floating', label: 'Floating Cabinet / Credenza' },
+                    { value: 'other', label: 'Other Wall Cabinet' }
+                ]
+            },
+            {
+                label: 'Scope',
+                id: 'size',
+                dependsOn: 'series',
+                optionSets: {
+                    kitchen: [
+                        { value: '', label: 'Choose quantity…' },
+                        { value: 'sm', label: '1 cabinet' },
+                        { value: 'md', label: '2–4 cabinets' },
+                        { value: 'lg', label: '5+ cabinets (full run)' }
+                    ],
+                    bathroom: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Small medicine cabinet' },
+                        { value: 'md', label: 'Large mirrored cabinet' },
+                        { value: 'lg', label: 'Cabinet + additional storage' }
+                    ],
+                    ikea: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: '1 unit' },
+                        { value: 'md', label: '2–3 units' },
+                        { value: 'lg', label: '4+ units / full system' }
+                    ],
+                    laundry: [
+                        { value: '', label: 'Choose quantity…' },
+                        { value: 'sm', label: '1 cabinet' },
+                        { value: 'md', label: '2–3 cabinets' },
+                        { value: 'lg', label: '4+ cabinets' }
+                    ],
+                    floating: [
+                        { value: '', label: 'Choose scope…' },
+                        { value: 'sm', label: 'Single unit' },
+                        { value: 'md', label: 'Unit + shelves' },
+                        { value: 'lg', label: 'Full wall system' }
+                    ],
+                    other: [
+                        { value: '', label: 'Choose complexity…' },
+                        { value: 'sm', label: 'Simple / light' },
+                        { value: 'md', label: 'Medium' },
+                        { value: 'lg', label: 'Complex / heavy' }
+                    ]
+                }
+            }
+        ],
+        pricing: {
+            kitchen: { sm: [80, 140], md: [200, 350], lg: [400, 650] },
+            bathroom: { sm: [60, 100], md: [100, 180], lg: [180, 300] },
+            ikea: { sm: [80, 130], md: [160, 260], lg: [280, 420] },
+            laundry: { sm: [80, 140], md: [180, 300], lg: [320, 500] },
+            floating: { sm: [80, 130], md: [160, 260], lg: [280, 420] },
+            other: { sm: [60, 120], md: [140, 240], lg: [260, 420] }
+        },
+        cta: { text: 'Get Exact Quote', href: '/#contact' },
+        disclaimer: 'Estimates include stud locating, leveling, and secure mounting. Cabinet hardware not included unless specified.'
     }
 };
 
