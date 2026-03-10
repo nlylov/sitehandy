@@ -34,14 +34,19 @@
     <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicons/favicon-64x64.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
         <link rel="preload" as="image" type="image/webp" href="/assets/services/service-tv-mounting.webp">
     <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div id="site-header"></div>
     <noscript>
         <div style="background:#0a0f1c;padding:16px 24px;text-align:center;border-bottom:1px solid #1e293b"><a href="/"
@@ -80,7 +85,8 @@
     <script
         type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does projector screen installation cost in NYC?","acceptedAnswer":{"@type":"Answer","text":"Pricing depends on screen type, size, and mounting surface. Use our instant calculator for a quick estimate."}},{"@type":"Question","name":"What types of projector screens do you install?","acceptedAnswer":{"@type":"Answer","text":"We install fixed-frame screens, manual pull-down screens, motorized electric screens, and tab-tensioned screens."}},{"@type":"Question","name":"Can you install a motorized projector screen?","acceptedAnswer":{"@type":"Answer","text":"Yes. We mount the screen housing, run power to the motor, and set up the remote control or wall switch."}},{"@type":"Question","name":"Do you install the projector screen and projector together?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. Most clients book both services together. We mount the projector, install the screen, route all cables, and align the image."}}]}</script>
 
-    <section class="svc-hero">
+    <main id="main-content">
+    <section class="svc-hero" aria-label="Service overview">
         <div class="svc-hero__bg"><img src="/assets/services/service-tv-mounting.webp"
                 alt="Professional projector screen installation in NYC" class="svc-hero__img" loading="eager" fetchpriority="high">
             <div class="svc-hero__overlay"></div>
@@ -159,7 +165,7 @@
         </div>
     </section>
 
-    <section class="svc-faq" id="faq">
+    <section class="svc-faq" id="faq" aria-label="Frequently asked questions">
         <div class="container">
             <span class="section-tag">Common Questions</span>
             <h2 class="section-title">Projector Screen FAQ</h2>
@@ -309,7 +315,7 @@
 
 
     <!-- ========== RELATED SERVICES ========== -->
-    <section class="svc-related">
+    <section class="svc-related" aria-label="Related services">
         <div class="container">
             <h2 class="section-title">Related TV & Wall Mounting Services</h2>
             <p class="section-subtitle">Explore more services from our <a href="/services/tv-wall-mounting/">TV & Wall
@@ -367,6 +373,7 @@
             </div>
         </div>
     </section>
+    </main>
     <div id="site-footer"></div>
     <script src="/components/loader.js" type="module"></script>
     <script src="/main.js" defer></script>

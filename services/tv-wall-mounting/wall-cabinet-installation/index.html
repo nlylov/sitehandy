@@ -34,14 +34,19 @@
     <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicons/favicon-64x64.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
         <link rel="preload" as="image" type="image/webp" href="/assets/services/service-mounting.png">
     <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div id="site-header"></div>
     <noscript>
         <div style="background:#0a0f1c;padding:16px 24px;text-align:center;border-bottom:1px solid #1e293b"><a href="/"
@@ -80,7 +85,8 @@
     <script
         type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much does wall cabinet installation cost?", "acceptedAnswer": {"@type": "Answer", "text": "Single cabinet mounting runs $80\u2013$200. Multi-cabinet kitchen runs get volume pricing."}}, {"@type": "Question", "name": "Do you install IKEA wall cabinets?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We install IKEA kitchen uppers, EKET systems, BESTA wall mounts, and all IKEA wall cabinet systems."}}, {"@type": "Question", "name": "How do you secure cabinets to the wall?", "acceptedAnswer": {"@type": "Answer", "text": "We locate studs and use lag bolts. Where studs aren't available, we use heavy-duty toggle bolts."}}, {"@type": "Question", "name": "Can you install a row of kitchen cabinets?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely. We install full runs of upper cabinets, ensuring they're level and aligned."}}]}</script>
 
-    <section class="svc-hero">
+    <main id="main-content">
+    <section class="svc-hero" aria-label="Service overview">
         <div class="svc-hero__bg"><img src="/assets/services/service-mounting.png"
                 alt="Wall Cabinet Installation in NYC" class="svc-hero__img" loading="eager" fetchpriority="high">
             <div class="svc-hero__overlay"></div>
@@ -158,7 +164,7 @@
         </div>
     </section>
 
-    <section class="svc-faq" id="faq">
+    <section class="svc-faq" id="faq" aria-label="Frequently asked questions">
         <div class="container">
             <span class="section-tag">Common Questions</span>
             <h2 class="section-title">Wall Cabinet Installation FAQ</h2>
@@ -304,7 +310,7 @@
 
 
     <!-- ========== RELATED SERVICES ========== -->
-    <section class="svc-related">
+    <section class="svc-related" aria-label="Related services">
         <div class="container">
             <h2 class="section-title">Related TV & Wall Mounting Services</h2>
             <p class="section-subtitle">Explore more services from our <a href="/services/tv-wall-mounting/">TV & Wall
@@ -362,6 +368,7 @@
             </div>
         </div>
     </section>
+    </main>
     <div id="site-footer"></div>
     <script src="/components/loader.js" type="module"></script>
     <script src="/main.js" defer></script>

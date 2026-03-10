@@ -34,14 +34,19 @@
     <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicons/favicon-64x64.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
         <link rel="preload" as="image" type="image/webp" href="/assets/services/service-furniture.webp">
     <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div id="site-header"></div>
     <noscript>
         <div style="background:#0a0f1c;padding:16px 24px;text-align:center;border-bottom:1px solid #1e293b"><a href="/"
@@ -81,7 +86,8 @@
     <script
         type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does Murphy bed installation cost in NYC?","acceptedAnswer":{"@type":"Answer","text":"Pricing depends on bed type, size, and whether it includes side cabinets or a desk. A basic vertical twin Murphy bed starts around $350–$500. Full system installs with cabinets can run $900–$1,500. Use our instant calculator for a quick estimate."}},{"@type":"Question","name":"Do you need to anchor a Murphy bed to the wall?","acceptedAnswer":{"@type":"Answer","text":"Yes. Murphy beds must be securely anchored to wall studs for safe operation. We locate studs, use lag bolts, and test the mechanism with full load before leaving."}},{"@type":"Question","name":"Can you install a Murphy bed in an apartment?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. Murphy beds are designed for small spaces, and most NYC apartments are ideal candidates. We work in studios, one-bedrooms, and co-ops."}},{"@type":"Question","name":"What brands of Murphy beds do you install?","acceptedAnswer":{"@type":"Answer","text":"We install Lori Wall Beds, Bestar, Night & Day Furniture, Wilding Wallbeds, Atlantic Furniture, IKEA hacks, and custom wall bed kits."}}]}</script>
 
-    <section class="svc-hero">
+    <main id="main-content">
+    <section class="svc-hero" aria-label="Service overview">
         <div class="svc-hero__bg"><img src="/assets/services/service-furniture.webp"
                 alt="Professional Murphy bed installation in NYC" class="svc-hero__img" loading="eager" fetchpriority="high">
             <div class="svc-hero__overlay"></div>
@@ -163,7 +169,7 @@
         </div>
     </section>
 
-    <section class="svc-faq" id="faq">
+    <section class="svc-faq" id="faq" aria-label="Frequently asked questions">
         <div class="container">
             <span class="section-tag">Common Questions</span>
             <h2 class="section-title">Murphy Bed FAQ</h2>
@@ -409,7 +415,7 @@
 
 
     <!-- ========== RELATED SERVICES ========== -->
-    <section class="svc-related">
+    <section class="svc-related" aria-label="Related services">
         <div class="container">
             <h2 class="section-title">Related Furniture Assembly Services</h2>
             <p class="section-subtitle">Explore more services from our <a href="/services/furniture-assembly/">Furniture
@@ -453,6 +459,7 @@
             </div>
         </div>
     </section>
+    </main>
     <div id="site-footer"></div>
     <script src="/components/loader.js" type="module"></script>
     <script src="/main.js" defer></script>

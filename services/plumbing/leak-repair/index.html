@@ -30,14 +30,19 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
         <link rel="preload" as="image" type="image/webp" href="/assets/services/service-plumbing.webp">
     <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div id="site-header"></div>
     <noscript>
         <div style="background:#0a0f1c;padding:16px 24px;text-align:center;border-bottom:1px solid #1e293b"><a href="/"
@@ -73,7 +78,8 @@
         type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"Leak Repair","name":"Leak Repair in NYC","description":"Professional leak repair in NYC. Faucet drips, pipe leaks, fixture leaks.","provider":{"@type":"LocalBusiness","name":"Repair Asap LLC","telephone":"+1-775-310-7770","url":"https://asap.repair","address":{"@type":"PostalAddress","streetAddress":"99-60 64th Ave","addressLocality":"Rego Park","addressRegion":"NY","postalCode":"11374","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"67"}},"areaServed":{"@type":"City","name":"New York City"}}</script>
     <script
         type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What leaks do you repair?","acceptedAnswer":{"@type":"Answer","text":"Dripping faucets, leaking supply lines, toilet leaks, pipe joint leaks, shower valve leaks, and under-sink leaks."}},{"@type":"Question","name":"Do you handle emergencies?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you have an active leak, call us immediately. We prioritize emergency leak calls for same-day service."}},{"@type":"Question","name":"Will you need to cut into walls?","acceptedAnswer":{"@type":"Answer","text":"Most leaks are at accessible joints, valves, or fixtures and don't require wall access. If we do need access, we'll discuss it first."}},{"@type":"Question","name":"How much does leak repair cost?","acceptedAnswer":{"@type":"Answer","text":"Flat-rate by repair type. Simple drip fixes are very affordable. Pipe repairs depend on location and access."}}]}</script>
-    <section class="svc-hero">
+    <main id="main-content">
+    <section class="svc-hero" aria-label="Service overview">
         <div class="svc-hero__bg"><img src="/assets/services/service-plumbing.webp" alt="Leak repair in NYC"
                 class="svc-hero__img" loading="eager" fetchpriority="high">
             <div class="svc-hero__overlay"></div>
@@ -124,7 +130,7 @@
             </div>
         </div>
     </section>
-<section class="svc-faq" id="faq">
+<section class="svc-faq" id="faq" aria-label="Frequently asked questions">
         <div class="container"><span class="section-tag">Common Questions</span>
             <h2 class="section-title">Leak Repair FAQ</h2>
             <div class="svc-faq__accordion">
@@ -282,7 +288,7 @@
     </section>
 
     <!-- ========== RELATED SERVICES ========== -->
-    <section class="svc-related">
+    <section class="svc-related" aria-label="Related services">
         <div class="container">
             <h2 class="section-title">Related Plumbing Services</h2>
             <p class="section-subtitle">Explore more services from our <a href="/services/plumbing/">Plumbing</a> category</p>
@@ -314,6 +320,7 @@
             </div>
         </div>
     </section>
+    </main>
     <div id="site-footer"></div>
     <script src="/components/loader.js"></script>
     <script src="/main.js"></script>

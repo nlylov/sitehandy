@@ -31,14 +31,19 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
         <link rel="preload" as="image" type="image/webp" href="/assets/services/service-appliance.webp">
     <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div id="site-header"></div>
     <noscript>
         <div style="background:#0a0f1c;padding:16px 24px;text-align:center;border-bottom:1px solid #1e293b"><a href="/"
@@ -78,7 +83,8 @@
     <script
         type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does refrigerator installation cost?","acceptedAnswer":{"@type":"Answer","text":"Flat-rate pricing based on the scope — simple slide-in or freestanding setups are the most affordable. Water line hookup for ice makers and door reversals are priced as add-ons."}},{"@type":"Question","name":"Can you connect the water line for the ice maker?","acceptedAnswer":{"@type":"Answer","text":"Yes. We tap into the nearest cold water supply, run braided stainless steel line, and test flow and pressure before leaving."}},{"@type":"Question","name":"Do you reverse refrigerator doors?","acceptedAnswer":{"@type":"Answer","text":"Yes. We reverse door hinges on compatible models so the fridge opens in the direction that works best for your kitchen layout."}},{"@type":"Question","name":"Can you remove the old refrigerator?","acceptedAnswer":{"@type":"Answer","text":"Yes. We disconnect and move the old unit out of the way. Hauling and disposal can be arranged upon request."}}]}</script>
 
-    <section class="svc-hero">
+    <main id="main-content">
+    <section class="svc-hero" aria-label="Service overview">
         <div class="svc-hero__bg"><img src="/assets/services/service-appliance.webp"
                 alt="Refrigerator installation in NYC" class="svc-hero__img" loading="eager" fetchpriority="high">
             <div class="svc-hero__overlay"></div>
@@ -137,7 +143,7 @@
         </div>
     </section>
 
-<section class="svc-faq" id="faq">
+<section class="svc-faq" id="faq" aria-label="Frequently asked questions">
         <div class="container"><span class="section-tag">Common Questions</span>
             <h2 class="section-title">Refrigerator FAQ</h2>
             <div class="svc-faq__accordion">
@@ -1076,9 +1082,9 @@
 
 
     <!-- ========== RELATED SERVICES ========== -->
-    <section class="svc-related">
+    <section class="svc-related" aria-label="Related services">
         <div class="container">
-            <h2 class="section-title">Related Appliance Services Services</h2>
+            <h2 class="section-title">Related Appliance Services</h2>
             <p class="section-subtitle">Explore more services from our <a href="/services/appliance-services/">Appliance Services</a> category</p>
             <div class="svc-related__grid">
                 <a href="/services/appliance-services/range-installation/" class="svc-related__link">
@@ -1108,6 +1114,7 @@
             </div>
         </div>
     </section>
+    </main>
     <div id="site-footer"></div>
     <script src="/components/loader.js"></script>
     <script src="/main.js"></script>

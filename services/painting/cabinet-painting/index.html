@@ -30,14 +30,19 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
         <link rel="preload" as="image" type="image/webp" href="/assets/services/service-painting.webp">
     <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div id="site-header"></div>
     <noscript>
         <div style="background:#0a0f1c;padding:16px 24px;text-align:center;border-bottom:1px solid #1e293b"><a href="/"
@@ -76,7 +81,8 @@
     <script
         type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does cabinet painting cost?","acceptedAnswer":{"@type":"Answer","text":"Per-door pricing for cabinets. A full kitchen is typically a fraction of the cost of replacing. We quote after counting doors and assessing condition."}},{"@type":"Question","name":"What's the process?","acceptedAnswer":{"@type":"Answer","text":"Remove doors and hardware, clean, sand, prime with bonding primer, apply 2 coats of durable cabinet paint, reinstall with new hardware if desired."}},{"@type":"Question","name":"Do you spray or brush?","acceptedAnswer":{"@type":"Answer","text":"Both. We spray when possible for a factory-smooth finish. Brush and roller for on-site situations where spraying isn't practical."}},{"@type":"Question","name":"How long does it take?","acceptedAnswer":{"@type":"Answer","text":"A full kitchen takes 3–5 days due to multiple coats and drying time. We work in phases so you have partial use of your kitchen throughout."}}]}</script>
 
-    <section class="svc-hero">
+    <main id="main-content">
+    <section class="svc-hero" aria-label="Service overview">
         <div class="svc-hero__bg"><img src="/assets/services/service-painting.webp" alt="Cabinet painting in NYC"
                 class="svc-hero__img" loading="eager" fetchpriority="high">
             <div class="svc-hero__overlay"></div>
@@ -130,7 +136,7 @@
         </div>
     </section>
 
-<section class="svc-faq" id="faq">
+<section class="svc-faq" id="faq" aria-label="Frequently asked questions">
         <div class="container"><span class="section-tag">Common Questions</span>
             <h2 class="section-title">Cabinet Painting FAQ</h2>
             <div class="svc-faq__accordion">
@@ -286,7 +292,7 @@
 
 
     <!-- ========== RELATED SERVICES ========== -->
-    <section class="svc-related">
+    <section class="svc-related" aria-label="Related services">
         <div class="container">
             <h2 class="section-title">Related Painting & Wall Finishes Services</h2>
             <p class="section-subtitle">Explore more services from our <a href="/services/painting/">Painting & Wall Finishes</a> category</p>
@@ -314,6 +320,7 @@
             </div>
         </div>
     </section>
+    </main>
     <div id="site-footer"></div>
     <script src="/components/loader.js"></script>
     <script src="/main.js"></script>

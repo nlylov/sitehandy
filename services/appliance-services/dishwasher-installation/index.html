@@ -31,14 +31,19 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
         <link rel="preload" as="image" type="image/webp" href="/assets/services/service-appliance.webp">
     <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div id="site-header"></div>
     <noscript>
         <div style="background:#0a0f1c;padding:16px 24px;text-align:center;border-bottom:1px solid #1e293b"><a href="/"
@@ -78,7 +83,8 @@
     <script
         type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does dishwasher installation cost?","acceptedAnswer":{"@type":"Answer","text":"Flat-rate pricing based on the complexity of the hookup. Standard swap-outs with existing connections are the most affordable. New installations requiring plumbing and electrical work are priced higher."}},{"@type":"Question","name":"Can you install a dishwasher where there wasn't one before?","acceptedAnswer":{"@type":"Answer","text":"Yes. We can run a new water supply line, add a drain connection to your sink plumbing, and install a dedicated electrical outlet if needed."}},{"@type":"Question","name":"Do you remove the old dishwasher?","acceptedAnswer":{"@type":"Answer","text":"Yes. We disconnect, pull out, and can haul away the old unit. We also inspect the area for water damage or mold before installing the new one."}},{"@type":"Question","name":"How long does installation take?","acceptedAnswer":{"@type":"Answer","text":"A standard swap takes about 1–2 hours. New installations with plumbing and electrical work may take 3–4 hours."}}]}</script>
 
-    <section class="svc-hero">
+    <main id="main-content">
+    <section class="svc-hero" aria-label="Service overview">
         <div class="svc-hero__bg"><img src="/assets/services/service-appliance.webp" alt="Dishwasher installation in NYC"
                 class="svc-hero__img" loading="eager" fetchpriority="high">
             <div class="svc-hero__overlay"></div>
@@ -139,7 +145,7 @@
         </div>
     </section>
 
-<section class="svc-faq" id="faq">
+<section class="svc-faq" id="faq" aria-label="Frequently asked questions">
         <div class="container"><span class="section-tag">Common Questions</span>
             <h2 class="section-title">Dishwasher FAQ</h2>
             <div class="svc-faq__accordion">
@@ -309,9 +315,9 @@
 
 
     <!-- ========== RELATED SERVICES ========== -->
-    <section class="svc-related">
+    <section class="svc-related" aria-label="Related services">
         <div class="container">
-            <h2 class="section-title">Related Appliance Services Services</h2>
+            <h2 class="section-title">Related Appliance Services</h2>
             <p class="section-subtitle">Explore more services from our <a href="/services/appliance-services/">Appliance Services</a> category</p>
             <div class="svc-related__grid">
                 <a href="/services/appliance-services/refrigerator-installation/" class="svc-related__link">
@@ -341,6 +347,7 @@
             </div>
         </div>
     </section>
+    </main>
     <div id="site-footer"></div>
     <script src="/components/loader.js"></script>
     <script src="/main.js"></script>

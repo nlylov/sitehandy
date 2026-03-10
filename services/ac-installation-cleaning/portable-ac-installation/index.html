@@ -36,14 +36,19 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
         <link rel="preload" as="image" type="image/webp" href="/assets/services/service-ac.webp">
     <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div id="site-header"></div>
     <noscript>
         <div style="background:#0a0f1c;padding:16px 24px;text-align:center;border-bottom:1px solid #1e293b"><a href="/"
@@ -83,7 +88,8 @@
     <script
         type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does portable AC setup cost in NYC?","acceptedAnswer":{"@type":"Answer","text":"Setup typically includes window venting kit installation, hose routing, and drainage configuration. Pricing is flat-rate and depends on your window type and unit model. We provide a quote before starting."}},{"@type":"Question","name":"Do you install the window venting kit?","acceptedAnswer":{"@type":"Answer","text":"Yes. We cut and fit the exhaust panel to your window, seal gaps with weatherstripping, and ensure the hose is properly connected for maximum efficiency."}},{"@type":"Question","name":"Can you set up a portable AC with no window?","acceptedAnswer":{"@type":"Answer","text":"In most cases a window or sliding door is needed for venting. However, we can route exhaust through drop ceilings, dryer vents, or custom wall ports where building conditions allow."}},{"@type":"Question","name":"Do portable ACs need drainage?","acceptedAnswer":{"@type":"Answer","text":"Many modern units are self-evaporative, but some require a drain hose or tank emptying. We configure your unit's drainage — continuous drain hose, gravity drain, or condensate pump — based on its design."}}]}</script>
 
-    <section class="svc-hero">
+    <main id="main-content">
+    <section class="svc-hero" aria-label="Service overview">
         <div class="svc-hero__bg"><img src="/assets/services/service-ac.webp" alt="Professional portable AC setup in NYC"
                 class="svc-hero__img" loading="eager" fetchpriority="high">
             <div class="svc-hero__overlay"></div>
@@ -139,7 +145,7 @@
         </div>
     </section>
 
-    <section class="svc-faq" id="faq">
+    <section class="svc-faq" id="faq" aria-label="Frequently asked questions">
         <div class="container"><span class="section-tag">Common Questions</span>
             <h2 class="section-title">Portable AC FAQ</h2>
             <div class="svc-faq__accordion">
@@ -237,7 +243,7 @@
 
 
     <!-- ========== RELATED SERVICES ========== -->
-    <section class="svc-related">
+    <section class="svc-related" aria-label="Related services">
         <div class="container">
             <h2 class="section-title">Related AC Installation & Cleaning Services</h2>
             <p class="section-subtitle">Explore more services from our <a href="/services/ac-installation-cleaning/">AC Installation & Cleaning</a> category</p>
@@ -269,6 +275,7 @@
             </div>
         </div>
     </section>
+    </main>
     <div id="site-footer"></div>
     <script src="/components/loader.js"></script>
     <script src="/main.js"></script>

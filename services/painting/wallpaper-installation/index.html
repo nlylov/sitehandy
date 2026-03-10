@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div id="site-header"></div>
     <noscript><div style="background:#0a0f1c;padding:16px 24px;text-align:center;border-bottom:1px solid #1e293b"><a href="/" style="color:#c19a4a;font-weight:700;font-size:18px;text-decoration:none">Repair Asap LLC</a><span style="color:#94a3b8;margin:0 12px">|</span><a href="tel:+17753107770" style="color:#e2e8f0;text-decoration:none">+1 (775) 310-7770</a></div></noscript>
 
@@ -49,7 +50,8 @@
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "serviceType": "Wallpaper Installation", "name": "Wallpaper Installation in NYC", "description": "Need wallpaper installed in New York City? Repair Asap LLC installs wallpaper across Manhattan, Brooklyn, Queens, and Staten Island \u2014 peel-and-stick, pre-pasted, traditional paste, vinyl, grasscloth, and mural wallpapers.", "provider": {"@type": "LocalBusiness", "name": "Repair Asap LLC", "telephone": "+1-775-310-7770", "url": "https://asap.repair", "address": {"@type": "PostalAddress", "streetAddress": "99-60 64th Ave", "addressLocality": "Rego Park", "addressRegion": "NY", "postalCode": "11374", "addressCountry": "US"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5", "reviewCount": "63"}}, "areaServed": {"@type": "City", "name": "New York City"}}</script>
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much does wallpaper installation cost in NYC?", "acceptedAnswer": {"@type": "Answer", "text": "Wallpaper installation typically runs $3\u2013$8 per square foot for labor, depending on paper type and complexity."}}, {"@type": "Question", "name": "Do you install peel-and-stick wallpaper?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Peel-and-stick is popular for accent walls and rental apartments."}}, {"@type": "Question", "name": "Can you wallpaper a full room?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely. We handle full-room installations with precise pattern matching around corners."}}, {"@type": "Question", "name": "Do you supply wallpaper?", "acceptedAnswer": {"@type": "Answer", "text": "We install wallpaper you provide. We can help calculate how many rolls you need."}}]}</script>
 
-    <section class="svc-hero">
+    <main id="main-content">
+    <section class="svc-hero" aria-label="Service overview">
         <div class="svc-hero__bg"><img src="/assets/services/service-painting.webp" alt="Wallpaper Installation in NYC" class="svc-hero__img" loading="eager" fetchpriority="high"><div class="svc-hero__overlay"></div></div>
         <div class="container svc-hero__inner">
             <div class="svc-hero__badge">Wallpaper Installation</div>
@@ -79,7 +81,7 @@
 
     <section class="spoke-module"><div class="container"><div data-module="comparison" data-config='{"title": "Why Hire a Pro?", "columns": ["Repair Asap", "TaskRabbit", "DIY"], "highlight": 0, "rows": [{"feature": "Licensed & Insured", "values": ["yes", "varies", "no"]}, {"feature": "Flat-Rate Pricing", "values": ["yes", "no", "n/a"]}, {"feature": "1-Year Warranty", "values": ["yes", "no", "no"]}, {"feature": "Same-Day Available", "values": ["yes", "varies", "n/a"]}, {"feature": "Background Checked", "values": ["yes", "varies", "no"]}, {"feature": "Cleanup Included", "values": ["yes", "varies", "no"]}, {"feature": "Average 5-Star Rating", "values": ["4.9\u2605 avg", "varies", "n/a"]}]}'></div></div></section>
 
-<section class="svc-faq" id="faq"><div class="container">
+<section class="svc-faq" id="faq" aria-label="Frequently asked questions"><div class="container">
         <span class="section-tag">Common Questions</span>
         <h2 class="section-title">Wallpaper Installation FAQ</h2>
         <div class="svc-faq__accordion">
@@ -538,7 +540,7 @@
 
 
     <!-- ========== RELATED SERVICES ========== -->
-    <section class="svc-related">
+    <section class="svc-related" aria-label="Related services">
         <div class="container">
             <h2 class="section-title">Related Painting & Wall Finishes Services</h2>
             <p class="section-subtitle">Explore more services from our <a href="/services/painting/">Painting & Wall Finishes</a> category</p>
@@ -566,6 +568,7 @@
             </div>
         </div>
     </section>
+    </main>
     <div id="site-footer"></div>
     <script src="/components/loader.js" type="module"></script>
     <script src="/main.js" defer></script>

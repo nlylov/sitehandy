@@ -14,6 +14,26 @@
   opacity: 1;
 }
 
+/* ---------- Skip to Content (Accessibility) ---------- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 9999;
+  padding: 12px 24px;
+  background: var(--accent);
+  color: var(--bg-primary);
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
 /* ---------- CSS Custom Properties ---------- */
 :root {
   /* Colors */

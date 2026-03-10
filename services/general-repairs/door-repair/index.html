@@ -30,14 +30,19 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
         <link rel="preload" as="image" type="image/webp" href="/assets/services/service-general.png">
     <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div id="site-header"></div>
     <noscript>
         <div style="background:#0a0f1c;padding:16px 24px;text-align:center;border-bottom:1px solid #1e293b"><a href="/"
@@ -76,7 +81,8 @@
     <script
         type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What kind of door problems do you fix?","acceptedAnswer":{"@type":"Answer","text":"Sticking, sagging, won't latch, squeaky hinges, damaged frames, hollow-core holes, weatherstripping, and lock alignment issues."}},{"@type":"Question","name":"Do you replace interior doors?","acceptedAnswer":{"@type":"Answer","text":"Yes. Pre-hung and slab doors. We handle measuring, trimming, hinge mortising, and hardware installation."}},{"@type":"Question","name":"Can you fix a door that won't close?","acceptedAnswer":{"@type":"Answer","text":"Yes. Usually caused by shifted hinges, a warped frame, or strike plate misalignment. We diagnose and fix the root cause."}},{"@type":"Question","name":"How much does door repair cost?","acceptedAnswer":{"@type":"Answer","text":"Flat-rate pricing based on the specific repair. Simple adjustments are affordable. Full door replacements quoted after assessment."}}]}</script>
 
-    <section class="svc-hero">
+    <main id="main-content">
+    <section class="svc-hero" aria-label="Service overview">
         <div class="svc-hero__bg"><img src="/assets/services/service-general.png" alt="Door repair in NYC"
                 class="svc-hero__img" loading="eager" fetchpriority="high">
             <div class="svc-hero__overlay"></div>
@@ -129,7 +135,7 @@
         </div>
     </section>
 
-<section class="svc-faq" id="faq">
+<section class="svc-faq" id="faq" aria-label="Frequently asked questions">
         <div class="container"><span class="section-tag">Common Questions</span>
             <h2 class="section-title">Door Repair FAQ</h2>
             <div class="svc-faq__accordion">
@@ -276,7 +282,7 @@
 
 
     <!-- ========== RELATED SERVICES ========== -->
-    <section class="svc-related">
+    <section class="svc-related" aria-label="Related services">
         <div class="container">
             <h2 class="section-title">Related General Repairs Services</h2>
             <p class="section-subtitle">Explore more services from our <a href="/services/general-repairs/">General Repairs</a> category</p>
@@ -312,6 +318,7 @@
             </div>
         </div>
     </section>
+    </main>
     <div id="site-footer"></div>
     <script src="/components/loader.js"></script>
     <script src="/main.js"></script>

@@ -31,14 +31,19 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
         <link rel="preload" as="image" type="image/webp" href="/assets/services/service-flooring.webp">
     <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div id="site-header"></div>
     <noscript>
         <div style="background:#0a0f1c;padding:16px 24px;text-align:center;border-bottom:1px solid #1e293b"><a href="/"
@@ -77,7 +82,8 @@
     <script
         type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does peel and stick installation cost?","acceptedAnswer":{"@type":"Answer","text":"Very affordable per-square-foot pricing. It's one of the most budget-friendly flooring options available."}},{"@type":"Question","name":"How long does peel & stick flooring last?","acceptedAnswer":{"@type":"Answer","text":"Quality peel & stick vinyl can last 5–10 years with proper installation and care. Premium options last even longer."}},{"@type":"Question","name":"Is peel & stick good for rentals?","acceptedAnswer":{"@type":"Answer","text":"Yes. It's easy to remove without damaging the subfloor, making it ideal for renters who want to upgrade their space."}},{"@type":"Question","name":"Does the subfloor need to be perfectly smooth?","acceptedAnswer":{"@type":"Answer","text":"Yes — peel & stick works best on clean, smooth, flat surfaces. We prep the subfloor to ensure strong adhesion."}}]}</script>
 
-    <section class="svc-hero">
+    <main id="main-content">
+    <section class="svc-hero" aria-label="Service overview">
         <div class="svc-hero__bg"><img src="/assets/services/service-flooring.webp"
                 alt="Peel and stick flooring installation in NYC" class="svc-hero__img" loading="eager" fetchpriority="high">
             <div class="svc-hero__overlay"></div>
@@ -131,7 +137,7 @@
         </div>
     </section>
 
-    <section class="svc-faq" id="faq">
+    <section class="svc-faq" id="faq" aria-label="Frequently asked questions">
         <div class="container"><span class="section-tag">Common Questions</span>
             <h2 class="section-title">Peel &amp; Stick FAQ</h2>
             <div class="svc-faq__accordion">
@@ -223,7 +229,7 @@
 
 
     <!-- ========== RELATED SERVICES ========== -->
-    <section class="svc-related">
+    <section class="svc-related" aria-label="Related services">
         <div class="container">
             <h2 class="section-title">Related Flooring Installation Services</h2>
             <p class="section-subtitle">Explore more services from our <a href="/services/flooring-installation/">Flooring Installation</a> category</p>
@@ -255,6 +261,7 @@
             </div>
         </div>
     </section>
+    </main>
     <div id="site-footer"></div>
     <script src="/components/loader.js"></script>
     <script src="/main.js"></script>

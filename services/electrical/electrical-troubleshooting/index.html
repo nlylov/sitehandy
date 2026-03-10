@@ -31,14 +31,19 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
         <link rel="preload" as="image" type="image/webp" href="/assets/services/service-electrical.webp">
     <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div id="site-header"></div>
     <noscript>
         <div style="background:#0a0f1c;padding:16px 24px;text-align:center;border-bottom:1px solid #1e293b"><a href="/"
@@ -77,7 +82,8 @@
     <script
         type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does electrical troubleshooting cost?","acceptedAnswer":{"@type":"Answer","text":"We charge a flat diagnostic fee to identify the problem. Repairs are quoted separately after diagnosis so there are no surprises."}},{"@type":"Question","name":"Why do my breakers keep tripping?","acceptedAnswer":{"@type":"Answer","text":"Common causes include overloaded circuits, short circuits, ground faults, or a failing breaker. We test all possibilities and fix the root cause."}},{"@type":"Question","name":"Why are my lights flickering?","acceptedAnswer":{"@type":"Answer","text":"Flickering can indicate loose wiring, a failing switch, voltage fluctuation, or an overloaded circuit. We diagnose through systematic testing."}},{"@type":"Question","name":"Is a buzzing outlet dangerous?","acceptedAnswer":{"@type":"Answer","text":"Buzzing can indicate arcing or a loose connection — both fire hazards. We recommend same-day inspection. Call us right away."}}]}</script>
 
-    <section class="svc-hero">
+    <main id="main-content">
+    <section class="svc-hero" aria-label="Service overview">
         <div class="svc-hero__bg"><img src="/assets/services/service-electrical.webp"
                 alt="Electrical troubleshooting in NYC" class="svc-hero__img" loading="eager" fetchpriority="high">
             <div class="svc-hero__overlay"></div>
@@ -130,7 +136,7 @@
         </div>
     </section>
 
-    <section class="svc-faq" id="faq">
+    <section class="svc-faq" id="faq" aria-label="Frequently asked questions">
         <div class="container"><span class="section-tag">Common Questions</span>
             <h2 class="section-title">Troubleshooting FAQ</h2>
             <div class="svc-faq__accordion">
@@ -224,7 +230,7 @@
 
 
     <!-- ========== RELATED SERVICES ========== -->
-    <section class="svc-related">
+    <section class="svc-related" aria-label="Related services">
         <div class="container">
             <h2 class="section-title">Related Electrical Services</h2>
             <p class="section-subtitle">Explore more services from our <a href="/services/electrical/">Electrical</a> category</p>
@@ -260,6 +266,7 @@
             </div>
         </div>
     </section>
+    </main>
     <div id="site-footer"></div>
     <script src="/components/loader.js"></script>
     <script src="/main.js"></script>

@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div id="site-header"></div>
     <noscript><div style="background:#0a0f1c;padding:16px 24px;text-align:center;border-bottom:1px solid #1e293b"><a href="/" style="color:#c19a4a;font-weight:700;font-size:18px;text-decoration:none">Repair Asap LLC</a><span style="color:#94a3b8;margin:0 12px">|</span><a href="tel:+17753107770" style="color:#e2e8f0;text-decoration:none">+1 (775) 310-7770</a></div></noscript>
 
@@ -49,7 +50,8 @@
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "serviceType": "Blind Installation", "name": "Blind Installation in NYC", "description": "Need blinds installed in New York City? Repair Asap LLC installs window blinds of all types across Manhattan, Brooklyn, Queens, and Staten Island \u2014 Venetian, roller, cellular, Roman, and blackout blinds.", "provider": {"@type": "LocalBusiness", "name": "Repair Asap LLC", "telephone": "+1-775-310-7770", "url": "https://asap.repair", "address": {"@type": "PostalAddress", "streetAddress": "99-60 64th Ave", "addressLocality": "Rego Park", "addressRegion": "NY", "postalCode": "11374", "addressCountry": "US"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5", "reviewCount": "63"}}, "areaServed": {"@type": "City", "name": "New York City"}}</script>
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much does blind installation cost in NYC?", "acceptedAnswer": {"@type": "Answer", "text": "Single blind installation runs $30\u2013$60 per window. Multi-window jobs get volume pricing."}}, {"@type": "Question", "name": "Do you install motorized blinds?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We install motorized and smart blinds, including battery-powered and hardwired options."}}, {"@type": "Question", "name": "Inside mount or outside mount?", "acceptedAnswer": {"@type": "Answer", "text": "We do both. We recommend based on your window type for the best look."}}, {"@type": "Question", "name": "Can you install blinds in a whole apartment?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely. We handle full-apartment installations efficiently in a single visit."}}]}</script>
 
-    <section class="svc-hero">
+    <main id="main-content">
+    <section class="svc-hero" aria-label="Service overview">
         <div class="svc-hero__bg"><img src="/assets/services/service-general.png" alt="Blind Installation in NYC" class="svc-hero__img" loading="eager" fetchpriority="high"><div class="svc-hero__overlay"></div></div>
         <div class="container svc-hero__inner">
             <div class="svc-hero__badge">Blind Installation</div>
@@ -79,7 +81,7 @@
 
     <section class="spoke-module"><div class="container"><div data-module="comparison" data-config='{"title": "Why Hire a Pro?", "columns": ["Repair Asap", "TaskRabbit", "DIY"], "highlight": 0, "rows": [{"feature": "Licensed & Insured", "values": ["yes", "varies", "no"]}, {"feature": "Flat-Rate Pricing", "values": ["yes", "no", "n/a"]}, {"feature": "1-Year Warranty", "values": ["yes", "no", "no"]}, {"feature": "Same-Day Available", "values": ["yes", "varies", "n/a"]}, {"feature": "Background Checked", "values": ["yes", "varies", "no"]}, {"feature": "Cleanup Included", "values": ["yes", "varies", "no"]}, {"feature": "Average 5-Star Rating", "values": ["4.9\u2605 avg", "varies", "n/a"]}]}'></div></div></section>
 
-<section class="svc-faq" id="faq"><div class="container">
+<section class="svc-faq" id="faq" aria-label="Frequently asked questions"><div class="container">
         <span class="section-tag">Common Questions</span>
         <h2 class="section-title">Blind Installation FAQ</h2>
         <div class="svc-faq__accordion">
@@ -150,7 +152,7 @@
 
 
     <!-- ========== RELATED SERVICES ========== -->
-    <section class="svc-related">
+    <section class="svc-related" aria-label="Related services">
         <div class="container">
             <h2 class="section-title">Related General Repairs Services</h2>
             <p class="section-subtitle">Explore more services from our <a href="/services/general-repairs/">General Repairs</a> category</p>
@@ -186,6 +188,7 @@
             </div>
         </div>
     </section>
+    </main>
     <div id="site-footer"></div>
     <script src="/components/loader.js" type="module"></script>
     <script src="/main.js" defer></script>

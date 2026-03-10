@@ -31,14 +31,19 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
         <link rel="preload" as="image" type="image/webp" href="/assets/services/service-ac.webp">
     <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div id="site-header"></div>
     <noscript>
         <div style="background:#0a0f1c;padding:16px 24px;text-align:center;border-bottom:1px solid #1e293b"><a href="/"
@@ -77,7 +82,8 @@
     <script
         type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does PTAC installation cost in NYC?","acceptedAnswer":{"@type":"Answer","text":"Pricing depends on unit size, sleeve condition, and electrical requirements. Standard PTAC swaps start at a competitive flat rate. We inspect the sleeve and wiring before quoting."}},{"@type":"Question","name":"Do you inspect the wall sleeve?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every PTAC install begins with a sleeve inspection for rust, gaps, insulation condition, and drainage slope."}},{"@type":"Question","name":"Can you replace a PTAC with a different brand?","acceptedAnswer":{"@type":"Answer","text":"Usually yes. PTAC units follow standard sleeve sizes. We verify compatibility and install adapter kits if needed."}},{"@type":"Question","name":"Do you handle the electrical hookup?","acceptedAnswer":{"@type":"Answer","text":"Yes. We connect to the existing dedicated circuit, verify amperage and voltage, and test all modes before leaving."}}]}</script>
 
-    <section class="svc-hero">
+    <main id="main-content">
+    <section class="svc-hero" aria-label="Service overview">
         <div class="svc-hero__bg"><img src="/assets/services/service-ac.webp" alt="PTAC installation in NYC"
                 class="svc-hero__img" loading="eager" fetchpriority="high">
             <div class="svc-hero__overlay"></div>
@@ -132,7 +138,7 @@
         </div>
     </section>
 
-<section class="svc-faq" id="faq">
+<section class="svc-faq" id="faq" aria-label="Frequently asked questions">
         <div class="container"><span class="section-tag">Common Questions</span>
             <h2 class="section-title">PTAC FAQ</h2>
             <div class="svc-faq__accordion">
@@ -275,7 +281,7 @@
 
 
     <!-- ========== RELATED SERVICES ========== -->
-    <section class="svc-related">
+    <section class="svc-related" aria-label="Related services">
         <div class="container">
             <h2 class="section-title">Related AC Installation & Cleaning Services</h2>
             <p class="section-subtitle">Explore more services from our <a href="/services/ac-installation-cleaning/">AC Installation & Cleaning</a> category</p>
@@ -307,6 +313,7 @@
             </div>
         </div>
     </section>
+    </main>
     <div id="site-footer"></div>
     <script src="/components/loader.js"></script>
     <script src="/main.js"></script>

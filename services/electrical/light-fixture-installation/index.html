@@ -31,14 +31,19 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
         <link rel="preload" as="image" type="image/webp" href="/assets/services/service-electrical.webp">
     <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div id="site-header"></div>
     <noscript>
         <div style="background:#0a0f1c;padding:16px 24px;text-align:center;border-bottom:1px solid #1e293b"><a href="/"
@@ -77,7 +82,8 @@
     <script
         type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does light fixture installation cost?","acceptedAnswer":{"@type":"Answer","text":"Flat-rate pricing per fixture. Simple swap-outs are most affordable. Heavy chandeliers, recessed can retrofits, and new junction box installs are priced based on complexity."}},{"@type":"Question","name":"Can you install a fixture where there isn't one?","acceptedAnswer":{"@type":"Answer","text":"Yes. We can run new wiring, install a junction box, and mount your fixture. We keep ceiling and wall damage to a minimum."}},{"@type":"Question","name":"Do you install heavy chandeliers?","acceptedAnswer":{"@type":"Answer","text":"Yes. We install a fan-rated brace box in the ceiling if needed and verify it can support the fixture weight before hanging it."}},{"@type":"Question","name":"Can you add recessed lighting?","acceptedAnswer":{"@type":"Answer","text":"Yes. We install new-construction and retrofit recessed cans, including LED wafer-style fixtures that require no housing."}}]}</script>
 
-    <section class="svc-hero">
+    <main id="main-content">
+    <section class="svc-hero" aria-label="Service overview">
         <div class="svc-hero__bg"><img src="/assets/services/service-electrical.webp"
                 alt="Light fixture installation in NYC" class="svc-hero__img" loading="eager" fetchpriority="high">
             <div class="svc-hero__overlay"></div>
@@ -130,7 +136,7 @@
         </div>
     </section>
 
-<section class="svc-faq" id="faq">
+<section class="svc-faq" id="faq" aria-label="Frequently asked questions">
         <div class="container"><span class="section-tag">Common Questions</span>
             <h2 class="section-title">Light Fixture FAQ</h2>
             <div class="svc-faq__accordion">
@@ -560,7 +566,7 @@
 
 
     <!-- ========== RELATED SERVICES ========== -->
-    <section class="svc-related">
+    <section class="svc-related" aria-label="Related services">
         <div class="container">
             <h2 class="section-title">Related Electrical Services</h2>
             <p class="section-subtitle">Explore more services from our <a href="/services/electrical/">Electrical</a> category</p>
@@ -596,6 +602,7 @@
             </div>
         </div>
     </section>
+    </main>
     <div id="site-footer"></div>
     <script src="/components/loader.js"></script>
     <script src="/main.js"></script>

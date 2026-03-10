@@ -31,14 +31,19 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
         <link rel="preload" as="image" type="image/webp" href="/assets/services/service-painting.webp">
     <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div id="site-header"></div>
     <noscript>
         <div style="background:#0a0f1c;padding:16px 24px;text-align:center;border-bottom:1px solid #1e293b"><a href="/"
@@ -74,7 +79,8 @@
         type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"Trim & Baseboard Painting","name":"Trim & Baseboard Painting in NYC","description":"Professional trim and baseboard painting in NYC.","provider":{"@type":"LocalBusiness","name":"Repair Asap LLC","telephone":"+1-775-310-7770","url":"https://asap.repair","address":{"@type":"PostalAddress","streetAddress":"99-60 64th Ave","addressLocality":"Rego Park","addressRegion":"NY","postalCode":"11374","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"67"}},"areaServed":{"@type":"City","name":"New York City"}}</script>
     <script
         type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What trim do you paint?","acceptedAnswer":{"@type":"Answer","text":"Baseboards, door frames, window casings, crown molding, chair rail, and wainscoting."}},{"@type":"Question","name":"Do you prep before painting?","acceptedAnswer":{"@type":"Answer","text":"Yes. We fill nail holes, caulk gaps, sand, and prime before applying 2 coats of semi-gloss or satin paint."}},{"@type":"Question","name":"What finish do you use?","acceptedAnswer":{"@type":"Answer","text":"Semi-gloss is standard for trim (durable, easy to clean). We also offer satin and high-gloss on request."}},{"@type":"Question","name":"How much does trim painting cost?","acceptedAnswer":{"@type":"Answer","text":"Per-linear-foot or per-room pricing. Bundled with wall painting for best value."}}]}</script>
-    <section class="svc-hero">
+    <main id="main-content">
+    <section class="svc-hero" aria-label="Service overview">
         <div class="svc-hero__bg"><img src="/assets/services/service-painting.webp"
                 alt="Trim and baseboard painting in NYC" class="svc-hero__img" loading="eager" fetchpriority="high">
             <div class="svc-hero__overlay"></div>
@@ -125,7 +131,7 @@
             </div>
         </div>
     </section>
-    <section class="svc-faq" id="faq">
+    <section class="svc-faq" id="faq" aria-label="Frequently asked questions">
         <div class="container"><span class="section-tag">Common Questions</span>
             <h2 class="section-title">Trim Painting FAQ</h2>
             <div class="svc-faq__accordion">
@@ -213,7 +219,7 @@
     </section>
 
     <!-- ========== RELATED SERVICES ========== -->
-    <section class="svc-related">
+    <section class="svc-related" aria-label="Related services">
         <div class="container">
             <h2 class="section-title">Related Painting & Wall Finishes Services</h2>
             <p class="section-subtitle">Explore more services from our <a href="/services/painting/">Painting & Wall Finishes</a> category</p>
@@ -241,6 +247,7 @@
             </div>
         </div>
     </section>
+    </main>
     <div id="site-footer"></div>
     <script src="/components/loader.js"></script>
     <script src="/main.js"></script>

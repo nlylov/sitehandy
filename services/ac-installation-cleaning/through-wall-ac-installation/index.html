@@ -34,14 +34,19 @@
     <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicons/favicon-64x64.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
         <link rel="preload" as="image" type="image/webp" href="/assets/services/service-ac.webp">
     <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div id="site-header"></div>
     <noscript>
         <div style="background:#0a0f1c;padding:16px 24px;text-align:center;border-bottom:1px solid #1e293b"><a href="/"
@@ -81,7 +86,8 @@
     <script
         type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does through-wall AC installation cost in NYC?","acceptedAnswer":{"@type":"Answer","text":"Pricing depends on the unit size (BTU), sleeve condition, and whether electrical work is needed. Use our contact form for a quick flat-rate quote."}},{"@type":"Question","name":"What is a through-wall AC unit?","acceptedAnswer":{"@type":"Answer","text":"A through-wall AC sits in a metal sleeve built into the wall. Unlike window units, they don't block the window and provide a cleaner look. They're common in NYC co-ops and condos."}},{"@type":"Question","name":"Can you install a through-wall AC in an existing sleeve?","acceptedAnswer":{"@type":"Answer","text":"Yes. We install new units into existing wall sleeves, ensure proper fit and seal, and test the unit for cooling performance."}},{"@type":"Question","name":"Do you handle the electrical for through-wall AC?","acceptedAnswer":{"@type":"Answer","text":"We can install dedicated outlets for AC units requiring 220V/240V power. For buildings requiring permits, we coordinate with your building management."}}]}</script>
 
-    <section class="svc-hero">
+    <main id="main-content">
+    <section class="svc-hero" aria-label="Service overview">
         <div class="svc-hero__bg"><img src="/assets/services/service-ac.webp"
                 alt="Professional through-wall AC installation in NYC" class="svc-hero__img" loading="eager" fetchpriority="high">
             <div class="svc-hero__overlay"></div>
@@ -161,7 +167,7 @@
         </div>
     </section>
 
-<section class="svc-faq" id="faq">
+<section class="svc-faq" id="faq" aria-label="Frequently asked questions">
         <div class="container">
             <span class="section-tag">Common Questions</span>
             <h2 class="section-title">Through-Wall AC FAQ</h2>
@@ -1338,7 +1344,7 @@
 
 
     <!-- ========== RELATED SERVICES ========== -->
-    <section class="svc-related">
+    <section class="svc-related" aria-label="Related services">
         <div class="container">
             <h2 class="section-title">Related AC Installation & Cleaning Services</h2>
             <p class="section-subtitle">Explore more services from our <a href="/services/ac-installation-cleaning/">AC Installation & Cleaning</a> category</p>
@@ -1370,6 +1376,7 @@
             </div>
         </div>
     </section>
+    </main>
     <div id="site-footer"></div>
     <script src="/components/loader.js" type="module"></script>
     <script src="/main.js" defer></script>
