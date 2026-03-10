@@ -566,19 +566,41 @@
                 }
             });
         }
-        // === AUTO-SCROLL to #leave-review when linked from SMS ===
+        // === SMS MODE: Move review form to TOP when #leave-review ===
         if (window.location.hash === '#leave-review') {
-            // Wait for DOM + header to load, then scroll
-            setTimeout(() => {
-                const el = document.getElementById('leave-review');
-                if (el) {
-                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    // Highlight animation
-                    el.style.transition = 'box-shadow 0.4s ease';
-                    el.style.boxShadow = '0 0 0 3px rgba(201, 168, 76, 0.6)';
-                    setTimeout(() => { el.style.boxShadow = ''; }, 3000);
-                }
-            }, 800);
+            const collector = document.getElementById('leave-review');
+            const reviewsSection = document.querySelector('.reviews-page .container');
+            const filters = document.querySelector('.reviews-filters');
+            const filterNote = filters ? filters.nextElementSibling : null;
+            const grid = document.getElementById('reviews-grid');
+
+            if (collector && reviewsSection) {
+                // Move collector to the very top of the reviews section
+                reviewsSection.insertBefore(collector, reviewsSection.firstChild);
+
+                // Hide filters and reviews grid — client came to leave a review, not read them
+                if (filters) filters.style.display = 'none';
+                if (filterNote && filterNote.tagName === 'P') filterNote.style.display = 'none';
+                if (grid) grid.style.display = 'none';
+
+                // Add a "Browse Reviews" button so they can still see reviews if they want
+                const browseBtn = document.createElement('button');
+                browseBtn.textContent = '↓ See All Reviews';
+                browseBtn.className = 'btn btn--outline';
+                browseBtn.style.cssText = 'display:block;margin:24px auto 0;';
+                browseBtn.addEventListener('click', () => {
+                    if (filters) filters.style.display = '';
+                    if (filterNote && filterNote.tagName === 'P') filterNote.style.display = '';
+                    if (grid) grid.style.display = '';
+                    browseBtn.remove();
+                });
+                collector.after(browseBtn);
+
+                // Highlight the form
+                collector.style.transition = 'box-shadow 0.5s ease';
+                collector.style.boxShadow = '0 0 0 3px rgba(201, 168, 76, 0.5)';
+                setTimeout(() => { collector.style.boxShadow = ''; }, 3000);
+            }
         }
     </script>
 </body>
