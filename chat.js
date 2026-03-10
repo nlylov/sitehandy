@@ -3,7 +3,7 @@
 
   // --- КОНФИГУРАЦИЯ ---
   const config = {
-    apiEndpoint: 'https://repair-asap-proxy.vercel.app',
+    apiEndpoint: 'https://repair-asap-proxy-production.up.railway.app',
     fontFamily: "'Outfit', 'Inter', sans-serif",
     storageKey: 'repair_asap_thread_id'
   };
