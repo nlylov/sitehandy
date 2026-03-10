@@ -1580,6 +1580,7 @@ export default function calculator(container) {
                         </div>
                         <button type="button" class="btn btn--accent btn--lg mod-calc__cta">${cfg.cta.text}</button>
                         <p class="mod-calc__disclaimer">${cfg.disclaimer}</p>
+                        <p class="mod-calc__disclaimer" style="margin-top:6px;font-weight:500">⚠️ Minimum service call: $150 per visit</p>
                     </div>
                 </div>
             </div>

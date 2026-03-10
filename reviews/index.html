@@ -58,8 +58,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
+    </noscript>
 
     <link rel="stylesheet" href="/styles.css">
 </head>
@@ -563,6 +565,20 @@
                     btn.disabled = false;
                 }
             });
+        }
+        // === AUTO-SCROLL to #leave-review when linked from SMS ===
+        if (window.location.hash === '#leave-review') {
+            // Wait for DOM + header to load, then scroll
+            setTimeout(() => {
+                const el = document.getElementById('leave-review');
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // Highlight animation
+                    el.style.transition = 'box-shadow 0.4s ease';
+                    el.style.boxShadow = '0 0 0 3px rgba(201, 168, 76, 0.6)';
+                    setTimeout(() => { el.style.boxShadow = ''; }, 3000);
+                }
+            }, 800);
         }
     </script>
 </body>
