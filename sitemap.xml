@@ -526,4 +526,10 @@
         <priority>0.3</priority>
     </url>
 
+  <url>
+    <loc>https://asap.repair/about/</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
