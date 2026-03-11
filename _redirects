@@ -32,6 +32,18 @@ https://asap-repair.netlify.app/*  https://asap.repair/:splat  301!
 /assets/photos/minor-plumbing-repairs/  /services/plumbing/              301
 /assets/photos/*                      /                                  301
 
+# ---- GBP PRODUCTS (Google Business Profile links without /services/ prefix) ----
+/drywall-repair-finishing             /services/general-repairs/drywall-repair/  301
+/drywall-repair-finishing/            /services/general-repairs/drywall-repair/  301
+/interior-painting                    /services/painting/                301
+/interior-painting/                   /services/painting/                301
+/mounting-hanging                     /services/tv-wall-mounting/        301
+/mounting-hanging/                    /services/tv-wall-mounting/        301
+/shower-tub-touch-ups                 /services/plumbing/                301
+/shower-tub-touch-ups/                /services/plumbing/                301
+/minor-tiling-backsplash              /services/general-repairs/         301
+/minor-tiling-backsplash/             /services/general-repairs/         301
+
 # ---- ALTERNATIVE SLUG GUESSES (common variations that 404) ----
 /services/home-installation-repairs/*   /services/general-repairs/:splat    301
 /services/electrical-services/*         /services/electrical/:splat         301
