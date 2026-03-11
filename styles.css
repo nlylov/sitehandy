@@ -5187,7 +5187,7 @@ button.portfolio-card__video {
   padding: 48px 24px;
   text-align: center;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 32px auto 48px;
 }
 
 .reviews-collector__title {
