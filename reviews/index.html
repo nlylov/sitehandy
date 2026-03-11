@@ -184,11 +184,7 @@
             <p style="text-align:center;color:#64748b;font-size:13px;margin:-8px 0 16px">TaskRabbit reviews are from our
                 previous profile</p>
 
-            <div class="reviews-grid" id="reviews-grid">
-                <!-- Javascript will render reviews here -->
-            </div>
-
-            <!-- Review Collection Block -->
+            <!-- Review Collection Block (moved to top for visibility) -->
             <div class="reviews-collector" id="leave-review">
                 <div class="reviews-collector__inner">
                     <h2 class="reviews-collector__title">How was your experience?</h2>
@@ -234,11 +230,11 @@
                         </button>
                     </div>
 
-                    <!-- Flow 1: 4 or 5 Stars (Redirect to Public Platforms) -->
+                    <!-- Flow 1: 4 or 5 Stars (Redirect to Google) -->
                     <div class="rc-flow rc-flow--high" id="rc-flow-high" hidden>
                         <h3 class="rc-flow__title">Awesome! We're so glad you're happy.</h3>
-                        <p class="rc-flow__text">Would you mind taking 30 seconds to copy your review and post it on
-                            Google or Yelp? It helps our local business tremendously!</p>
+                        <p class="rc-flow__text">Would you mind taking 30 seconds to leave a review on Google? It helps
+                            our local business tremendously!</p>
                         <div class="rc-links">
                             <a href="https://g.page/r/CSK3M3n6T8_qEBM/review" target="_blank" rel="noopener"
                                 class="btn btn--accent btn--block">
@@ -252,15 +248,7 @@
                                     <path fill="#EA4335"
                                         d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
                                 </svg>
-                                Review on Google
-                            </a>
-                            <a href="https://www.yelp.com/writeareview/biz/repair-asap-brooklyn" target="_blank"
-                                rel="noopener" class="btn btn--secondary btn--block">
-                                <svg width="20" height="20" viewBox="0 0 100 100" class="icon-inline">
-                                    <path fill="currentColor"
-                                        d="M50 0C22.4 0 0 22.4 0 50s22.4 50 50 50 50-22.4 50-50S77.6 0 50 0zm-8.5 70.2l-14-7.3 16.6-22.8 1.1 25.8c.1 2-1.7 5-3.7 4.3zm26.3-3.1c.2 2.2-2.7 3.8-4.5 2.5L49.2 59.3l18.5-10 .1 17.8zM71 47.3l-19.3 9.2-.7-27.5c-.1-2.3 2.4-3.9 4.3-2.7L71 44.5c1.6 1 1.7 3 0 2.8zm-39.1 2.1c-2 .9-4.2-.7-3.9-2.9l3.3-21.9c.3-2.2 3.2-3 4.5-1.2l10.3 14.9-14.2 11.1z" />
-                                </svg>
-                                Review on Yelp
+                                Leave a Review on Google
                             </a>
                         </div>
                     </div>
@@ -290,6 +278,10 @@
                     </div>
 
                 </div>
+            </div>
+
+            <div class="reviews-grid" id="reviews-grid">
+                <!-- Javascript will render reviews here -->
             </div>
         </div>
     </section>
