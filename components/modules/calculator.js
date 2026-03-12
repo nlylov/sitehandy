@@ -80,14 +80,14 @@ const CONFIGS = {
             }
         ],
         pricing: {
-            kallax: { sm: [80, 120], md: [120, 180], lg: [180, 260] },
-            pax: { sm: [150, 220], md: [250, 380], lg: [380, 550] },
-            malm: { sm: [80, 120], md: [100, 160], lg: [150, 230] },
-            hemnes: { sm: [90, 140], md: [140, 200], lg: [220, 340] },
-            besta: { sm: [120, 180], md: [200, 320], lg: [320, 480] },
-            billy: { sm: [60, 100], md: [140, 200], lg: [220, 320] },
-            nordli: { sm: [80, 130], md: [120, 180], lg: [180, 280] },
-            other: { sm: [60, 120], md: [120, 200], lg: [200, 350] }
+            kallax: { sm: [65, 99], md: [99, 150], lg: [150, 220] },
+            pax: { sm: [120, 180], md: [200, 310], lg: [310, 450] },
+            malm: { sm: [65, 99], md: [85, 130], lg: [120, 190] },
+            hemnes: { sm: [75, 115], md: [115, 165], lg: [180, 280] },
+            besta: { sm: [99, 150], md: [165, 260], lg: [260, 400] },
+            billy: { sm: [50, 85], md: [115, 165], lg: [180, 260] },
+            nordli: { sm: [65, 110], md: [99, 150], lg: [150, 230] },
+            other: { sm: [50, 99], md: [99, 165], lg: [165, 290] }
         },
         cta: { text: 'Get Exact Quote', href: '/#contact' },
         disclaimer: 'Estimates based on standard assembly. Final price confirmed after review.'
@@ -161,13 +161,13 @@ const CONFIGS = {
             }
         ],
         pricing: {
-            platform: { sm: [80, 120], md: [100, 150], lg: [120, 180] },
-            storage: { sm: [120, 180], md: [150, 250], lg: [200, 350] },
-            bunk: { sm: [150, 220], md: [200, 300], lg: [280, 420] },
-            loft: { sm: [140, 200], md: [180, 280], lg: [250, 380] },
-            adjustable: { sm: [80, 130], md: [100, 160], lg: [180, 280] },
-            daybed: { sm: [80, 130], md: [120, 180], lg: [160, 250] },
-            other: { sm: [60, 120], md: [100, 180], lg: [160, 300] }
+            platform: { sm: [65, 99], md: [85, 125], lg: [99, 150] },
+            storage: { sm: [99, 150], md: [125, 200], lg: [165, 290] },
+            bunk: { sm: [125, 180], md: [165, 250], lg: [230, 350] },
+            loft: { sm: [115, 165], md: [150, 230], lg: [200, 310] },
+            adjustable: { sm: [65, 110], md: [85, 130], lg: [150, 230] },
+            daybed: { sm: [65, 110], md: [99, 150], lg: [130, 200] },
+            other: { sm: [50, 99], md: [85, 150], lg: [130, 250] }
         },
         cta: { text: 'Get Exact Quote', href: '/#contact' },
         disclaimer: 'Estimates based on standard assembly. Final price confirmed after review.'
@@ -234,12 +234,12 @@ const CONFIGS = {
             }
         ],
         pricing: {
-            freestanding: { sm: [100, 160], md: [160, 240], lg: [240, 380] },
-            armoire: { sm: [120, 180], md: [180, 280], lg: [280, 420] },
-            'closet-system': { sm: [150, 250], md: [280, 420], lg: [420, 650] },
-            'sliding-door': { sm: [160, 240], md: [250, 380], lg: [380, 550] },
-            'walk-in': { sm: [200, 300], md: [300, 480], lg: [480, 750] },
-            other: { sm: [80, 160], md: [160, 280], lg: [280, 450] }
+            freestanding: { sm: [85, 130], md: [130, 200], lg: [200, 310] },
+            armoire: { sm: [99, 150], md: [150, 230], lg: [230, 350] },
+            'closet-system': { sm: [125, 200], md: [230, 350], lg: [350, 530] },
+            'sliding-door': { sm: [130, 200], md: [200, 310], lg: [310, 450] },
+            'walk-in': { sm: [165, 250], md: [250, 390], lg: [390, 620] },
+            other: { sm: [65, 130], md: [130, 230], lg: [230, 370] }
         },
         cta: { text: 'Get Exact Quote', href: '/#contact' },
         disclaimer: 'Estimates based on standard assembly. Final price confirmed after review.'
@@ -306,12 +306,12 @@ const CONFIGS = {
             }
         ],
         pricing: {
-            'floating-vanity': { sm: [120, 180], md: [180, 280], lg: [280, 420] },
-            'wall-cabinet': { sm: [80, 130], md: [160, 260], lg: [280, 420] },
-            'floating-desk': { sm: [100, 160], md: [160, 250], lg: [250, 380] },
-            'wall-unit': { sm: [120, 200], md: [220, 360], lg: [360, 550] },
-            'floating-shelf': { sm: [60, 100], md: [120, 200], lg: [200, 320] },
-            other: { sm: [60, 120], md: [120, 220], lg: [220, 380] }
+            'floating-vanity': { sm: [99, 150], md: [150, 230], lg: [230, 350] },
+            'wall-cabinet': { sm: [65, 110], md: [130, 210], lg: [230, 350] },
+            'floating-desk': { sm: [85, 130], md: [130, 200], lg: [200, 310] },
+            'wall-unit': { sm: [99, 165], md: [180, 295], lg: [295, 450] },
+            'floating-shelf': { sm: [50, 85], md: [99, 165], lg: [165, 260] },
+            other: { sm: [50, 99], md: [99, 180], lg: [180, 310] }
         },
         cta: { text: 'Get Exact Quote', href: '/#contact' },
         disclaimer: 'Estimates based on standard assembly. Final price confirmed after review.'
@@ -364,10 +364,10 @@ const CONFIGS = {
             }
         ],
         pricing: {
-            small: { sm: [120, 180], md: [160, 220], lg: [200, 280] },
-            medium: { sm: [150, 220], md: [200, 280], lg: [250, 340] },
-            large: { sm: [200, 280], md: [250, 350], lg: [300, 420] },
-            xlarge: { sm: [280, 380], md: [340, 450], lg: [400, 550] }
+            small: { sm: [99, 150], md: [130, 180], lg: [165, 230] },
+            medium: { sm: [125, 180], md: [165, 230], lg: [200, 280] },
+            large: { sm: [165, 230], md: [200, 290], lg: [250, 350] },
+            xlarge: { sm: [230, 310], md: [280, 370], lg: [330, 450] }
         },
         cta: { text: 'Get Exact Quote', href: '/#contact' },
         disclaimer: 'Estimates include mount, cable concealment, and labor. Mount hardware not included unless specified.'
@@ -434,12 +434,12 @@ const CONFIGS = {
             }
         ],
         pricing: {
-            floating: { sm: [60, 100], md: [120, 200], lg: [200, 320] },
-            bracket: { sm: [50, 80], md: [100, 160], lg: [160, 260] },
-            ledge: { sm: [50, 80], md: [90, 150], lg: [150, 240] },
-            heavy: { sm: [80, 130], md: [160, 260], lg: [260, 400] },
-            corner: { sm: [60, 100], md: [120, 190], lg: [190, 300] },
-            other: { sm: [50, 100], md: [100, 180], lg: [180, 300] }
+            floating: { sm: [50, 85], md: [99, 165], lg: [165, 260] },
+            bracket: { sm: [40, 65], md: [85, 130], lg: [130, 210] },
+            ledge: { sm: [40, 65], md: [75, 125], lg: [125, 200] },
+            heavy: { sm: [65, 110], md: [130, 210], lg: [210, 330] },
+            corner: { sm: [50, 85], md: [99, 155], lg: [155, 250] },
+            other: { sm: [40, 85], md: [85, 150], lg: [150, 250] }
         },
         cta: { text: 'Get Exact Quote', href: '/#contact' },
         disclaimer: 'Estimates based on standard installation. Final price confirmed after reviewing your wall and shelves.'
@@ -506,12 +506,12 @@ const CONFIGS = {
             }
         ],
         pricing: {
-            single: { sm: [50, 80], md: [120, 200], lg: [200, 320] },
-            double: { sm: [70, 110], md: [160, 260], lg: [260, 400] },
-            ceiling: { sm: [80, 130], md: [180, 300], lg: [300, 460] },
-            bay: { sm: [100, 160], md: [160, 250], lg: [280, 420] },
-            tension: { sm: [30, 50], md: [70, 120], lg: [120, 200] },
-            other: { sm: [50, 100], md: [120, 220], lg: [220, 360] }
+            single: { sm: [40, 65], md: [99, 165], lg: [165, 260] },
+            double: { sm: [55, 90], md: [130, 210], lg: [210, 330] },
+            ceiling: { sm: [65, 110], md: [150, 250], lg: [250, 380] },
+            bay: { sm: [85, 130], md: [130, 200], lg: [230, 350] },
+            tension: { sm: [25, 40], md: [55, 99], lg: [99, 165] },
+            other: { sm: [40, 85], md: [99, 180], lg: [180, 295] }
         },
         cta: { text: 'Get Exact Quote', href: '/#contact' },
         disclaimer: 'Estimates based on standard installation. Final price confirmed after reviewing your windows and rods.'
@@ -578,12 +578,12 @@ const CONFIGS = {
             }
         ],
         pricing: {
-            vanity: { sm: [60, 90], md: [90, 140], lg: [140, 220] },
-            'full-length': { sm: [60, 100], md: [100, 160], lg: [160, 250] },
-            decorative: { sm: [50, 80], md: [80, 130], lg: [130, 200] },
-            oversized: { sm: [120, 180], md: [180, 280], lg: [250, 380] },
-            frameless: { sm: [70, 110], md: [110, 170], lg: [170, 260] },
-            other: { sm: [50, 100], md: [100, 180], lg: [180, 300] }
+            vanity: { sm: [50, 75], md: [75, 115], lg: [115, 180] },
+            'full-length': { sm: [50, 85], md: [85, 130], lg: [130, 200] },
+            decorative: { sm: [40, 65], md: [65, 110], lg: [110, 165] },
+            oversized: { sm: [99, 150], md: [150, 230], lg: [200, 310] },
+            frameless: { sm: [55, 90], md: [90, 140], lg: [140, 215] },
+            other: { sm: [40, 85], md: [85, 150], lg: [150, 250] }
         },
         cta: { text: 'Get Exact Quote', href: '/#contact' },
         disclaimer: 'Estimates based on standard installation. Final price confirmed after reviewing your mirror and wall.'
@@ -636,10 +636,10 @@ const CONFIGS = {
             }
         ],
         pricing: {
-            ceiling: { sm: [150, 220], md: [200, 300], lg: [280, 400] },
-            wall: { sm: [120, 180], md: [160, 250], lg: [220, 340] },
-            shelf: { sm: [60, 100], md: [100, 160], lg: [140, 220] },
-            other: { sm: [100, 180], md: [180, 280], lg: [280, 420] }
+            ceiling: { sm: [125, 180], md: [165, 250], lg: [230, 330] },
+            wall: { sm: [99, 150], md: [130, 200], lg: [180, 280] },
+            shelf: { sm: [50, 85], md: [85, 130], lg: [115, 180] },
+            other: { sm: [85, 150], md: [150, 230], lg: [230, 350] }
         },
         cta: { text: 'Get Exact Quote', href: '/#contact' },
         disclaimer: 'Estimates include mount and cable routing. Projector and cables not included.'
@@ -699,11 +699,11 @@ const CONFIGS = {
             }
         ],
         pricing: {
-            fixed: { sm: [120, 180], md: [180, 280], lg: [280, 400] },
-            pulldown: { sm: [80, 130], md: [130, 200], lg: [200, 300] },
-            motorized: { sm: [150, 230], md: [230, 350], lg: [350, 500] },
-            'tab-tension': { sm: [160, 250], md: [250, 380], lg: [380, 550] },
-            other: { sm: [80, 150], md: [150, 250], lg: [250, 400] }
+            fixed: { sm: [99, 150], md: [150, 230], lg: [230, 330] },
+            pulldown: { sm: [65, 110], md: [110, 165], lg: [165, 250] },
+            motorized: { sm: [125, 190], md: [190, 290], lg: [290, 410] },
+            'tab-tension': { sm: [130, 200], md: [200, 310], lg: [310, 450] },
+            other: { sm: [65, 125], md: [125, 200], lg: [200, 330] }
         },
         cta: { text: 'Get Exact Quote', href: '/#contact' },
         disclaimer: 'Estimates include mounting and alignment. Screen hardware not included unless specified.'
@@ -770,12 +770,12 @@ const CONFIGS = {
             }
         ],
         pricing: {
-            simple: { sm: [60, 100], md: [100, 160], lg: [160, 240] },
-            lshaped: { sm: [100, 160], md: [160, 240], lg: [240, 360] },
-            standing: { sm: [80, 130], md: [130, 200], lg: [200, 300] },
-            executive: { sm: [120, 180], md: [200, 300], lg: [300, 450] },
-            gaming: { sm: [70, 120], md: [120, 200], lg: [200, 320] },
-            other: { sm: [60, 120], md: [120, 200], lg: [200, 340] }
+            simple: { sm: [50, 85], md: [85, 130], lg: [130, 200] },
+            lshaped: { sm: [85, 130], md: [130, 200], lg: [200, 295] },
+            standing: { sm: [65, 110], md: [110, 165], lg: [165, 250] },
+            executive: { sm: [99, 150], md: [165, 250], lg: [250, 370] },
+            gaming: { sm: [55, 99], md: [99, 165], lg: [165, 260] },
+            other: { sm: [50, 99], md: [99, 165], lg: [165, 280] }
         },
         cta: { text: 'Get Exact Quote', href: '/#contact' },
         disclaimer: 'Estimates based on standard assembly. Final price confirmed after reviewing your desk.'
@@ -842,12 +842,12 @@ const CONFIGS = {
             }
         ],
         pricing: {
-            standard: { sm: [60, 100], md: [100, 150], lg: [150, 220] },
-            tall: { sm: [70, 110], md: [110, 170], lg: [170, 250] },
-            wide: { sm: [80, 130], md: [130, 200], lg: [200, 300] },
-            combo: { sm: [80, 130], md: [130, 200], lg: [200, 280] },
-            nightstand: { sm: [40, 70], md: [70, 120], lg: [110, 170] },
-            other: { sm: [50, 100], md: [100, 180], lg: [180, 280] }
+            standard: { sm: [50, 85], md: [85, 125], lg: [125, 180] },
+            tall: { sm: [55, 90], md: [90, 140], lg: [140, 200] },
+            wide: { sm: [65, 110], md: [110, 165], lg: [165, 250] },
+            combo: { sm: [65, 110], md: [110, 165], lg: [165, 230] },
+            nightstand: { sm: [35, 55], md: [55, 99], lg: [90, 140] },
+            other: { sm: [40, 85], md: [85, 150], lg: [150, 230] }
         },
         cta: { text: 'Get Exact Quote', href: '/#contact' },
         disclaimer: 'Estimates based on standard assembly. Wall anchoring included where required.'
@@ -914,12 +914,12 @@ const CONFIGS = {
             }
         ],
         pricing: {
-            vertical: { sm: [350, 500], md: [500, 750], lg: [750, 1100] },
-            horizontal: { sm: [350, 500], md: [500, 700], lg: [700, 1000] },
-            cabinet: { sm: [400, 600], md: [600, 900], lg: [900, 1400] },
-            bookcase: { sm: [400, 600], md: [600, 900], lg: [900, 1300] },
-            'desk-combo': { sm: [450, 650], md: [650, 1000], lg: [1000, 1500] },
-            other: { sm: [350, 550], md: [550, 850], lg: [850, 1300] }
+            vertical: { sm: [280, 410], md: [410, 615], lg: [615, 900] },
+            horizontal: { sm: [280, 410], md: [410, 575], lg: [575, 820] },
+            cabinet: { sm: [330, 490], md: [490, 740], lg: [740, 1150] },
+            bookcase: { sm: [330, 490], md: [490, 740], lg: [740, 1070] },
+            'desk-combo': { sm: [370, 530], md: [530, 820], lg: [820, 1230] },
+            other: { sm: [280, 450], md: [450, 700], lg: [700, 1070] }
         },
         cta: { text: 'Get Exact Quote', href: '/#contact' },
         disclaimer: 'Estimates include assembly, wall anchoring, and mechanism testing. Hardware and bed frame included in estimate.'
@@ -986,12 +986,12 @@ const CONFIGS = {
             }
         ],
         pricing: {
-            framed: { sm: [40, 70], md: [80, 140], lg: [150, 260] },
-            canvas: { sm: [40, 70], md: [80, 140], lg: [150, 250] },
-            'gallery-wall': { sm: [120, 200], md: [200, 320], lg: [320, 480] },
-            heavy: { sm: [80, 130], md: [130, 200], lg: [200, 320] },
-            'mirror-decor': { sm: [50, 80], md: [80, 140], lg: [140, 220] },
-            other: { sm: [40, 80], md: [80, 160], lg: [160, 280] }
+            framed: { sm: [35, 55], md: [65, 115], lg: [125, 215] },
+            canvas: { sm: [35, 55], md: [65, 115], lg: [125, 200] },
+            'gallery-wall': { sm: [99, 165], md: [165, 260], lg: [260, 395] },
+            heavy: { sm: [65, 110], md: [110, 165], lg: [165, 260] },
+            'mirror-decor': { sm: [40, 65], md: [65, 115], lg: [115, 180] },
+            other: { sm: [35, 65], md: [65, 130], lg: [130, 230] }
         },
         cta: { text: 'Get Exact Quote', href: '/#contact' },
         disclaimer: 'Estimates include wall assessment, leveling, and hardware. Art pieces not included.'
@@ -1058,12 +1058,12 @@ const CONFIGS = {
             }
         ],
         pricing: {
-            kitchen: { sm: [80, 140], md: [200, 350], lg: [400, 650] },
-            bathroom: { sm: [60, 100], md: [100, 180], lg: [180, 300] },
-            ikea: { sm: [80, 130], md: [160, 260], lg: [280, 420] },
-            laundry: { sm: [80, 140], md: [180, 300], lg: [320, 500] },
-            floating: { sm: [80, 130], md: [160, 260], lg: [280, 420] },
-            other: { sm: [60, 120], md: [140, 240], lg: [260, 420] }
+            kitchen: { sm: [65, 115], md: [165, 290], lg: [330, 530] },
+            bathroom: { sm: [50, 85], md: [85, 150], lg: [150, 250] },
+            ikea: { sm: [65, 110], md: [130, 210], lg: [230, 350] },
+            laundry: { sm: [65, 115], md: [150, 250], lg: [260, 410] },
+            floating: { sm: [65, 110], md: [130, 210], lg: [230, 350] },
+            other: { sm: [50, 99], md: [115, 200], lg: [215, 350] }
         },
         cta: { text: 'Get Exact Quote', href: '/#contact' },
         disclaimer: 'Estimates include stud locating, leveling, and secure mounting. Cabinet hardware not included unless specified.'
@@ -1116,10 +1116,10 @@ const CONFIGS = {
             }
         ],
         pricing: {
-            swap: { sm: [150, 220], md: [200, 280], lg: [250, 350] },
-            new: { sm: [250, 350], md: [350, 500], lg: [500, 750] },
-            builtin: { sm: [180, 260], md: [260, 380], lg: [380, 550] },
-            other: { sm: [150, 250], md: [250, 400], lg: [400, 600] }
+            swap: { sm: [125, 180], md: [165, 230], lg: [200, 290] },
+            new: { sm: [200, 290], md: [290, 410], lg: [410, 620] },
+            builtin: { sm: [150, 215], md: [215, 310], lg: [310, 450] },
+            other: { sm: [125, 200], md: [200, 330], lg: [330, 490] }
         },
         cta: { text: 'Get Exact Quote', href: '/#contact' },
         disclaimer: 'Estimates include hookup, leveling, and leak test. Appliance not included.'
@@ -1179,11 +1179,11 @@ const CONFIGS = {
             }
         ],
         pricing: {
-            electric: { sm: [120, 180], md: [180, 260], lg: [280, 400] },
-            gas: { sm: [150, 220], md: [220, 320], lg: [350, 500] },
-            ventless: { sm: [130, 200], md: [200, 300], lg: [300, 450] },
-            stackable: { sm: [150, 220], md: [220, 320], lg: [320, 450] },
-            other: { sm: [120, 200], md: [200, 320], lg: [320, 500] }
+            electric: { sm: [99, 150], md: [150, 215], lg: [230, 330] },
+            gas: { sm: [125, 180], md: [180, 260], lg: [290, 410] },
+            ventless: { sm: [110, 165], md: [165, 250], lg: [250, 370] },
+            stackable: { sm: [125, 180], md: [180, 260], lg: [260, 370] },
+            other: { sm: [99, 165], md: [165, 260], lg: [260, 410] }
         },
         cta: { text: 'Get Exact Quote', href: '/#contact' },
         disclaimer: 'Estimates include hookup, venting, and testing. Appliance and parts not included.'
@@ -1243,11 +1243,11 @@ const CONFIGS = {
             }
         ],
         pricing: {
-            otr: { sm: [120, 180], md: [180, 280], lg: [280, 420] },
-            builtin: { sm: [130, 200], md: [200, 300], lg: [300, 450] },
-            undermount: { sm: [100, 160], md: [160, 250], lg: [250, 380] },
-            drawer: { sm: [150, 220], md: [220, 340], lg: [340, 500] },
-            other: { sm: [100, 180], md: [180, 300], lg: [300, 450] }
+            otr: { sm: [99, 150], md: [150, 230], lg: [230, 345] },
+            builtin: { sm: [110, 165], md: [165, 250], lg: [250, 370] },
+            undermount: { sm: [85, 130], md: [130, 200], lg: [200, 310] },
+            drawer: { sm: [125, 180], md: [180, 280], lg: [280, 410] },
+            other: { sm: [85, 150], md: [150, 250], lg: [250, 370] }
         },
         cta: { text: 'Get Exact Quote', href: '/#contact' },
         disclaimer: 'Estimates include mounting, venting, and electrical check. Microwave not included.'
@@ -1314,12 +1314,12 @@ const CONFIGS = {
             }
         ],
         pricing: {
-            'gas-freestanding': { sm: [150, 220], md: [220, 320], lg: [350, 500] },
-            'electric-freestanding': { sm: [120, 180], md: [180, 260], lg: [280, 400] },
-            'slide-in': { sm: [150, 220], md: [220, 340], lg: [340, 500] },
-            'wall-oven': { sm: [180, 260], md: [260, 380], lg: [400, 600] },
-            cooktop: { sm: [130, 200], md: [200, 300], lg: [320, 480] },
-            other: { sm: [120, 220], md: [220, 350], lg: [350, 550] }
+            'gas-freestanding': { sm: [125, 180], md: [180, 260], lg: [290, 410] },
+            'electric-freestanding': { sm: [99, 150], md: [150, 215], lg: [230, 330] },
+            'slide-in': { sm: [125, 180], md: [180, 280], lg: [280, 410] },
+            'wall-oven': { sm: [150, 215], md: [215, 310], lg: [330, 490] },
+            cooktop: { sm: [110, 165], md: [165, 250], lg: [260, 395] },
+            other: { sm: [99, 180], md: [180, 290], lg: [290, 450] }
         },
         cta: { text: 'Get Exact Quote', href: '/#contact' },
         disclaimer: 'Estimates include hookup, anti-tip installation, and testing. Appliance not included.'
@@ -1386,12 +1386,12 @@ const CONFIGS = {
             }
         ],
         pricing: {
-            freestanding: { sm: [100, 160], md: [160, 240], lg: [260, 380] },
-            'french-door': { sm: [120, 180], md: [180, 260], lg: [280, 400] },
-            'side-by-side': { sm: [120, 180], md: [180, 260], lg: [260, 380] },
-            'counter-depth': { sm: [150, 220], md: [220, 340], lg: [350, 500] },
-            mini: { sm: [60, 100], md: [100, 160], lg: [160, 260] },
-            other: { sm: [100, 180], md: [180, 300], lg: [300, 450] }
+            freestanding: { sm: [85, 130], md: [130, 200], lg: [215, 310] },
+            'french-door': { sm: [99, 150], md: [150, 215], lg: [230, 330] },
+            'side-by-side': { sm: [99, 150], md: [150, 215], lg: [215, 310] },
+            'counter-depth': { sm: [125, 180], md: [180, 280], lg: [290, 410] },
+            mini: { sm: [50, 85], md: [85, 130], lg: [130, 215] },
+            other: { sm: [85, 150], md: [150, 250], lg: [250, 370] }
         },
         cta: { text: 'Get Exact Quote', href: '/#contact' },
         disclaimer: 'Estimates include leveling, water line, and testing. Appliance not included.'
@@ -1451,11 +1451,11 @@ const CONFIGS = {
             }
         ],
         pricing: {
-            stacked: { sm: [200, 300], md: [300, 420], lg: [450, 650] },
-            sidebyside: { sm: [200, 300], md: [300, 420], lg: [450, 650] },
-            allinone: { sm: [150, 220], md: [220, 320], lg: [350, 500] },
-            'laundry-center': { sm: [180, 260], md: [260, 380], lg: [400, 580] },
-            other: { sm: [180, 280], md: [280, 420], lg: [420, 650] }
+            stacked: { sm: [165, 250], md: [250, 345], lg: [370, 530] },
+            sidebyside: { sm: [165, 250], md: [250, 345], lg: [370, 530] },
+            allinone: { sm: [125, 180], md: [180, 260], lg: [290, 410] },
+            'laundry-center': { sm: [150, 215], md: [215, 310], lg: [330, 475] },
+            other: { sm: [150, 230], md: [230, 345], lg: [345, 530] }
         },
         cta: { text: 'Get Exact Quote', href: '/#contact' },
         disclaimer: 'Estimates include hookup, venting, and testing for both units. Appliances not included.'
@@ -1515,11 +1515,11 @@ const CONFIGS = {
             }
         ],
         pricing: {
-            topload: { sm: [120, 180], md: [180, 260], lg: [280, 400] },
-            frontload: { sm: [130, 200], md: [200, 300], lg: [300, 440] },
-            stackable: { sm: [130, 200], md: [200, 280], lg: [300, 420] },
-            portable: { sm: [60, 100], md: [100, 160], lg: [160, 250] },
-            other: { sm: [120, 200], md: [200, 300], lg: [300, 450] }
+            topload: { sm: [99, 150], md: [150, 215], lg: [230, 330] },
+            frontload: { sm: [110, 165], md: [165, 250], lg: [250, 360] },
+            stackable: { sm: [110, 165], md: [165, 230], lg: [250, 345] },
+            portable: { sm: [50, 85], md: [85, 130], lg: [130, 200] },
+            other: { sm: [99, 165], md: [165, 250], lg: [250, 370] }
         },
         cta: { text: 'Get Exact Quote', href: '/#contact' },
         disclaimer: 'Estimates include hookup, leveling, and leak test. Appliance and hoses not included.'
@@ -1580,7 +1580,7 @@ export default function calculator(container) {
                         </div>
                         <button type="button" class="btn btn--accent btn--lg mod-calc__cta">${cfg.cta.text}</button>
                         <p class="mod-calc__disclaimer">${cfg.disclaimer}</p>
-                        <p class="mod-calc__disclaimer" style="margin-top:6px;font-weight:500">⚠️ Minimum service call: $150 per visit</p>
+                        <p class="mod-calc__disclaimer" style="margin-top:6px;font-weight:500">⚠️ Minimum service call: $99 per visit</p>
                     </div>
                 </div>
             </div>
