@@ -636,6 +636,88 @@
 
     <script src="/components/loader.js"></script>
     <script src="/main.js"></script>
+
+    <!-- Knowledge Base dynamic FAQ overlay -->
+    <script>
+    (function() {
+        var KB_URL = 'https://crm.asap.repair/api/knowledge-base';
+
+        function faqItemHtml(q, a) {
+            return '<div class="faq-item">' +
+                '<button class="faq-item__question" aria-expanded="false">' +
+                    '<span>' + escHtml(q) + '</span>' +
+                    '<svg class="faq-item__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>' +
+                '</button>' +
+                '<div class="faq-item__answer"><p>' + escHtml(a) + '</p></div>' +
+            '</div>';
+        }
+
+        function escHtml(s) {
+            var d = document.createElement('div');
+            d.textContent = s;
+            return d.innerHTML;
+        }
+
+        function rebindAccordions() {
+            document.querySelectorAll('.faq-item__question').forEach(function(btn) {
+                btn.removeEventListener('click', toggleFaq);
+                btn.addEventListener('click', toggleFaq);
+            });
+        }
+
+        function toggleFaq() {
+            var expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !expanded);
+            var answer = this.nextElementSibling;
+            if (answer) {
+                answer.style.maxHeight = expanded ? '0' : answer.scrollHeight + 'px';
+                answer.style.opacity = expanded ? '0' : '1';
+            }
+        }
+
+        fetch(KB_URL)
+            .then(function(r) { return r.json(); })
+            .then(function(kb) {
+                if (!kb || !kb.faqs || kb.faqs.length === 0) return;
+
+                // Build FAQ HTML from KB
+                var html = '';
+                kb.faqs.forEach(function(faq) {
+                    html += faqItemHtml(faq.question, faq.answer);
+                });
+
+                // Replace the first FAQ section content (Estimates & Fees) with KB FAQs
+                var lists = document.querySelectorAll('.faq__list');
+                if (lists.length > 0) {
+                    // Replace first section, keep others
+                    lists[0].innerHTML = html;
+                    rebindAccordions();
+                }
+
+                // Update Schema.org FAQPage structured data
+                var schemaScript = document.querySelector('script[type="application/ld+json"]');
+                if (schemaScript) {
+                    try {
+                        var schema = JSON.parse(schemaScript.textContent);
+                        if (schema['@type'] === 'FAQPage') {
+                            schema.mainEntity = kb.faqs.map(function(faq) {
+                                return {
+                                    '@type': 'Question',
+                                    name: faq.question,
+                                    acceptedAnswer: {
+                                        '@type': 'Answer',
+                                        text: faq.answer
+                                    }
+                                };
+                            });
+                            schemaScript.textContent = JSON.stringify(schema, null, 2);
+                        }
+                    } catch(e) {}
+                }
+            })
+            .catch(function() { /* fallback: keep static HTML */ });
+    })();
+    </script>
 </body>
 
 </html>
