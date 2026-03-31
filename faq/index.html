@@ -658,21 +658,24 @@
             return d.innerHTML;
         }
 
-        function rebindAccordions() {
-            document.querySelectorAll('.faq-item__question').forEach(function(btn) {
-                btn.removeEventListener('click', toggleFaq);
-                btn.addEventListener('click', toggleFaq);
+        function bindAccordionsInContainer(container) {
+            // Use the same .active class approach as main.js
+            var items = container.querySelectorAll('.faq-item');
+            items.forEach(function(item) {
+                var btn = item.querySelector('.faq-item__question');
+                btn.addEventListener('click', function() {
+                    var isActive = item.classList.contains('active');
+                    // Close all in this container only
+                    items.forEach(function(faq) {
+                        faq.classList.remove('active');
+                        faq.querySelector('.faq-item__question').setAttribute('aria-expanded', 'false');
+                    });
+                    if (!isActive) {
+                        item.classList.add('active');
+                        btn.setAttribute('aria-expanded', 'true');
+                    }
+                });
             });
-        }
-
-        function toggleFaq() {
-            var expanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !expanded);
-            var answer = this.nextElementSibling;
-            if (answer) {
-                answer.style.maxHeight = expanded ? '0' : answer.scrollHeight + 'px';
-                answer.style.opacity = expanded ? '0' : '1';
-            }
         }
 
         fetch(KB_URL)
@@ -689,9 +692,9 @@
                 // Replace the first FAQ section content (Estimates & Fees) with KB FAQs
                 var lists = document.querySelectorAll('.faq__list');
                 if (lists.length > 0) {
-                    // Replace first section, keep others
+                    // Replace first section only, rebind only that section
                     lists[0].innerHTML = html;
-                    rebindAccordions();
+                    bindAccordionsInContainer(lists[0]);
                 }
 
                 // Update Schema.org FAQPage structured data
